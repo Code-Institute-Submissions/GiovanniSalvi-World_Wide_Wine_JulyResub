@@ -1,5 +1,5 @@
 core.Microsoft*
-core.mongo*
+*.sqlite3
 core.python*
 env.py
 __pycache__/
