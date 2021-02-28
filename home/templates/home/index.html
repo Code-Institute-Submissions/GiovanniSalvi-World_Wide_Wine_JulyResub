@@ -1,6 +1,10 @@
-{% extend base.html %}
-{% block static %}
+{% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-    <h1>it works</h1>
+
+    <h1 class="display-4 text-success">it works</h1>
+
 {% endblock %}
+
+
