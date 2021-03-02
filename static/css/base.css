@@ -1,8 +1,42 @@
 html{
     height:100%;
-
 }
-
 body{
     background-color: pink;
+    height:100vh;
+}
+.fixed-top{
+    max-width: 20%;
+    color:black;
+    font-weight: lighter;
+    outline: none;
+    margin-top: 10px;
+    font-size: 40px;
+}
+.fa-search{
+    outline:none!important;
+    color:rgb(141, 25, 25);
+    
+}
+.form-inline{
+    margin-top: 5%;
+    color: black;
+    justify-content: center;
+}
+.input-group{
+    width:25rem!important;
+    border-radius: none!important;
+}
+.line{
+    width:100%;
+    height: 1%;
+    background-color: rgba(32, 30, 30, 0.966);
+}
+.logo-font{
+    display:inline;
+    float:right;
+}
+.icon {
+    display: inline;
+    float:right;
 }
