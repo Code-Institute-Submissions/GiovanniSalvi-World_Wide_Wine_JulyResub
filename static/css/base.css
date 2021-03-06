@@ -2,7 +2,10 @@ html{
     height:100%;
 }
 body{
-    background-color: pink;
+    /*background-color: pink;*/
+    background-image:url(https://4kwallpapers.com/images/wallpapers/wooden-background-wooden-planks-5k-1920x1200-2304.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     height:100vh;
 }
 .fixed-top{
@@ -19,9 +22,13 @@ body{
     
 }
 .form-inline{
-    margin-top: 5%;
+    margin-top: 10%;
     color: black;
     justify-content: center;
+}
+.form-control{
+    position:relative;
+    top:1em;
 }
 .input-group{
     width:25rem!important;
@@ -36,7 +43,35 @@ body{
     display:inline;
     float:right;
 }
+.navbar{
+    align-items: center;   
+}
+.nav-link{
+    color:white;
+}
+.sparkling{
+    color:rgb(228, 208, 97);
+}
 .icon {
     display: inline;
     float:right;
+}
+.menu-icon{
+    position: relative;
+    bottom:65%;
+}
+.footer_menu{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+.about{
+    justify-content: center;
+}
+.navbar-collapse{
+     justify-content: center;
+}
+.navbar-nav{
+    text-align: center;
+    word-spacing: 10px;
 }
