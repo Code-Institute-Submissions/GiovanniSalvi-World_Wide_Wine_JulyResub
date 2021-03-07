@@ -2,11 +2,11 @@ html{
     height:100%;
 }
 body{
-    /*background-color: pink;*/
     background-image:url(https://4kwallpapers.com/images/wallpapers/wooden-background-wooden-planks-5k-1920x1200-2304.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height:100vh;
+    background-attachment: fixed;
+    height:100%;
 }
 .fixed-top{
     max-width: 20%;
@@ -17,9 +17,7 @@ body{
     font-size: 40px;
 }
 .fa-search{
-    outline:none!important;
     color:rgb(141, 25, 25);
-    
 }
 .form-inline{
     margin-top: 10%;
@@ -41,7 +39,14 @@ body{
 }
 .logo-font{
     display:inline;
-    float:right;
+    color: black;
+    font-style: oblique;
+    font-family: fantasy;
+    font-size:xx-large;
+    font-weight: bold;
+    position: relative;
+    top:1.2em;
+    right:1em
 }
 .navbar{
     align-items: center;   
@@ -58,15 +63,17 @@ body{
 }
 .menu-icon{
     position: relative;
-    bottom:65%;
+    bottom:50%;
+    left:3%;
+    text-decoration:none;
 }
 .footer_menu{
-    position:absolute;
-    bottom:0;
+    position:relative;
+    top:4em;
     width:100%;
 }
 .about{
-    justify-content: center;
+    height: 3em;
 }
 .navbar-collapse{
      justify-content: center;
@@ -75,3 +82,40 @@ body{
     text-align: center;
     word-spacing: 10px;
 }
+.box{
+    display:grid;
+    border:5px solid #6b0202;
+    height:300px;
+    max-width:200px;
+    border-radius: 15px;
+    box-shadow:3px 3px 0px 0px #6b0202;
+}
+.content{
+    margin-top: 10%;
+    justify-content: center;
+    column-gap: 6em;
+    row-gap: 4em;
+
+}
+.footer_table{
+    margin: 2%;
+    color: gray;
+    font-style: italic;
+    font-family: serif;
+    position: relative;
+    top: -10px;
+    font-size: 15px;
+}
+.navbar-collapse{
+    display: inline-block;
+}
+li{
+    list-style-type: none;
+}
+.text-light{
+    position:relative!important;
+    left:2em;
+}
+
+
+

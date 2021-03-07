@@ -37,7 +37,7 @@
     <div class="row bg-light">
             <div class="col-12 col-md-4 my-auto  text-center ">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link mw-30">
-                    <h2 class="fixed-top logo-font "> World<strong style="color:rgb(141, 25, 25)"> Wide</strong> Wine</h2>
+                    <h2 class="logo-font "> World<strong style="color:rgb(141, 25, 25)"> Wide</strong> Wine</h2>
                 </a>
             </div>
        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -56,14 +56,16 @@
         </div>
         
          <div class="row w-100 p-1">
-            <div class="col-12 logo-font text-black ">
-                    <ul class="icon menu-icon ">
-                        <a class=" btn btn-md rounded-0">MyAccount <i class="fa fa-user" aria-hidden="true"></i></a>
-                        <li class="collapse">Register</li>
-                        <li class="collapse">login</li>
+            <div class="col-12 text-black ">
+                    <ul class="icon menu-icon dropdown">
+                        <button class="btn" type="button" data-toggle="dropdown" id="dropdownMenu1" aria-haspopup="true" aria-expanded="false"><a class=" btn btn-md rounded-0">MyAccount <i class="fa fa-user" aria-hidden="true"></i></a></button>
+                        <div class="dropdown-menu"     aria-labelledby="dropdownMenu1">
+                             <li><a href="#" class="dropdown-item">Register</a></li>
+                             <li><a href="#" class="dropdown-item">Login</a></li>
+                        </div>
                     </ul>
                     <ul class="icon menu-icon">
-                        <a class=" btn btn-md rounded-0">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <button class="btn" type="button"><a class=" btn btn-md rounded-0">Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
                     </ul>
                 </div>
           </div>
@@ -72,34 +74,54 @@
     
     </header>
     <div class="containe-fluid">
-        <nav class="navbar navbar-expand-lg bg-dark">
-           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-             <ul class="navbar-nav">
-                <li class="nav-item active">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink">Types<span class="sr-only">(current)</span></a>
-               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">White</a>
-                <a class="dropdown-item" href="#">Red</a>
-                <a class="dropdown-item" href="#">Rose'</a>
-               </div>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link " href="#">Countries</a>
-               </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link sparkling" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Champagne
-                 </a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg" style="background-color:#305377;">
+             <div class="navbar-collapse">
+                <ul class="nav-item active">
+                <button class="btn" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false"><a style="color:black;" class="nav-link" href="#">Types</a></button>
+                    <li class="multi-collapse collapsing"><a style="text-decoration: none;" class="text-light" href="#">White</a></li>
+                    <li class="multi-collapse collapsing"><a style="text-decoration: none;" class="text-light" href="#">Red</a></li>
+                    <li class="multi-collapse collapsing"><a style="text-decoration: none;" class="text-light" href="#">Rose'</a></li>
+                </ul>
             </div>
-            </nav>
-        </div> 
+        <div class="navbar-collapse">
+               <ul class="nav-item active">
+               <button class="btn" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false"><a style="color:black" class="nav-link " href="#">Countries</a></button>
+                  <li class="multi-collapse collapsing"><a style="text-decoration: none;" class="text-light" href="#">US</a></li>
+                  <li class="multi-collapse collapsing"><a style="text-decoration: none;" class="text-light" href="#">France</a></li>
+                  <li class="multi-collapse collapsing"><a style="text-decoration: none;" class="text-light" href="#">Italy</a></li>
+                  <li class="multi-collapse collapsing"><a style="text-decoration: none;" class="text-light" href="#">Spain</a></li>
+               </ul>
+            </div>
+            <div class="navbar-collapse">
+               <ul class="nav-item active">
+               <button class="btn" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false"><a    class="nav-link sparkling" href="#">Champagne
+               </a></button>
+                    <li class="multi-collapse collapsing"><a style="text-decoration: none;" class="text-light" href="#">Blanc de Noirs</a></li>
+                    <li class="multi-collapse collapsing"><a style="text-decoration: none;" class="text-light" href="#">Blanc de Blancs</a></li>
+                    <li class="multi-collapse collapsing"><a style="text-decoration: none;" class="text-light" href="#">Brut</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid">
+            <div class= "content row">
+                <div class="col box b1">1</div>
+                <div class="col box b2">2</div>
+                <div class="col box b3">3</div>
+                <div class="w-100"></div>
+                <div class="col box b4">4</div>
+                <div class="col box b5">5</div>
+                <div class="col box b6">6</div>
+            </div>
+
+        </div>
+        
         <footer class="container-fluid footer_menu">
           <div class="row bg-light about">
             <table class="footer_table">
-                <th ><a style="color:inherit;text-decoration: none;" href="#">About</a></th>
-                <th ><a style="color:inherit;text-decoration: none;" href="#">Contact</a></th>
+                <th ><a style="color:inherit;text-decoration: none;letter-spacing: 3px;" href="#">About</a></th>
+                <th ><a style="color:inherit;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
+                left: 1em;" href="#">Contact</a></th>
             </table>
           </div>
         </footer>
