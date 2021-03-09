@@ -1,12 +1,11 @@
-html{
-    height:100%;
-}
+
 body{
     background-image:url(https://4kwallpapers.com/images/wallpapers/wooden-background-wooden-planks-5k-1920x1200-2304.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height:100%;
+    height:50%;
+
 }
 .fixed-top{
     max-width: 20%;
@@ -69,11 +68,13 @@ body{
 }
 .footer_menu{
     position:relative;
-    top:4em;
     width:100%;
+    min-height: 100%;
 }
 .about{
-    height: 3em;
+    position:absolute;
+    bottom:0;
+    width:100vw;
 }
 .navbar-collapse{
      justify-content: center;
@@ -103,9 +104,9 @@ body{
     font-style: italic;
     font-family: serif;
     position: relative;
-    top: -10px;
     font-size: 15px;
 }
+
 .navbar-collapse{
     display: inline-block;
 }
@@ -116,6 +117,43 @@ li{
     position:relative!important;
     left:2em;
 }
+.panel-title{
+    color:gold;
+}
+.panel{
+    margin: 4em 2em;
+    padding: 1em;
+    width: 45vw;
+}
+.logo{
+    color: rgb(141, 25, 25);
+    font-size: 2em;
+    font-weight:400;
+    position: relative;
+    float: right;
+    right: 3em;
+    bottom: 12em;
+}  
+.forms{
+    display: inline-block;
+    width: 100%;
+} 
+.login-form-1{
+    width: 25vw;
+    float: right;
+    position: relative;
+    bottom: 20.5em;
+}
+.etc-login-form{
+    margin-top:1.3em;
+}
+.login-button{
+    margin-top: 2em;
+}
+.form-control {
+    border: 0;
+}
+
 
 
 
