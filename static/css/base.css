@@ -118,6 +118,9 @@ li{
     position:relative!important;
     left:2em;
 }
+.text-light:hover{
+    background-color:#2461a2;
+}
 .panel-title{
     color:gold;
 }
