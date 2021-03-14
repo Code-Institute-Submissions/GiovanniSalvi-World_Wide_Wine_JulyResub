@@ -70,11 +70,11 @@ body{
 .footer_menu{
     position:relative;
     width:100%;
-    top:40em;
+    top:55em;
 }
 .about{
     position:absolute;
-    bottom:-25em;
+    bottom:0;
     width:100vw;
 }
 .navbar-collapse{
