@@ -11,6 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'World_Wide_Wine.settings')
+os.environ.setdefault(
+    'DJANGO_SETTINGS_MODULE', 'world-wide-wine-django-app.settings')
 
 application = get_wsgi_application()
