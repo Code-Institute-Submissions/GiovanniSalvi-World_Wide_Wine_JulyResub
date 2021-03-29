@@ -18,12 +18,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
+SECRET_KEY = os.environ.get 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['git.heroku.com/world-wide-wine-django-app.git']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 
 # Application definition
@@ -110,7 +110,7 @@ WSGI_APPLICATION = 'World_Wide_Wine.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://kujimrqrmgwhnt:3933c3bbc870646d60f933c09c3dfecae752e0af15f3453a82ff474f3ff51505@ec2-18-233-83-165.compute-1.amazonaws.com:5432/d2ccp00l2noi2j')
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
