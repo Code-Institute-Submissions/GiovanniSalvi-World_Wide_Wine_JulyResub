@@ -1,1 +1,1 @@
-web : gunicorn world-wide-wine-django-app.wsgi:application
+web : gunicorn World_Wide_Wine.wsgi.application
