@@ -23,7 +23,7 @@ body{
     width: 50%;
     height: 20em;
     float: right;
-    margin-top: 20em;
+    margin-top: 8em;
     position: relative;
 }
 .fa-search{
@@ -87,7 +87,7 @@ body{
 .about{
     position:absolute;
     width:100vw;
-    bottom:-12em;
+    bottom:-18em;
     height: 6em;
 }
 .navbar-collapse{
@@ -143,6 +143,14 @@ li{
     margin: 4em 2em;
     padding: 1em;
     width: 45vw;
+}
+.flyer{
+    font-size: 3vw;
+    font-style: inherit;
+    font-family: math;
+    font-family: fantasy;
+    font-weight: 900;
+    padding: 10px;
 }
 .logo{
     color: rgb(141, 25, 25);
