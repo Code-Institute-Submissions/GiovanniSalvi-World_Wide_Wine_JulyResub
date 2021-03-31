@@ -14,7 +14,7 @@ body{
 .index_image{
     width: 50%;
     height: 40em;
-    background-image: url();
+    background-image: url('media/unnamed.jpeg);
     background-repeat: no-repeat;
     background-size: contain;
     float: left;
