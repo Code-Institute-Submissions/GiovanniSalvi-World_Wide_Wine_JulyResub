@@ -9,8 +9,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
 
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -31,17 +29,33 @@
     {% block extra_js %}
     {% endblock %}
 
+    {% block page_header %}
+
+
+
     <title>World Wide Wine</title>
   </head>
-  <body>
-    <header class="container-fluid">
-    <div class="row bg-light">
+  <body class="container">
+    <header class="row ">
+    <div class="col bg-light">
             <div class="col-12 col-md-4 my-auto  text-center ">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link mw-30">
                     <h2 class="logo-font "> World<strong style="color:rgb(141, 25, 25)"> Wide</strong> Wine</h2>
                 </a>
             </div>
-       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-sm-4 my-auto py-lg-0 text-black ">
+                    <ul style="outline: none!important;" class="icon menu-icon dropdown">
+                        <button  class="btn" type="button" data-toggle="dropdown" id="dropdownMenu1" aria-haspopup="true" aria-expanded="false"><a class=" btn btn-md rounded-0">MyAccount <i class="fa fa-user" aria-hidden="true"></i></a></button>
+                        <div class="dropdown-menu"     aria-labelledby="dropdownMenu1">
+                             <li><a href="#" class="dropdown-item">Register</a></li>
+                             <li><a href="#" class="dropdown-item">Login</a></li>
+                        </div>
+                    </ul>
+                    <ul class="icon menu-icon">
+                        <button class="btn" type="button"><a class=" btn btn-md rounded-0"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
+                    </ul>
+            </div>
+       <div class="col-12 col-sm-4 my-auto py-lg-0">
          <form class="form-inline" method="GET" action="">
              <div class="input-group">
                 <input class="form-control ml-sm-3 " type="search" placeholder="Search" aria-label="Search">
@@ -55,26 +69,18 @@
              </div>
          </form>
         </div>
-        
-         <div class="row w-100 p-1 w-100-md-none">
-            <div class="col-12 text-black ">
-                    <ul style="outline: none!important;" class="icon menu-icon dropdown">
-                        <button  class="btn" type="button" data-toggle="dropdown" id="dropdownMenu1" aria-haspopup="true" aria-expanded="false"><a class=" btn btn-md rounded-0">MyAccount <i class="fa fa-user" aria-hidden="true"></i></a></button>
-                        <div class="dropdown-menu"     aria-labelledby="dropdownMenu1">
-                             <li><a href="#" class="dropdown-item">Register</a></li>
-                             <li><a href="#" class="dropdown-item">Login</a></li>
-                        </div>
-                    </ul>
-                    <ul class="icon menu-icon">
-                        <button class="btn" type="button"><a class=" btn btn-md rounded-0"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
-                    </ul>
-                </div>
-          </div>
     </div>
+        
+         
+            
+    
     
     
     </header>
-    <div class="container-fluid">
+    {% endblock %}
+
+    {% block content %}
+    <div class="container">
     <nav class="navbar navbar-expand-md" style="background-color:#305377;">
              <div class="navbar-collapse">
                 <ul class="nav-item active">
@@ -105,7 +111,7 @@
         </nav>
     </div>
     
-<footer class="container-fluid footer_menu">
+<footer class="container footer_menu">
           <div class="row bg-light about">
             <table class="footer_table">
                 <th ><a style="color:#615353;;text-decoration: none;letter-spacing: 3px;" href="#">About</a></th>
@@ -115,12 +121,10 @@
           </div>
 </footer>
 </body>
-{% block page_header %}
-
-{% endblock %}
 
 
-{% block content %}
+
+
 
 {% endblock %}
 </html>

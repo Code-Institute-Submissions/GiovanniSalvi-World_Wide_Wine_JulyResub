@@ -26,13 +26,17 @@ body{
     margin-top: 8em;
     position: relative;
 }
+.may-auto{
+    height:5em;
+    text-align: center!important;
+}
 .fa-search{
     color:rgb(141, 25, 25);
 }
 .form-inline{
     margin-top: 10%;
     color: black;
-    justify-content: center;
+    height:inherit
 }
 .form-control{
     position:relative;
@@ -40,7 +44,7 @@ body{
 }
 .input-group{
     width:25rem!important;
-    border-radius: none!important;
+    height:inherit;
 }
 .line{
     width:100%;
