@@ -222,24 +222,23 @@ li{
   .index_image {
     width: 100%;
     height: 20em;
-    margin-left: 10%;
+    margin-left: 0;
     text-align: center;
-    margin-top: 8em;
     position: relative;
-    margin-top: -15%;
+    margin-top: -20%;
   }
 }
 @media only screen and (max-width: 900px) {
   .index_text {
     width: 80%;
-    margin-top: -15%;
+    margin-top: 80%;
   }
 }
 @media only screen and (max-width: 1080px) {
   .footer_menu {
+    font-size: 10px;
     position: relative;
-    width: 100%;
-    bottom:0;
+    top: 25%;
   }
 }
 @media only screen and (max-width: 580px) {
@@ -288,6 +287,7 @@ li{
 @media only screen and (max-width: 480px) {
   .input-group {
     width:16rem!important;
+    margin-left: 7%;
   }
 }  
 @media only screen and (max-width: 480px) {
@@ -318,13 +318,22 @@ li{
   .cart {
     float: right;
     position: relative;
-    bottom: 1.8em;
-    left: 1.8em;
+    bottom: 2.8em;
+    left: 2.5em;
   }
 } 
 @media only screen and (max-width: 480px) {
   .account {
+    outline: none!important;
     position: relative;
-    left: 2.6em;
+    left: 2.6;
+    left: -1.4em;
+  }
+} 
+@media only screen and (max-width: 480px) {
+  .navbar-collapse {
+    font-size: 10px;
+    position: relative;
+    top: 25%;
   }
 } 
