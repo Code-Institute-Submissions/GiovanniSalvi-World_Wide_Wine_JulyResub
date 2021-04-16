@@ -21,10 +21,9 @@ body{
 }
 .index_text{
     width: 50%;
-    height: 20em;
+    height: 10em;
     float: right;
     margin-top: 8em;
-    position: relative;
 }
 .my-auto{
     height:5em;
@@ -41,13 +40,13 @@ body{
 }
 .form_in_line{
     color: black;
-    margin-left: 33%;
+    margin-left: 25%;
     height: inherit;
-    margin-top: 5%;
+    margin-top: 510;
 }
 .form-control{
-    position:relative;
-    top:1em;
+    border: 1px black solid;
+
 }
 .input-group{
     width:35rem!important;
@@ -145,6 +144,7 @@ li{
     font-style: inherit;
     font-family: fantasy;
     font-weight: 900;
+    font-size: 30px;
 }
 .logo{
     color: rgb(141, 25, 25);
