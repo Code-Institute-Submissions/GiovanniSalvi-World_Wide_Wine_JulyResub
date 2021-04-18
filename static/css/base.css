@@ -50,6 +50,8 @@ body{
 .input-group{
     width:35rem!important;
     height:inherit;
+    margin-left: 30%;
+
 }
 .line{
     width:100%;
@@ -251,9 +253,8 @@ li{
 }
 @media only screen and (max-width: 480px) {
   .text-black {
-    width:60%;
+    width:70%;
     position:unset;
-    top:20%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -288,16 +289,19 @@ li{
 @media only screen and (max-width: 480px) {
   .input-group {
     width:18rem!important;
+    margin-left: unset;
   }
 }
-@media only screen and (max-width: 1080px) {
+@media only screen and (min-width: 485px) and (max-width: 1080px) {
   .input-group {
-    width:25rem!important;
+    width:28rem!important;
+    margin-left: 23%;
   }
 } 
-@media only screen and (max-width: 290px) {
+@media only screen and (max-width: 290px) and (min-width: 470px) {
   .input-group {
     width:14rem!important;
+    margin-left: unset;
   }
 }   
 @media only screen and (max-width: 480px) {
@@ -327,8 +331,7 @@ li{
 } 
 @media only screen and (max-width: 480px) {
   .cart {
-    float: left;
-    
+    float: left;    
   }
 } 
 @media only screen and (max-width: 480px) {
@@ -363,5 +366,12 @@ li{
 @media only screen and (max-width: 480px) {
   .account .cart {
     float:left;
+  }
+}
+@media only screen and (min-width: 470px) and (max-width: 180px) {
+  .text-black {
+    width: 100%;
+    position: relative;
+    bottom: -2em;
   }
 }
