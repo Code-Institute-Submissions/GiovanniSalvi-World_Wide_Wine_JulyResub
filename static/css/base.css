@@ -40,9 +40,8 @@ body{
 }
 .form_in_line{
     color: black;
-    margin-left: 25%;
     height: inherit;
-    margin-top: 510;
+    margin-top: 5em;
 }
 .form-control{
     border: 1px black solid;
@@ -76,7 +75,7 @@ body{
     pointer-events: none;
 }
 .icon {
-    display: inline;
+    display: contents;
     float:right;
 }
 .menu-icon{
@@ -218,6 +217,9 @@ li{
     top: 5%;
     color: #003977;
 }
+.container-fluid{
+    height:100vh;
+}
 @media only screen and (max-width: 900px) {
   .index_image {
     width: 100%;
@@ -229,8 +231,9 @@ li{
 }
 @media only screen and (max-width: 900px) {
   .index_text {
-    width: 80%;
-    margin-top: 80%;
+    width: 95%;
+    margin-top: unset;
+    margin-bottom:80%;
   }
 }
 @media only screen and (max-width: 1080px) {
@@ -243,18 +246,14 @@ li{
 @media only screen and (max-width: 580px) {
   .btn {
     padding:0;
-  }
-}
-@media only screen and (max-width: 380px) {
-  .menu-icon {
-    position: unset;
+
   }
 }
 @media only screen and (max-width: 480px) {
   .text-black {
     width:60%;
     position:unset;
-    float: unset;
+    top:20%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -288,9 +287,19 @@ li{
 }  
 @media only screen and (max-width: 480px) {
   .input-group {
-    width:15rem!important;
+    width:18rem!important;
   }
-}  
+}
+@media only screen and (max-width: 1080px) {
+  .input-group {
+    width:25rem!important;
+  }
+} 
+@media only screen and (max-width: 290px) {
+  .input-group {
+    width:14rem!important;
+  }
+}   
 @media only screen and (max-width: 480px) {
   .logo-font {
     position: relative;
@@ -307,27 +316,25 @@ li{
    .background_image{
     padding: 20px;
     position: relative;
-    top: 5em;
+    top: 2em;
+    text-align: end;
   }
 }
 @media only screen and (max-width: 480px) {
   .form_in_line {
-    margin-left: 10%;
+    margin-left: auto;
   }
 } 
 @media only screen and (max-width: 480px) {
   .cart {
-    float: right;
-    position: relative;
-    bottom: 2.8em;
-    left: 1.5em;
+    float: left;
+    
   }
 } 
 @media only screen and (max-width: 480px) {
   .account {
     outline: none!important;
     position: relative;
-    left: 2.6;
     left: -1.8em;
   }
 } 
@@ -337,25 +344,24 @@ li{
     position: relative;
   }
 } 
-@media only screen and (max-width: 480px) {
-  .nav-item {
-    right:15%;
-    position: relative;
-  }
-} 
-@media only screen and (max-width: 1080px) {
-  .show {
-    line-height: 2em!important;
-  }
-} 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 580px) {
   .container-fluid {
-    height:45em;
+    height:60em;
   }
 }
 @media only screen and (max-width: 480px) {
   .footer {
     position: relative;
     height: 50vh;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .myAccount {
+    display:none;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .account .cart {
+    float:left;
   }
 }
