@@ -225,7 +225,6 @@ li{
     margin-left: 0;
     text-align: center;
     position: relative;
-    margin-top: -20%;
   }
 }
 @media only screen and (max-width: 900px) {
@@ -272,13 +271,16 @@ li{
 }
 @media only screen and (max-width: 480px) {
   .about {
-    height:auto!important;
+    height: auto!important;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
   }
 }  
 @media only screen and (max-width: 480px) {
   .flyer {
     position:unset;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     display: inline-block;
     font-size: 18px;
     transform: scaleY(0.8);
@@ -286,8 +288,7 @@ li{
 }  
 @media only screen and (max-width: 480px) {
   .input-group {
-    width:16rem!important;
-    margin-left: 7%;
+    width:15rem!important;
   }
 }  
 @media only screen and (max-width: 480px) {
@@ -303,7 +304,7 @@ li{
   }
 }  
 @media only screen and (max-width:420px) {
-    .background_image{
+   .background_image{
     padding: 20px;
     position: relative;
     top: 5em;
@@ -311,7 +312,7 @@ li{
 }
 @media only screen and (max-width: 480px) {
   .form_in_line {
-    margin-top: 0;
+    margin-left: 10%;
   }
 } 
 @media only screen and (max-width: 480px) {
@@ -319,7 +320,7 @@ li{
     float: right;
     position: relative;
     bottom: 2.8em;
-    left: 2.5em;
+    left: 1.5em;
   }
 } 
 @media only screen and (max-width: 480px) {
@@ -327,13 +328,34 @@ li{
     outline: none!important;
     position: relative;
     left: 2.6;
-    left: -1.4em;
+    left: -1.8em;
   }
 } 
 @media only screen and (max-width: 480px) {
   .navbar-collapse {
     font-size: 10px;
     position: relative;
-    top: 25%;
   }
 } 
+@media only screen and (max-width: 480px) {
+  .nav-item {
+    right:15%;
+    position: relative;
+  }
+} 
+@media only screen and (max-width: 1080px) {
+  .show {
+    line-height: 2em!important;
+  }
+} 
+@media only screen and (max-width: 480px) {
+  .container-fluid {
+    height:45em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .footer {
+    position: relative;
+    height: 50vh;
+  }
+}
