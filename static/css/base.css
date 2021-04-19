@@ -119,7 +119,9 @@ body{
     bottom: 5%;
     right: 10px;
 }
-
+.account{
+    float:right;
+}
 .navbar-collapse{
     display: inline-block;
 }
@@ -129,6 +131,7 @@ li{
 .text-light{
     position:relative!important;
     left:1em;
+    display: none;
 }
 .text-light:hover{
     background-color:#2461a2;
@@ -384,7 +387,4 @@ li{
   .fa-search {
     margin-left: 5px;
   }
-}
-.active{
-    display:none;
 }
