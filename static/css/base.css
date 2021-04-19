@@ -19,6 +19,25 @@ body{
     background-size: contain;
     float: left;
 }
+.dropdown-menu{
+    position: absolute;
+    top: 38%;
+    left: 55%;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
 .index_text{
     width: 50%;
     height: 10em;
@@ -94,7 +113,8 @@ body{
     text-decoration: none;
 }
 .about{
-    height: 6em;
+    height: 7em;
+    width:100vw;
 }
 .navbar-collapse{
      justify-content: center;
@@ -146,10 +166,12 @@ li{
     transition: 0.2s;
 }
 .panel-title{
-    color:gold;
+    color: gold;
+    margin-bottom: 10%;
+    font-size: 2.75rem;
 }
 .panel{
-    margin: 4em 2em;
+    margin: 4em 4em 4em 4em;
     padding: 1em;
     width: 45vw;
 }
@@ -162,15 +184,15 @@ li{
 .logo{
     color: rgb(141, 25, 25);
     font-size: 2em;
-    font-weight:400;
+    font-weight: 400;
     position: relative;
-    bottom: -0.5em;
-    left: 15.5%;
+    bottom: -2.2em;
+    left: 20.5%;
 }  
 .login-form-1{
     width: 25vw;
     position: relative;
-    top: 5em;
+    top: 10em;
 }
 .etc-login-form{
     margin-top:1.3em;

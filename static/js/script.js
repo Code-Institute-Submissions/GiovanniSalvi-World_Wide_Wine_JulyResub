@@ -1,8 +1,8 @@
-//$('.nav-link').on('click', function () {
-    //if(!$(this).siblings('.nav-link').hasClass('collapsed')) {
-       //$(this).siblings('.nav-link').click();
-       //}
-    //});
+$('.nav-link').on('click', function () {
+    if(!$(this).siblings('.nav-link').hasClass('collapsed')) {
+       $(this).siblings('.nav-link').click();
+       }
+    });
 //function list(event, listName) {
     //var i, text_list, btn;
     //text_list = document.getElementsByClassName("text_list");

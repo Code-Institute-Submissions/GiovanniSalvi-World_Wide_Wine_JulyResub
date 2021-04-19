@@ -29,7 +29,7 @@
     {% block extra_js %}
     {% endblock %}
 
-    {% block page_header %}
+    
 
 
 
@@ -47,7 +47,7 @@
                     <ul style="outline: none!important;" class="icon menu-icon dropdown">
                         <button class="btn account" type="button" data-toggle="dropdown" id="dropdownMenu1" aria-haspopup="true" aria-expanded="false"><a class=" btn btn-md rounded-0"><span class="myAccount">MyAccount</span><i class="fa fa-user" aria-hidden="true"></i></a></button> 
                         <div class="dropdown-menu"     aria-labelledby="dropdownMenu1">
-                             <li><a href="#" class="dropdown-item">Register</a></li>
+                             <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
                              <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
                         </div>   
                     </ul>
@@ -103,7 +103,7 @@
     </nav>
     </div>
 </div>
- {% endblock %}
+ 
 
  {% block content %}
  
