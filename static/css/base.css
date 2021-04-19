@@ -26,7 +26,7 @@ body{
     margin-top: 8em;
 }
 .my-auto{
-    height:5em;
+    height:6em;
     text-align: center!important;
 }
 .text-black{
@@ -48,9 +48,9 @@ body{
 
 }
 .input-group{
-    width:35rem!important;
-    height:inherit;
-    margin-left: 30%;
+    width: 50%;
+    height: inherit;
+    margin-left: 25%;
 
 }
 .line{
@@ -145,7 +145,7 @@ li{
     font-style: inherit;
     font-family: fantasy;
     font-weight: 900;
-    font-size: 30px;
+    font-size: 40px;
 }
 .logo{
     color: rgb(141, 25, 25);
@@ -277,31 +277,37 @@ li{
     width: 100vw;
   }
 }  
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 580px) {
   .flyer {
     position:unset;
     letter-spacing: 4px;
     display: inline-block;
-    font-size: 18px;
+    font-size: 25px;
     transform: scaleY(0.8);
   }
 }  
-@media only screen and (max-width: 480px) {
-  .input-group {
-    width:18rem!important;
-    margin-left: unset;
+@media only screen and (max-width: 290px) {
+  .flyer {
+      font-size: 20px;
   }
 }
-@media only screen and (min-width: 485px) and (max-width: 1080px) {
+@media only screen and (max-width: 480px) {
   .input-group {
-    width:28rem!important;
-    margin-left: 23%;
+    width: 75%;
+    margin-left: 15%;
+  }
+}
+@media only screen and (min-width: 685px) and (max-width: 1080px) {
+  .input-group {
+    height: inherit;
+    margin-left: 25%;
+    width: 50%;
   }
 } 
-@media only screen and (max-width: 290px) and (min-width: 470px) {
+@media only screen and (max-width: 0px) and (min-width: 470px) {
   .input-group {
-    width:14rem!important;
-    margin-left: unset;
+    width: 100%;
+    margin-left: 0;
   }
 }   
 @media only screen and (max-width: 480px) {
@@ -355,7 +361,6 @@ li{
 @media only screen and (max-width: 480px) {
   .footer {
     position: relative;
-    height: 50vh;
   }
 }
 @media only screen and (max-width: 580px) {
@@ -374,4 +379,12 @@ li{
     position: relative;
     bottom: -2em;
   }
+}
+@media only screen and (max-width: 580px) {
+  .fa-search {
+    margin-left: 5px;
+  }
+}
+.active{
+    display:none;
 }
