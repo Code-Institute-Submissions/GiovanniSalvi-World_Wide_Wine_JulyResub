@@ -13,7 +13,6 @@
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static '/css/base.css' %}">
-        <link rel="stylesheet" href="{% static '/js/script.js' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -24,6 +23,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static '/js/script.js' %}">
     {% endblock %}
 
     {% block extra_js %}
@@ -48,7 +48,7 @@
                         <button class="btn account" type="button" data-toggle="dropdown" id="dropdownMenu1" aria-haspopup="true" aria-expanded="false"><a class=" btn btn-md rounded-0"><span class="myAccount">MyAccount</span><i class="fa fa-user" aria-hidden="true"></i></a></button> 
                         <div class="dropdown-menu"     aria-labelledby="dropdownMenu1">
                              <li><a href="#" class="dropdown-item">Register</a></li>
-                             <li><a href="#" class="dropdown-item">Login</a></li>
+                             <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
                         </div>   
                     </ul>
                     <ul class="icon menu-icon">
@@ -75,25 +75,25 @@
 <div style="line-height: 5em;">
    <div class="row">
     <nav class="col navbar navbar-expand-md" style="background-color:#305377;">
-            <div class="navbar-collapse">
+            <div class="navbar-collapse" style="line-height: 2em;">
                <ul class="nav-item active">
-               <button class="btn" onmouseover="list(event, 'Types')"><a style="color:black" class="nav-link " href="#">Types</a></button>
-                  <li><a style="text-decoration: none;" class="text-light" href="#">White</a></li>
-                  <li><a style="text-decoration: none;" class="text-light" href="#">Red</a></li>
-                  <li><a style="text-decoration: none;" class="text-light" href="#">Rose'</a></li>
+               <button class="btn" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false"><a style="color:black" class="nav-link " href="#">Types</a></button>
+                  <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">White</a></li>
+                  <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Red</a></li>
+                  <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Rose'</a></li>
                </ul>
             </div>
-            <div class="navbar-collapse">
+            <div class="navbar-collapse" style="line-height: 2em;">
                <ul class="nav-item active">
-               <button class="btn" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false"><a style="color:black" class="nav-link" href="#" onmouseover="list(event, 'Countries')">Countries</a></button>
+               <button class="btn" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false"><a style="color:black" class="nav-link" href="#">Countries</a></button>
                   <li class="collapse"><a style="text-decoration: none;" class="text-light " href="#">US</a></li>
                   <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">France</a></li>
                   <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Italy</a></li>
                </ul>
             </div>
-            <div class="navbar-collapse">
+            <div class="navbar-collapse" style="line-height: 2em;">
                <ul class="nav-item active">
-               <button class="btn" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false"><a    class="nav-link sparkling" href="#" onmouseover="list(event, 'Champagne')">Champagne
+               <button class="btn" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false"><a    class="nav-link sparkling" href="#">Champagne
                </a></button>
                     <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Blanc de Noirs</a></li>
                     <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Blanc de Blancs</a></li>

@@ -33,7 +33,7 @@ body{
     width: 40%;
     float: right;
     position: relative;
-    bottom: 3em;
+    bottom: 5em;
 }
 .fa-search{
     color:rgb(141, 25, 25);
@@ -51,7 +51,6 @@ body{
     width: 50%;
     height: inherit;
     margin-left: 25%;
-
 }
 .line{
     width:100%;
@@ -69,12 +68,21 @@ body{
     top:1em;
 }
 .nav-link{
-    color:white;
     padding: 0;
+}
+.nav-link:hover {
+    color:#3c3232;
+    opacity: 0.9;
+    transition: 0.2s;
 }
 .sparkling{
     color:rgb(228, 208, 97);
     pointer-events: none;
+}
+.sparkling:hover {
+    color: #ffc107;
+    opacity: 0.9;
+    transition: 0.2s;
 }
 .icon {
     display: contents;
@@ -130,11 +138,12 @@ li{
 }
 .text-light{
     position:relative!important;
-    left:1em;
-    display: none;
+    left:1em;    
 }
 .text-light:hover{
-    background-color:#2461a2;
+    color: #2f3338!important;
+    opacity: 0.9;
+    transition: 0.2s;
 }
 .panel-title{
     color:gold;
@@ -158,7 +167,6 @@ li{
     bottom: -0.5em;
     left: 15.5%;
 }  
-
 .login-form-1{
     width: 25vw;
     position: relative;
@@ -213,7 +221,9 @@ li{
     font-size: 12px;
     margin-left: 2%;
 }
-
+.show{
+    max-height: 2.5em;
+}
 .contact-text{
     height: min-content;
     line-height: 2;
@@ -224,6 +234,9 @@ li{
 }
 .container-fluid{
     height:100vh;
+}
+.cart{
+    float: right;
 }
 @media only screen and (max-width: 900px) {
   .index_image {
