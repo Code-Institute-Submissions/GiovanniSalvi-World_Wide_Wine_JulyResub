@@ -45,14 +45,14 @@ body{
     margin-top: 8em;
 }
 .my-auto{
-    height:6em;
+    height:7.5em;
     text-align: center!important;
 }
 .text-black{
     width: 40%;
     float: right;
     position: relative;
-    bottom: 5em;
+    bottom: 4em;
 }
 .fa-search{
     color:rgb(141, 25, 25);
@@ -295,6 +295,12 @@ li{
     position:unset;
   }
 }
+@media only screen and (min-width: 480px) and (max-width:580px) {
+  .text-black {
+    width:58%;
+    float: none;
+  }
+}
 @media only screen and (max-width: 480px) {
   .w-100 {
     width:80%!important;
@@ -326,7 +332,7 @@ li{
 }  
 @media only screen and (max-width: 290px) {
   .flyer {
-      font-size: 20px;
+    font-size: 20px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -382,8 +388,8 @@ li{
   .account {
     outline: none!important;
     position: relative;
-    left: -1.8em;
-  }
+    right: 45%;
+    }
 } 
 @media only screen and (max-width: 480px) {
   .navbar-collapse {
