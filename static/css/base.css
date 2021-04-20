@@ -297,7 +297,7 @@ li{
 }
 @media only screen and (min-width: 480px) and (max-width:580px) {
   .text-black {
-    width:58%;
+    width:60%;
     float: none;
     bottom:0;
   }
@@ -338,8 +338,8 @@ li{
 }
 @media only screen and (max-width: 580px) {
   .input-group {
-    width: 75%;
-    margin-left: 15%;
+    width: 85%;
+    margin-left: 10%;
   }
 }
 @media only screen and (min-width: 685px) and (max-width: 1080px) {
@@ -349,7 +349,7 @@ li{
     width: 50%;
   }
 } 
-@media only screen and (max-width: 0px) and (min-width: 470px) {
+@media only screen and (min-width: 180px) and (max-width: 470px) {
   .input-group {
     width: 100%;
     margin-left: 0;
@@ -430,3 +430,97 @@ li{
     margin-left: 5px;
   }
 }
+@media only screen and (max-width: 580px) {
+  .navbar-collapse {
+    display:contents;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .navbar-collapse {
+    display:block;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .text-black {
+    width: 70%;
+    position: relative;
+    top: 3em;
+  }
+}
+@media only screen and (min-width: 470px) and (max-width: 180px) {
+  .account {
+    margin-left: 10%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .register_form {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #5a3f3f7a;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .panel {
+    margin: 0;
+    padding: 0;
+    width: unset;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .signup_already {
+    font-size: small;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .login_container {
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .lg_form {
+    height: 69%;
+    margin: 8% 6.5%;
+    background-color: gray;
+    border: 1px black solid;
+    border-radius: 5px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .logo {
+    color: rgb(141, 25, 25);
+    font-size: 1.5em;
+    font-weight: 300;
+    position: relative;
+    bottom: -1.2em;
+    left: 14.5%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .login-form-1 {
+    width: 50vw;
+    height: 20em;
+    position: relative;
+    top: 25%;
+    right: 12%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .login-button {
+    margin-top: 1em;
+    font-size: small;
+    width:100%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .etc-login-form  {
+    font-size: small;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .form-control {
+    font-size: 0.7rem;
+  }
+}
+
+
+
