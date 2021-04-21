@@ -112,6 +112,7 @@
 .about{
     position: absolute;
     width: 100vw;
+    margin-left: 0;
 }
 .navbar-collapse{
      justify-content: center;
@@ -123,10 +124,11 @@
 .box{
     display:grid;
     border:5px solid #6b0202;
-    height:300px;
-    max-width:200px;
+    height:40em;
+    max-width:30em;
     border-radius: 15px;
     box-shadow:3px 3px 0px 0px #6b0202;
+    cursor: pointer;
 }
 .content{
     margin-top: 10%;
@@ -220,22 +222,70 @@ li{
     margin: 2em 1em;
 }
 .b1{
-    background-color: #00008b5e;
+    background-color:  #ef0b21c4;
+}
+.b1:hover {
+     background-color: #ef0b2166;
+     transition-duration: 0.6s;
+}
+.b1:active {
+    background-color:  #ef0b21c4;
+    transition-duration: 0.1s;
 }
 .b2{
-    background-color: #ffa5006b;
+    background-color: #ffa500e0;
+}
+.b2:hover {
+     background-color: #ffa5006e;
+     transition-duration: 0.6s;
+}
+.b2:active {
+    background-color: #ffa500e0;
+    transition-duration: 0.1s;
 }
 .b3{
-    background-color: #00800061;
+    background-color: #027b02d1;
+}
+.b3:hover {
+     background-color: #027b026b;
+     transition-duration: 0.6s;
+}
+.b3:active {
+    background-color: #027b02d1;
+    transition-duration: 0.1s;
 }
 .b4{
-    background-color: #80008040;
+    background-color:#800080d4;
+}
+.b4:hover {
+     background-color:#80008070;
+     transition-duration: 0.6s;
+}
+.b4:active {
+    background-color:#800080d4;
+    transition-duration: 0.1s;
 }
 .b5{
-    background-color: #dee2e661;
+    background-color: #0062cced;
+}
+.b5:hover {
+     background-color: #0062cc66;
+     transition-duration: 0.6s;
+}
+.b5:active {
+    background-color: #0062cced;
+    transition-duration: 0.1s;
 }
 .b6{
-    background-color: #ffc0cb73;
+    background-color: #a0a7af;
+}
+.b6:hover {
+     background-color: #a0a7af8a;
+     transition-duration: 0.6s;
+}
+.b6:active {
+    background-color: #a0a7af;
+    transition-duration: 0.1s;
 }
 .contact-form{
     width: 70%;
@@ -259,7 +309,7 @@ li{
     height: min-content;
     line-height: 2;
     position: relative;
-    left: 16%;
+    left: 17%;
     top: 14%;
     color: #003977;
     font-size: x-large;
@@ -291,23 +341,37 @@ li{
 }
 .text-left {
     text-align: left!important;
-    margin-top: 5%;
 }
 .main-contact-form{
     height: 20em;
     padding: 20px 0;
     margin-left: 10%;
-    margin-top: 5%;
 }
 .contact-form{
     width: 100%;
     border-radius: 5px;
+    font-size: large;
 }
 .contact-btn{
     margin: 0;
     font-size: 9px;
     border: 0.1px black solid;
 }
+.wine-details{
+    height: fit-content;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    font-size: larger;
+    font-style: inherit;
+    font-family: fantasy;
+    font-weight: bold;
+    width: 90%;
+}
+#login-form{
+    margin-top: 3.5em;
+}
+
 @media only screen and (max-width: 900px) {
   .index_image {
     width: 100%;
@@ -463,7 +527,7 @@ li{
   }
 }
 @media only screen and (max-width: 480px) {
-  .account .cart {
+  .account.cart {
     float:left;
   }
 }
@@ -539,7 +603,7 @@ li{
 }
 @media only screen and (max-width: 580px) {
   .login-form-1 {
-    width: 60%;
+    width: 65%;
     height: 20em;
     position: relative;
     left: 20%;
@@ -569,7 +633,7 @@ li{
   .form-control {
     width: 100%;
     margin-bottom: 20px;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 @media only screen and (max-width: 580px) {
@@ -618,10 +682,27 @@ li{
   .contact-form form{
     padding:4%;
     margin-bottom: auto;
+    font-size: medium;
   }
 }
 @media only screen and (max-width: 580px) {
   .contact-btn{
     font-size: 12px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .contact-text{
+    top: 10%;
+    font-size: larger;
+  }
+}
+@media only screen and (max-width: 580px) {
+  #login-form{
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 380px) {
+  a {
+    font-size:12px!important;
   }
 }
