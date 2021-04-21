@@ -259,9 +259,10 @@ li{
     height: min-content;
     line-height: 2;
     position: relative;
-    left: 8%;
-    top: 5%;
+    left: 16%;
+    top: 14%;
     color: #003977;
+    font-size: x-large;
 }
 .container-fluid{
     height:100%;
@@ -291,6 +292,21 @@ li{
 .text-left {
     text-align: left!important;
     margin-top: 5%;
+}
+.main-contact-form{
+    height: 20em;
+    padding: 20px 0;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.contact-form{
+    width: 100%;
+    border-radius: 5px;
+}
+.contact-btn{
+    margin: 0;
+    font-size: 9px;
+    border: 0.1px black solid;
 }
 @media only screen and (max-width: 900px) {
   .index_image {
@@ -585,5 +601,27 @@ li{
     height: 5em;
   }
 }
-
-
+@media only screen and (max-width: 580px) {
+  .contact-text {
+    width: min-content;
+    font-size: larger;
+    line-height: unset;
+    left:5%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .main-contact-form {
+    margin-left: unset;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .contact-form form{
+    padding:4%;
+    margin-bottom: auto;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .contact-btn{
+    font-size: 12px;
+  }
+}
