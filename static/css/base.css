@@ -1,7 +1,5 @@
-
-body{
-    height:50%;
-    min-width: 100vw;
+.container{
+    min-width: 100%!important;
 }
 .fixed-top{
     max-width: 20%;
@@ -23,7 +21,6 @@ body{
     position: absolute;
     top: 38%;
     left: 55%;
-    z-index: 1000;
     display: none;
     float: left;
     min-width: 10rem;
@@ -40,7 +37,7 @@ body{
 }
 .index_text{
     width: 50%;
-    height: 10em;
+    height: max-content;
     float: right;
     margin-top: 8em;
 }
@@ -113,8 +110,8 @@ body{
     text-decoration: none;
 }
 .about{
-    height: 7em;
-    width:100vw;
+    position: absolute;
+    width: 100vw;
 }
 .navbar-collapse{
      justify-content: center;
@@ -167,13 +164,13 @@ li{
 }
 .panel-title{
     color: gold;
-    margin-bottom: 10%;
+    margin-bottom: 7%;
     font-size: 2.75rem;
 }
 .panel{
     margin: 4em 4em 4em 4em;
     padding: 1em;
-    width: 45vw;
+    width: 40vw;
 }
 .flyer{
     font-style: inherit;
@@ -183,25 +180,38 @@ li{
 }
 .logo{
     color: rgb(141, 25, 25);
-    font-size: 2em;
-    font-weight: 400;
+    font-size: 3.25em;
+    font-weight: 300;
     position: relative;
-    bottom: -2.2em;
-    left: 20.5%;
+    width: 100%;
+    text-align: center;
+    height: max-content;
 }  
 .login-form-1{
-    width: 25vw;
+    width: 100%;
     position: relative;
-    top: 10em;
+    top: 10%;
 }
 .etc-login-form{
-    margin-top:1.3em;
+    margin-top:2em;
+    text-align: center;
 }
 .login-button{
-    margin-top: 2em;
+    margin-top: 1em;
+    margin-left: 26%;
+    font-size: 13px;
 }
 .form-control {
     border: 0;
+    width: 66%;
+    float: right;
+    margin-bottom: 20px;
+}
+.input-sm{
+    border: 0;
+    width: 100%;
+    float: right;
+    margin-bottom: 20px;
 }
 .boxes{
     justify-content: center;
@@ -227,7 +237,6 @@ li{
 .b6{
     background-color: #ffc0cb73;
 }
-
 .contact-form{
     width: 70%;
 }
@@ -255,10 +264,33 @@ li{
     color: #003977;
 }
 .container-fluid{
-    height:100vh;
+    height:100%;
 }
 .cart{
     float: right;
+}
+.register_form {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #5a3f3f7a;
+    text-align: center;
+    max-width: none!important;
+}
+.lg_form{
+    height: 70%;
+    width: 70vw;
+    margin: 10% 0 10% 12%;
+    background-color: #5a3f3f7a;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+.form-group{
+    margin-bottom: -2rem;
+    width: 75%;
+}
+.text-left {
+    text-align: left!important;
+    margin-top: 5%;
 }
 @media only screen and (max-width: 900px) {
   .index_image {
@@ -316,10 +348,10 @@ li{
 }
 @media only screen and (max-width: 480px) {
   .about {
-    height: auto!important;
+    height: auto;
     position: absolute;
-    bottom: 0;
     width: 100vw;
+    bottom: 0;
   }
 }  
 @media only screen and (max-width: 580px) {
@@ -406,6 +438,7 @@ li{
 @media only screen and (max-width: 480px) {
   .footer {
     position: relative;
+    bottom: -5%;
   }
 }
 @media only screen and (max-width: 580px) {
@@ -453,13 +486,6 @@ li{
   }
 }
 @media only screen and (max-width: 580px) {
-  .register_form {
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #5a3f3f7a;
-  }
-}
-@media only screen and (max-width: 580px) {
   .panel {
     margin: 0;
     padding: 0;
@@ -473,14 +499,14 @@ li{
 }
 @media only screen and (max-width: 580px) {
   .login_container {
-    height: 100vh;
+    height: 80vh;
   }
 }
 @media only screen and (max-width: 580px) {
   .lg_form {
-    height: 69%;
-    margin: 8% 6.5%;
-    background-color: gray;
+    height: 60%;
+    margin: 15% 11%;
+    background-color:#5a3f3f7a;
     border: 1px black solid;
     border-radius: 5px;
   }
@@ -491,24 +517,26 @@ li{
     font-size: 1.5em;
     font-weight: 300;
     position: relative;
-    bottom: -1.2em;
-    left: 14.5%;
+    bottom: -1.8em;
+    height:unset;
   }
 }
 @media only screen and (max-width: 580px) {
   .login-form-1 {
-    width: 50vw;
+    width: 60%;
     height: 20em;
     position: relative;
+    left: 20%;
     top: 25%;
-    right: 12%;
   }
 }
 @media only screen and (max-width: 580px) {
   .login-button {
     margin-top: 1em;
     font-size: small;
-    width:100%;
+    width:20%;
+    margin-left: 0;
+    border: 0.3px black solid;
   }
 }
 @media only screen and (max-width: 580px) {
@@ -517,10 +545,45 @@ li{
   }
 }
 @media only screen and (max-width: 580px) {
+  .panel-title {
+    font-size: 1.75rem;
+  }
+}
+@media only screen and (max-width: 580px) {
   .form-control {
+    width: 100%;
+    margin-bottom: 20px;
     font-size: 0.7rem;
   }
 }
-
+@media only screen and (max-width: 580px) {
+  .form-group {
+    width: 100%;
+    margin-bottom: -2rem;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .signup_form {
+    width: 100%;
+    margin-bottom: 0rem;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .input-sm {
+    border: 0;
+    width: 100%;
+    margin-bottom: 25px;
+    float: left;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .form_group {
+    margin-bottom: -2rem;
+    width: 100%;
+    position: relative;
+    top: 10%;
+    height: 5em;
+  }
+}
 
 
