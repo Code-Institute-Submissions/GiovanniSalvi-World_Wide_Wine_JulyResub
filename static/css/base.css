@@ -57,7 +57,7 @@
 .form_in_line{
     color: black;
     height: inherit;
-    margin-top: 5em;
+    margin-top: 3em;
 }
 .form-control{
     border: 1px black solid;
@@ -124,8 +124,8 @@
 .box{
     display:grid;
     border:5px solid #6b0202;
-    height:40em;
-    max-width:30em;
+    height:30em;
+    max-width:20em;
     border-radius: 15px;
     box-shadow:3px 3px 0px 0px #6b0202;
     cursor: pointer;
@@ -219,7 +219,7 @@ li{
     justify-content: center;
     column-gap: 4em;
     row-gap: 4em;
-    margin: 2em 1em;
+    margin: 1em;
 }
 .b1{
     background-color:  #ef0b21c4;
@@ -319,6 +319,10 @@ li{
 }
 .cart{
     float: right;
+}
+.fa-shopping-cart:active{
+    color: rgb(30, 107, 112);
+    transition-duration: 0s;
 }
 .register_form {
     border: 1px solid black;
@@ -704,5 +708,11 @@ li{
 @media only screen and (max-width: 380px) {
   a {
     font-size:12px!important;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .box  {
+    height: 20em;
+    max-width: 12em;
   }
 }
