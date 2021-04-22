@@ -101,7 +101,9 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 2
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/success'
+#LOGOUT_URL = '/account/logout/'
+#LOGOUT_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'World_Wide_Wine.wsgi.application'
 

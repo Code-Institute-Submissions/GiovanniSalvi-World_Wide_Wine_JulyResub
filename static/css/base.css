@@ -17,23 +17,25 @@
     background-size: contain;
     float: left;
 }
-.dropdown-menu{
+.dropdown-menu {
     position: absolute;
-    top: 38%;
-    left: 55%;
     display: none;
     float: left;
     min-width: 10rem;
-    padding: .5rem 0;
-    margin: .125rem 0 0;
+    margin: 0.2rem 0 0;
     font-size: 1rem;
-    color: #212529;
+    color: #3d546b;
     text-align: left;
     list-style: none;
-    background-color: #fff;
+    background-color: #305377;
     background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: .25rem;
+    border: none;
+}
+.dropdown-toggle::after { 
+    border: none; 
+}
+.dropdown.show{
+    color:black;
 }
 .index_text{
     width: 50%;
@@ -92,11 +94,10 @@
     transition: 0.2s;
 }
 .sparkling{
-    color:rgb(228, 208, 97);
-    pointer-events: none;
+    color:rgb(228, 208, 97)!important;
 }
 .sparkling:hover {
-    color: #ffc107;
+    color: #ffc107!important;
     opacity: 0.9;
     transition: 0.2s;
 }
@@ -120,6 +121,17 @@
 .navbar-nav{
     text-align: center;
     word-spacing: 10px;
+}
+.list{
+    border: 0.5px black solid;
+    text-align: center;
+}
+.list:hover {
+    background-color: #003975ce;
+}
+.list a {
+    color: black;
+    cursor: pointer;
 }
 .box{
     display:grid;
@@ -302,9 +314,6 @@ li{
     font-size: 12px;
     margin-left: 2%;
 }
-.show{
-    max-height: 2.5em;
-}
 .contact-text{
     height: min-content;
     line-height: 2;
@@ -320,9 +329,16 @@ li{
 .cart{
     float: right;
 }
-.fa-shopping-cart:active{
+.fa-shopping-cart:hover {
+    color: rgb(26, 145, 153);
+    transition-duration: 0.5s;
+}
+.fa-shopping-cart:active {
     color: rgb(30, 107, 112);
     transition-duration: 0s;
+}
+.fa {
+    font-size: large;
 }
 .register_form {
     border: 1px solid black;
@@ -375,7 +391,21 @@ li{
 #login-form{
     margin-top: 3.5em;
 }
-
+.dropdown-toggle {
+    white-space: nowrap;
+    font-size: 22px;
+    color: black;
+}
+.dropdown-toggle:hover {
+    color: #b4101d;
+    text-decoration: none;
+}
+.menu-list{
+    max-height: none;
+    border: 0.3px black solid;
+    border-radius: 3px;
+    background-color: #7c899612;
+}
 @media only screen and (max-width: 900px) {
   .index_image {
     width: 100%;
@@ -514,11 +544,6 @@ li{
     position: relative;
   }
 } 
-@media only screen and (max-width: 580px) {
-  .container-fluid {
-    height:60em;
-  }
-}
 @media only screen and (max-width: 480px) {
   .footer {
     position: relative;
@@ -716,3 +741,15 @@ li{
     max-width: 12em;
   }
 }
+
+@media only screen and (max-width: 990px) {
+  .navbar  {
+    flex-wrap:unset;
+  }
+}
+@media only screen and (max-width: 590px) {
+  .container-fluid li  {
+    height:unset!important;
+  }
+}
+

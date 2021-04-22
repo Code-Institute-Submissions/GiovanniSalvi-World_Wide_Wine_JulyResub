@@ -45,13 +45,14 @@
                 </a>
             </div>
             <div class="col-12 my-auto py-lg-0 text-black">
-                    <ul style="outline: none!important;" class="icon menu-icon dropdown">
-                        <button class="btn account" type="button"               data-toggle="dropdown" id="dropdownMenu1"    aria-haspopup="true" aria-expanded="false"><a class=" btn btn-md rounded-0"><span class="myAccount">MyAccount</span><i class="fa fa-user" aria-hidden="true"></i></a>
-                        </button> 
-                            <div class="dropdown-menu"     aria-labelledby="dropdownMenu1" style="max-height:none">
+                    <ul class="dropdown-menu icon menu-icon">
+                        <button class="btn account" type="button"               data-toggle="dropdown-item"  aria-expanded="false"><a href="#" class=" btn btn-md rounded-0"><span class="myAccount">MyAccount</span> <i class="fa fa-user" aria-hidden="true"></i></a>
+                            <div class="dropdown menu-list"      style="max-height:none">
                                 <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
                                 <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
-                            </div>   
+                                <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                            </div> 
+                        </button>   
                     </ul>
                     <ul class="icon menu-icon">
                         <button class="btn cart" type="button"><a class=" btn btn-md rounded-0"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
@@ -76,32 +77,49 @@
 
 <div style="line-height: 5em;">
    <div class="row">
-    <nav class="col navbar navbar-expand-md" style="background-color:#305377;">
-            <div class="navbar-collapse" style="line-height: 2em;">
-               <ul class="nav-item active">
-               <button class="btn" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false"><a style="color:black" class="nav-link " href="#">Types</a></button>
-                  <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">White</a></li>
-                  <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Red</a></li>
-                  <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Rose'</a></li>
-               </ul>
-            </div>
-            <div class="navbar-collapse" style="line-height: 2em;">
-               <ul class="nav-item active">
-               <button class="btn" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false"><a style="color:black" class="nav-link" href="#">Countries</a></button>
-                  <li class="collapse"><a style="text-decoration: none;" class="text-light " href="#">US</a></li>
-                  <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">France</a></li>
-                  <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Italy</a></li>
-               </ul>
-            </div>
-            <div class="navbar-collapse" style="line-height: 2em;">
-               <ul class="nav-item active">
-               <button class="btn" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false"><a    class="nav-link sparkling" href="#">Champagne
-               </a></button>
-                    <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Blanc de Noirs</a></li>
-                    <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Blanc de Blancs</a></li>
-                    <li class="collapse"><a style="text-decoration: none;" class="text-light" href="#">Brut</a></li>
-                </ul>
-            </div>
+    <nav class="col navbar navbar-expand-lg" style="background-color:#305377;">
+        <div class="container-fluid navbar_list" style="justify-content: center;">
+            <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Types </a>
+            <ul class="dropdown-menu" style="position: absolute;
+    left: -3.2em;">
+              <li class="list">
+                <a href="#">White<i class="icon-arrow-right"></i></a>
+              </li>
+              <li class="list"><a href="#">Red</a></li>
+              <li class="list"><a href="#">Rose'</a></li>
+              <li class="divider"></li>
+            </ul>
+            </li>
+        </div>
+            <div class="container-fluid" style="justify-content: center;">
+            <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Countries</a>
+            <ul class="dropdown-menu" style="position: absolute;
+    left: -2.3em;">
+              <li class="list">
+                <a href="#">US<i class="icon-arrow-right"></i></a>
+              </li>
+              <li class="list"><a href="#">France</a></li>
+              <li class="list"><a href="#">Italy</a></li>
+              <li class="divider"></li>
+            </ul>
+            </li>
+        </div>
+            <div class="container-fluid" style="justify-content: center;">
+            <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle sparkling" href="#">Champagne</a>
+            <ul class="dropdown-menu" style="position: absolute;
+    left: -1.3em;">
+              <li class="list">
+                <a href="#">Blanc de Noirs<i class="icon-arrow-right"></i></a>
+              </li>
+              <li class="list"><a href="#">Blac de blancs</a></li>
+              <li class="list"><a href="#">Brut</a></li>
+              <li class="divider"></li>
+            </ul>
+            </li>
+        </div>
     </nav>
     </div>
 </div>
