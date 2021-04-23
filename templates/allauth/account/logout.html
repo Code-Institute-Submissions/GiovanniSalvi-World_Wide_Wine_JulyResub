@@ -10,16 +10,13 @@
     <div class="row lgout_form">
 	<div class="logo"><p>Sign Out</p></div>
 	<div class="logout-form-1">
-    <form method="POST" action="{% url 'home' %}" id="logout-form" class="text-left">
-  {% csrf_token %}
-  {% if redirect_field_value %}
+    <form method="POST" action="{% url 'account_logout' %}" id="logout-form" class="text-left">
+    {% csrf_token %}
+    {% if redirect_field_value %}
   	<div class="form-group">
-   </div>
+    </div>
     {% endif %}
-
-  <input type="Submit" value="signout" class="signout-button btn btn-info">
-
- 
+    <input type="Submit" name="submit" value="submit" class="signout-button btn btn-info">
   
   </form>
 </div>
