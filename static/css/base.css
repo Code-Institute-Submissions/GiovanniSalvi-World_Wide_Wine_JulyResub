@@ -379,6 +379,18 @@ li:hover .navbar_list{
     border: 1px black solid;
     border-radius: 5px;
 }
+.lgout_form{
+    display:inline-block;
+    height: 20%;
+    width: 70vw;
+    margin: 10% 0 10% 13%;
+    background-color: #5a3f3f7a;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+.logout_container{
+    height:100vh;
+}
 .form-group{
     margin-bottom: -2rem;
     width: 75%;
@@ -413,7 +425,7 @@ li:hover .navbar_list{
     width: 90%;
 }
 #login-form{
-    margin-top: 2.5em;
+    margin-top: 1.5em;
 }
 #id_password{
     margin-left: 30%;
@@ -456,6 +468,15 @@ li:hover .navbar_list{
     background-color: #7b1f1fb8;
     height: 32em;border: 0.8px black solid;
     margin: 10% 22.5%;border-radius: 8px;
+}
+.errorlist{
+    text-align: center;
+    height: 2em;
+}
+.signout-button{
+    position: relative;
+    left: 47%;
+    font-size: 8px;
 }
 @media only screen and (max-width: 900px) {
   .index_image {
@@ -808,4 +829,39 @@ li:hover .navbar_list{
     margin: 22% 10.5%;
   }
 }
-
+@media only screen and (max-width: 420px) {
+  .btn-info.signout  {
+    font-size: 8px;
+    left: 43%;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .logo{
+      font-size: 1em;
+      bottom:0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .navbar_list.types{
+    width:unset;
+    left:-3.2em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .navbar_list.countries{
+    width:unset;
+    left:-3.2em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .navbar_list.sparkling{
+    width:unset; 
+    left:-3.2em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .lgout-form{
+    height:15%;
+  }
+}

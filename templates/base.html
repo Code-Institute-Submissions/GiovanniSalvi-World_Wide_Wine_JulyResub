@@ -48,14 +48,21 @@
                     <ul class="dropdown-menu icon menu-icon">
                         <button class="btn account" type="button"               data-toggle="dropdown-item"  aria-expanded="false"><a href="#" class=" btn btn-md rounded-0"><span class="myAccount">MyAccount</span> <i class="fa fa-user" aria-hidden="true"></i></a>
                             <div class="dropdown menu-list"      style="max-height:none">
+                                {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                    <a href="" class="dropdown-item">Admin</a>
+                                    {% endif %}
+                                <li><a href="" class="dropdown-item">MyAccount</a></li>
+                                <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li> 
+                                 {% else %}
                                 <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
                                 <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
-                                <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                                {% endif %} 
                             </div> 
                         </button>   
                     </ul>
                     <ul class="icon menu-icon">
-                        <button class="btn cart" type="button"><a class=" btn btn-md rounded-0"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
+                        <button href="" class="btn cart" type="button"><a class=" btn btn-md rounded-0"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
                     </ul>
             </div>
        <div class="col-12 my-auto py-lg-0">
@@ -81,7 +88,7 @@
         <div class="container-fluid" style="justify-content: center;">
             <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">Types </a>
-            <ul class="navbar_list dropdown_menu" style="position:absolute;left: -5.4em;
+            <ul class="dropdown_menu navbar_list types" style="position:absolute;left: -5.4em;
               width: 15em;padding: 0;">
               <li class="list " style="border:none;">
                 <a href="#" class="icon-arrow-right">White</a>
@@ -95,7 +102,7 @@
             <div class="container-fluid" style="justify-content: center;">
             <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">Countries</a>
-            <ul class="navbar_list dropdown_menu" style="position: absolute;
+            <ul class="navbar_list dropdown_menu countries" style="position: absolute;
                 left: -4.5em;
                  width: 15em;padding: 0;">
               <li class="list" style="border:none;">
@@ -110,7 +117,7 @@
             <div class="container-fluid" style="justify-content: center;">
             <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle sparkling icon-arrow-right" href="#">Champagne</a>
-            <ul class="navbar_list dropdown_menu" style="position: absolute;
+            <ul class="navbar_list dropdown_menu sparkling" style="position: absolute;
             left: -3.6em;
              width: 15em;padding: 0;">
               <li class="list" style="border:none;">
