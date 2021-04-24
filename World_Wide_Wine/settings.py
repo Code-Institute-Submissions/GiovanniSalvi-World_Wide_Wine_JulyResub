@@ -28,7 +28,7 @@ DEBUG = development
 if development:
     ALLOWED_HOSTS = ['localhost']
 else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+    HEROKU_HOSTNAME = 'world-wide-wine-django-app.herokuapp.com'
 
 
 # Application definition
