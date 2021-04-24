@@ -10,7 +10,7 @@
     <div class="row lgout_form">
 	<div class="logo"><p>Sign Out</p></div>
 	<div class="logout-form-1">
-    <form method="POST" action="{% url 'account_logout' %}" id="logout-form" class="text-left">
+    <form method="POST" action="{% url 'account_logout' %}?next=/stock" id="logout-form" class="text-left">
     {% csrf_token %}
     {% if redirect_field_value %}
   	<div class="form-group">
