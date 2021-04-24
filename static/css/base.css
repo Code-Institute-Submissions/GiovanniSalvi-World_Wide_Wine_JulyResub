@@ -129,7 +129,7 @@
     background-color: #003975ce;
 }
 .list a {
-    color: black;
+    color: white;
     cursor: pointer;
     text-decoration: none;
     font-size: 20px;
@@ -442,7 +442,7 @@ li:hover .navbar_list{
 .dropdown-toggle {
     white-space: nowrap;
     font-size: 25px;
-    color: black;
+    color: white;
 }
 .dropdown-toggle:hover {
     color: #b4101d;
