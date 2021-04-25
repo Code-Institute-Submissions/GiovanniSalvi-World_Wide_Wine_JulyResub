@@ -7,13 +7,15 @@
 {% block content %}
 
 <div class="container-fluid logout_container">
-    <div class="row lgout_form">
+    <div class="row" style="min-height: 100vh!important;">
+    <div class="lgout_form">
 	<div class="logo"><p>Sign Out</p></div>
 	<div class="logout-form-1">
     <form method="POST" action="{% url 'account_logout' %}?next=/stock" id="logout-form" class="text-left">
     {% csrf_token %}
     {% if redirect_field_value %}
   	<div class="form-group">
+    </div>
     </div>
     {% endif %}
     <input type="Submit" name="submit" value="logout" class="signout-button btn btn-info">

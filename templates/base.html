@@ -62,7 +62,7 @@
        <div class="col-12 my-auto py-lg-0">
          <form class="form_in_line" method="GET" action="{% url 'stock' %}">
              <div class="input-group">
-                <input class="form-control ml-sm-3 " type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control ml-sm-3 " type="search" placeholder="Search" name="q" aria-label="Search">
                   <div class="input-group-prepend  rounded-0" style="height: fit-content;">
                     <button class="btn form-control" style="width: inherit;" type="submit">
                         <span class="icon">
@@ -81,44 +81,44 @@
     <nav class="col navbar navbar-expand-lg" style="background-color:#305377;">
         <div class="container-fluid" style="justify-content: center;">
             <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Types </a>
+            <a data-toggle="dropdown" class="dropdown-toggle">Types </a>
             <ul class="dropdown_menu navbar_list types" style="position:absolute;left: -5.4em;
               width: 15em;padding: 0;">
-              <li class="list " style="border:none;">
-                <a href="#" class="icon-arrow-right">White</a>
+              <li class="list" style="border:none;">
+                <a href="{% url 'stock' %}?types=White" class="icon-arrow-right">White</a>
               </li>
-              <li class="list"><a href="#" class="icon-arrow-right">Red</a></li>
-              <li class="list"><a href="#" class="icon-arrow-right">Rose'</i></a></li>
+              <li class="list"><a href="{% url 'stock' %}?types=Red" class="icon-arrow-right">Red</a></li>
+              <li class="list"><a href="{% url 'stock' %}?types=Rose" class="icon-arrow-right">Rose'</a></li>
               <li class="divider"></li>
             </ul>
             </li>
         </div>
             <div class="container-fluid" style="justify-content: center;">
             <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Countries</a>
+            <a data-toggle="dropdown" class="dropdown-toggle">Countries</a>
             <ul class="navbar_list dropdown_menu countries" style="position: absolute;
                 left: -4.5em;
                  width: 15em;padding: 0;">
               <li class="list" style="border:none;">
-                <a href="#" class="icon-arrow-right">World</a>
+                <a href="" class="icon-arrow-right">World</a>
               </li>
-              <li class="list"><a href="#" class="icon-arrow-right">France</a></li>
-              <li class="list"><a href="#" class="icon-arrow-right">Italy</i></a></li>
+              <li class="list"><a href="{% url 'stock' %}?country=France'" class="icon-arrow-right">France</a></li>
+              <li class="list"><a href="{% url 'stock' %}?country=Italy'" class="icon-arrow-right">Italy</a></li>
               <li class="divider"></li>
             </ul>
             </li>
         </div>
             <div class="container-fluid" style="justify-content: center;">
             <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle sparkling icon-arrow-right" href="#">Champagne</a>
+            <a data-toggle="dropdown" style="color:#ffc107!important" class="sparkling dropdown-toggle  icon-arrow-right">Champagne</a>
             <ul class="navbar_list dropdown_menu sparkling" style="position: absolute;
             left: -3.6em;
              width: 15em;padding: 0;">
               <li class="list" style="border:none;">
-                <a href="#" class="icon-arrow-right sparkling">Blanc de Noirs</a>
+                <a href="{% url 'stock' %}?types=Blanc de Noirs" class="icon-arrow-right sparkling">Blanc de Noirs</a>
               </li>
-              <li class="list"><a href="#" class="icon-arrow-right sparkling">Blac de blancs</a></li>
-              <li class="list"><a href="#" class="icon-arrow-right sparkling">Brut</a></li>
+              <li class="list"><a href="{% url 'stock' %}?types=Blanc de Blancs" class="icon-arrow-right sparkling">Blac de blancs</a></li>
+              <li class="list"><a href="{% url 'stock' %}?types=Brut" class="icon-arrow-right sparkling">Brut</a></li>
 
               <li class="divider"></li>
             </ul>

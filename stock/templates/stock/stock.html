@@ -5,12 +5,12 @@
 {% block content %}  
 
 <div class="container-fluid">
-            <div class="row boxes">
+            <div class="row boxes" style="min-height: 100vh;">
 
                 {% for item in item %}
 
                 <div href="#" class="col-lg-3 col-md-4 col-sm-6 box b1">
-                <div class="wine-name"><span class="name">{{ item }}</div>
+                <div class="wine-name"><span class="name">{{ item }}</span></div>
                 <div>{% if item.image %}
                                 <a href="#">
                                     <img class="image_wine" src="{{ item.image.url }}" alt="{{ item.name }}">

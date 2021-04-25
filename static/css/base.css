@@ -92,9 +92,6 @@
     opacity: 0.9;
     transition: 0.2s;
 }
-.sparkling{
-    color:#ffc107!important;
-}
 .sparkling:hover {
     color:rgb(241, 227, 99)!important;
     opacity: 0.9;
@@ -198,6 +195,7 @@ li{
     font-size: 3.25em;
     font-weight: 300;
     position: relative;
+    margin-top: 5%;
     width: 100%;
     text-align: center;
     height: max-content;
@@ -205,18 +203,17 @@ li{
 .login-form-1{
     width: 100%;
     position: relative;
-    top: 10%;
 }
 .etc-login-form{
-    margin-top: 2em;
-    margin-left: 1em;
+    margin-top: 8%;
+    /* margin-left: 1em; */
     text-align: center;
 }
 .login-button{
-    margin-top: 1.5em;
-    margin-left: 30%;
+    margin-top: 2%;
     font-size: 10px;
-    width: 10%;
+    width: 6%;
+
 }
 label{
     display: block;
@@ -397,19 +394,19 @@ li:hover .navbar_list{
 }
 .lg_form{
     display:inline-block;
-    height: 70%;
+    height: 30em;
     width: 70vw;
     margin: 10% 0 10% 12%;
-    background-color: #5a3f3f7a;
+    background-color: #cabdbd7a;
     border: 1px black solid;
     border-radius: 5px;
 }
 .lgout_form{
-    display:inline-block;
-    height: 22%;
-    width: 70vw;
-    margin: 10% 0 10% 13%;
-    background-color: #5a3f3f7a;
+    display: inline-block;
+    height: 12em;
+    width: 64vw;
+    margin: 10% 0 10% 16%;
+    background-color: #cabdbd7a;
     border: 1px black solid;
     border-radius: 5px;
 }
@@ -467,10 +464,11 @@ li:hover .navbar_list{
 .dropdown-toggle {
     white-space: nowrap;
     font-size: 25px;
-    color: white;
+    color: white!important;
+    cursor: pointer;
 }
 .dropdown-toggle:hover {
-    color: #b4101d;
+    color: #b4101d!important;
     text-decoration: none;
 }
 .menu-list{

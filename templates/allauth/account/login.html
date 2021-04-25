@@ -10,7 +10,8 @@
 
 
 <div class="container-fluid login_container">
-    <div class="row lg_form">
+    <div class="row" style="min-height: 100vh!important;">
+    <div class="lg_form">
 	<div class="logo"><p>Sign In</p></div>
 	<div class="login-form-1">
 		<form method="POST" action="{% url 'account_login' %}" id="login-form" class="text-left">
@@ -27,16 +28,17 @@
 					<div class="form-group">
 						<label for="lg_password" class="sr-only">Password</label>
 						<input type="password" class="form-control" id="lg_password" name="lg_password" placeholder="password">
-                    </div>
-                    
+                    </div>                   
                 {% endif %}
-                <input type="Submit" value="login" class="login-button btn btn-info">
+                <div style="text-align:center;">
+                <input type="Submit" value="login" class="login-button btn btn-info"></div>
             </div>
 			<div class="etc-login-form">
                 <p class="text-dark">forgot your password? <a style="color:rgb(141, 25, 25);text-decoration: none;" href="{% url 'account_reset_password' %}">click here</a></p>				
 			</div>
         </form>
       </div>
+    </div>
     </div>
 </div>
 
