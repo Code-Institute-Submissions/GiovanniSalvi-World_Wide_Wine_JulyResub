@@ -256,8 +256,28 @@ li:hover .navbar_list{
     transform: translateY(0);
     transition-delay: 0.1s,0.8s,1.2s;
 }
+.price1{
+    height: fit-content;
+    position: absolute;
+    bottom: 0;
+    color: 5%;
+    font-size: larger;
+    font-style: inherit;
+    text-align: right;
+    font-weight: bold;
+    text-align: right;
+    width: 90%;
+}
+.image_wine{
+    max-height: 50%;
+    position: absolute;
+    bottom: 25%;
+    left: 13%;
+    border-radius: 16em;
+}
 .b1{
     background-color:  #ef0b21c4;
+    justify-content: center;
 }
 .b1:hover {
      background-color: #ef0b2166;
@@ -269,6 +289,7 @@ li:hover .navbar_list{
 }
 .b2{
     background-color: #ffa500e0;
+    justify-content: center;
 }
 .b2:hover {
      background-color: #ffa5006e;
@@ -280,6 +301,7 @@ li:hover .navbar_list{
 }
 .b3{
     background-color: #027b02d1;
+    justify-content: center;
 }
 .b3:hover {
      background-color: #027b026b;
@@ -291,6 +313,7 @@ li:hover .navbar_list{
 }
 .b4{
     background-color:#800080d4;
+    justify-content: center;
 }
 .b4:hover {
      background-color:#80008070;
@@ -302,6 +325,7 @@ li:hover .navbar_list{
 }
 .b5{
     background-color: #0062cced;
+    justify-content: center;
 }
 .b5:hover {
      background-color: #0062cc66;
@@ -313,6 +337,7 @@ li:hover .navbar_list{
 }
 .b6{
     background-color: #a0a7af;
+    justify-content: center;
 }
 .b6:hover {
      background-color: #a0a7af8a;
@@ -421,7 +446,7 @@ li:hover .navbar_list{
     font-size: larger;
     font-style: inherit;
     font-family: fantasy;
-    font-weight: bold;
+    font-weight: bolder;
     width: 90%;
 }
 #login-form{
@@ -476,7 +501,15 @@ li:hover .navbar_list{
 .signout-button{
     position: relative;
     left: 47%;
-    font-size: 8px;
+    font-size: 10px;
+}
+.wine-name{
+    margin-top: 8%;
+    font-size: 1.4em;
+    padding: 5px;
+    font-weight: bold;
+    height: 30%;
+    font-family: math;
 }
 @media only screen and (max-width: 900px) {
   .index_image {

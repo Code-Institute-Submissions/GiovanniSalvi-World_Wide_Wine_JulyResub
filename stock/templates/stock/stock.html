@@ -6,25 +6,40 @@
 
 <div class="container-fluid">
             <div class="row boxes">
+
+                {% for item in item %}
+
                 <div href="#" class="col-lg-3 col-md-4 col-sm-6 box b1">
-                <div></div>
-                <span class="wine-details">Details</span></div>
-                <div href="#" class="col-lg-3 col-md-4 col-sm-6 box b2">
-                <div></div>
-                <span class="wine-details">Details</span></div>
+                <div class="wine-name"><span class="name">{{ item }}</div>
+                <div>{% if item.image %}
+                                <a href="#">
+                                    <img class="image_wine" src="{{ item.image.url }}" alt="{{ item.name }}">
+                                </a>
+                                {% else %}
+                                <a href="#">
+                                    <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
+                                </a>
+                    {% endif %}
+                </div>
+                <span class="wine-details">{{ item.country }}</span><span class="price1">{{ item.price }}</span></div>
+                <!--<div href="#" class="col-lg-3 col-md-4 col-sm-6 box b2">
+                <div>{{ item }}</div>
+                <span class="wine-details">{{ item.country }}</span><span class="price1">{{ item.price }}</span></div>
                 <div href="#" class="col-lg-3 col-md-4 col-sm-6 box b3">
-                <div></div>   
-                <span class="wine-details">Details</span></div>
+                <div>{{ item }}</div>  
+                <span class="wine-details">{{ item.country }}</span><span class="price1">{{ item.price }}</span></div> 
                 <div class="w-100"></div> 
                 <div href="#" class="col-lg-3 col-md-4 col-sm-12 box b4">
-                <div></div>
-                <span class="wine-details">Details</span></div>
+                <div>{{ item }}</div>
+                <span class="wine-details">{{ item.country }}</span><span class="price1">{{ item.price }}</span></div>
                 <div href="#" class="col-lg-3 col-md-4 col-sm-12 box b5">
-                <div></div>
-                <span class="wine-details">Details</span></div>
+                <div>{{ item }}</div>
+                <span class="wine-details">{{ item.country }}</span><span class="price1">{{ item.price }}</span></div>
                 <div href="#" class="col-lg-3 col-md-4 col-sm-12 box b6">
-                <div></div>
-                <span class="wine-details">Details</span></div>
+                <div>{{ item }}</div>
+                <span class="wine-details">{{ item.country }}</span><span class="price1">{{ item.price }}</span></div>-->
+
+                {% endfor %}
                 
             </div>
 
