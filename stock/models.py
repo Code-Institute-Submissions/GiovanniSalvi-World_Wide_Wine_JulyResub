@@ -15,11 +15,11 @@ class Item(models.Model):
     sku = models.CharField(max_length=100, blank=True)
     name = models.CharField(max_length=100)
     types = models.CharField(max_length=100, blank=True)
-    country = models.CharField(max_length=100)
+    country = models.CharField(max_length=100, blank=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    image_url = models.URLField(blank=True)
-    image = models.ImageField(blank=True)
+    image_url = models.URLField(blank=True, default="S0ME STRING")
+    image = models.ImageField(blank=True, default="S0ME STRING")
     objects = models.Manager()
 
     def __str__(self):

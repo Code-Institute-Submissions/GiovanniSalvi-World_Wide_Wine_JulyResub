@@ -2,147 +2,175 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
 
     {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{% static '/js/script.js' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+    <link rel="script" href="{% static '/js/script.js' %}">
     {% endblock %}
 
 
-  <title>World Wide Wine</title>
-  </head>
-  <body>
+    <title>World Wide Wine</title>
+</head>
+
+<body>
     <div class="container">
-    <header class="row ">
-    <div class="col bg-light">
-            <div class="col-12 col-md-4 my-auto  text-center ">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link mw-30">
-                    <h2 class="logo-font "> World<strong style="color:rgb(141, 25, 25)"> Wide</strong> Wine</h2>
-                </a>
-            </div>
-            <div class="col-12 my-auto py-lg-0 text-black">
+        <header class="row ">
+            <div class="col bg-light">
+                <div class="col-12 col-md-4 my-auto  text-center ">
+                    <a href="{% url 'home' %}" class="nav-link main-logo-link mw-30">
+                        <h2 class="logo-font "> World<strong style="color:rgb(141, 25, 25)"> Wide</strong> Wine</h2>
+                    </a>
+                </div>
+                <div class="col-12 my-auto py-lg-0 text-black">
                     <ul class="dropdown-menu icon menu-icon">
-                        <button class="btn account" type="button"               data-toggle="dropdown-item"  aria-expanded="false"><a href="#" class=" btn btn-md rounded-0"><span class="myAccount">Account</span> <i class="fa fa-user" aria-hidden="true"></i></a>
-                            <div class="dropdown menu-list"      style="max-height:none">
+                        <button class="btn account" type="button" data-toggle="dropdown-item" aria-expanded="false"><a
+                                href="#" class=" btn btn-md rounded-0"><span class="myAccount">Account</span> <i
+                                    class="fa fa-user" aria-hidden="true"></i></a>
+                            <div class="dropdown menu-list" style="max-height:none">
                                 {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Admin</a>
-                                    {% endif %}
+                                {% if request.user.is_superuser %}
+                                <a href="" class="dropdown-item">Admin</a>
+                                {% endif %}
                                 <li><a href="" class="dropdown-item">MyAccount</a></li>
-                                <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li> 
-                                 {% else %}
-                                <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                                <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
-                                {% endif %} 
-                            </div> 
-                        </button>   
+                                <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                                {% else %}
+                                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                                {% endif %}
+                            </div>
+                        </button>
                     </ul>
                     <ul class="icon menu-icon">
-                        <button href="" class="btn cart" type="button"><a class=" btn btn-md rounded-0"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
+                        <button href="" class="btn cart" type="button"><a class=" btn btn-md rounded-0"><i
+                                    class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
                     </ul>
+                </div>
+                <div class="col-12 my-auto py-lg-0">
+                    <form class="form_in_line" method="GET" action="{% url 'stock' %}">
+                        <div class="input-group">
+                            <input class="form-control ml-sm-3 " type="search" placeholder="Search" name="q"
+                                aria-label="Search">
+                            <div class="input-group-prepend  rounded-0" style="height: fit-content;">
+                                <button class="btn form-control" style="width: inherit;" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-       <div class="col-12 my-auto py-lg-0">
-         <form class="form_in_line" method="GET" action="{% url 'stock' %}">
-             <div class="input-group">
-                <input class="form-control ml-sm-3 " type="search" placeholder="Search" name="q" aria-label="Search">
-                  <div class="input-group-prepend  rounded-0" style="height: fit-content;">
-                    <button class="btn form-control" style="width: inherit;" type="submit">
-                        <span class="icon">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </button>
-                 </div>
-             </div>
-         </form>
+        </header>
+
+        <div style="line-height: 5em;">
+            <div class="row">
+                <nav class="col navbar navbar-expand-lg" style="background-color:#305377;">
+                    <div class="container-fluid" style="justify-content: center;">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle">Types </a>
+                            <div class="hover_menu">
+                                <ul class="dropdown_menu navbar_list types" style="position: absolute;
+    left: -10.5em;
+    width: 25em;
+    padding: 0;">
+                                    <li class="list" style="border:none;height:4em;">
+                                        <a href="{% url 'stock' %}?types=White" class="icon-arrow-right">White</a>
+                                    </li>
+                                    <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Red"
+                                            class="icon-arrow-right">Red</a></li>
+                                    <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Rose'"
+                                            class="icon-arrow-right">Rose'</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="container-fluid" style="justify-content: center;">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle">Countries</a>
+                            <ul class="navbar_list dropdown_menu countries" style="position: absolute;
+    left: -9.5em;
+    width: 25em;
+    padding: 0;">
+                                <li class="list" style="border:none; height:4em;">
+                                    <a href="" class="icon-arrow-right">World</a>
+                                </li>
+                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=France'"
+                                        class="icon-arrow-right">France</a></li>
+                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=Italy'"
+                                        class="icon-arrow-right">Italy</a></li>
+                                <li class="divider"></li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="container-fluid" style="justify-content: center;">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" style="color:#ffc107!important"
+                                class="sparkling dropdown-toggle  icon-arrow-right">Champagne</a>
+                            <ul class="navbar_list dropdown_menu sparkling" style="position: absolute;
+    left: -8em;
+    width: 25em;
+    padding: 0;">
+                                <li class="list" style="border:none; height:4em">
+                                    <a href="{% url 'stock' %}?types=BlancdeNoirs"
+                                        class="icon-arrow-right sparkling">Blanc de Noirs</a>
+                                </li>
+                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=BlancdeBlancs"
+                                        class="icon-arrow-right sparkling">Blanc de blancs</a></li>
+                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Brut"
+                                        class="icon-arrow-right sparkling">Brut</a></li>
+
+                                <li class="divider"></li>
+                            </ul>
+                        </li>
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
-</header>
 
-<div style="line-height: 5em;">
-   <div class="row">
-    <nav class="col navbar navbar-expand-lg" style="background-color:#305377;">
-        <div class="container-fluid" style="justify-content: center;">
-            <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle">Types </a>
-            <ul class="dropdown_menu navbar_list types" style="position:absolute;left: -5.4em;
-              width: 15em;padding: 0;">
-              <li class="list" style="border:none;">
-                <a href="{% url 'stock' %}?types=White" class="icon-arrow-right">White</a>
-              </li>
-              <li class="list"><a href="{% url 'stock' %}?types=Red" class="icon-arrow-right">Red</a></li>
-              <li class="list"><a href="{% url 'stock' %}?types=Rose" class="icon-arrow-right">Rose'</a></li>
-              <li class="divider"></li>
-            </ul>
-            </li>
-        </div>
-            <div class="container-fluid" style="justify-content: center;">
-            <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle">Countries</a>
-            <ul class="navbar_list dropdown_menu countries" style="position: absolute;
-                left: -4.5em;
-                 width: 15em;padding: 0;">
-              <li class="list" style="border:none;">
-                <a href="" class="icon-arrow-right">World</a>
-              </li>
-              <li class="list"><a href="{% url 'stock' %}?country=France'" class="icon-arrow-right">France</a></li>
-              <li class="list"><a href="{% url 'stock' %}?country=Italy'" class="icon-arrow-right">Italy</a></li>
-              <li class="divider"></li>
-            </ul>
-            </li>
-        </div>
-            <div class="container-fluid" style="justify-content: center;">
-            <li class="dropdown">
-            <a data-toggle="dropdown" style="color:#ffc107!important" class="sparkling dropdown-toggle  icon-arrow-right">Champagne</a>
-            <ul class="navbar_list dropdown_menu sparkling" style="position: absolute;
-            left: -3.6em;
-             width: 15em;padding: 0;">
-              <li class="list" style="border:none;">
-                <a href="{% url 'stock' %}?types=Blanc de Noirs" class="icon-arrow-right sparkling">Blanc de Noirs</a>
-              </li>
-              <li class="list"><a href="{% url 'stock' %}?types=Blanc de Blancs" class="icon-arrow-right sparkling">Blac de blancs</a></li>
-              <li class="list"><a href="{% url 'stock' %}?types=Brut" class="icon-arrow-right sparkling">Brut</a></li>
+    {% block content %}
 
-              <li class="divider"></li>
-            </ul>
-            </li>
-        </div>
-    </nav>
-    </div>
-</div>
-</div>
-
- {% block content %}
- 
- {% endblock %}
+    {% endblock %}
 
 
-<footer class="footer">
-    <div class="row bg-light about">
+    <footer class="footer">
+        <div class="row bg-light about">
             <table class="footer_table">
-                <th ><a style="color:#615353;;text-decoration: none;letter-spacing: 3px;font-size: 20px;" href="#">About</a></th>
-                <th ><a style="color:#615353;;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
+                <th><a style="color:#615353;;text-decoration: none;letter-spacing: 3px;font-size: 20px;"
+                        href="#">About</a></th>
+                <th><a style="color:#615353;;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
                 left: 1em;font-size: 20px;" href="{% url 'view_contact' %}">Contact</a></th>
             </table>
-    </div>
-</footer>
+        </div>
+    </footer>
 
 </body>
 
