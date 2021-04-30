@@ -120,11 +120,11 @@
     width: 25em;
     padding: 0;">
                                 <li class="list" style="border:none; height:4em;">
-                                    <a href="" class="icon-arrow-right">World</a>
+                                    <a href="{% url 'stock' %}?country=World" class="icon-arrow-right">World</a>
                                 </li>
-                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=France'"
+                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=France"
                                         class="icon-arrow-right">France</a></li>
-                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=Italy'"
+                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=Italy"
                                         class="icon-arrow-right">Italy</a></li>
                                 <li class="divider"></li>
                             </ul>

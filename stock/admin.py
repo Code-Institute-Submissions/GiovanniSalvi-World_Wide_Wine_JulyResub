@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Stock, Item
+from .models import Stock, Item, Country
 
 # Register your models here.
 
@@ -22,6 +22,13 @@ class AdminStock(admin.ModelAdmin):
     )
 
 
+class AdminCountry(admin.ModelAdmin):
+    orderList = (
+        'country',
+    )
+
+
 admin.site.register(Stock, AdminStock)
 admin.site.register(Item, AdminItems)
+admin.site.register(Country, AdminCountry)
 

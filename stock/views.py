@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q
 from django.contrib import messages
-from .models import Item, Stock
+from .models import Item, Stock, Country
 from django.shortcuts import get_object_or_404
 
 # Create your views here.
@@ -12,6 +12,7 @@ def view_stock(request):
     item = Item.objects.all()
     query = None
     types = None
+    country = None
 
     if request.GET:
         if 'types' in request.GET:
@@ -19,6 +20,12 @@ def view_stock(request):
 
             stock = get_object_or_404(Stock, types=types)
             item = item.filter(stock=stock)
+
+        if 'country' in request.GET:
+            country = request.GET['country']
+
+            stock = get_object_or_404(Country, country=country)
+            item = item.filter(country=stock)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -29,7 +36,7 @@ def view_stock(request):
             searching = Q(
                 name__icontains=query
                 ) | Q(
-                country__icontains=query) | Q(
+                types__icontains=query) | Q(
                 description__icontains=query
                 )
 
@@ -39,6 +46,7 @@ def view_stock(request):
         'item': item,
         'base': query,
         'stock': types,
+        'country': country,
     }
 
     return render(request, 'stock/stock.html', context)
