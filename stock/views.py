@@ -52,3 +52,12 @@ def view_stock(request):
     return render(request, 'stock/stock.html', context)
 
 
+def item_details(request, item_id):
+
+    item = get_object_or_404(Item, pk=item_id)
+
+    context = {
+        'item': item,
+    }
+
+    return render(request, 'stock/item_details.html', context)
