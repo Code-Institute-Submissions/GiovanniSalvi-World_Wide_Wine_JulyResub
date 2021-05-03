@@ -68,7 +68,15 @@
                     </ul>
                     <ul class="icon menu-icon">
                         <button class="btn cart" type="button"><a  href="{% url 'shopping_cart' %}" class=" btn btn-md rounded-0"><i
-                                    class="fa fa-shopping-cart" aria-hidden="true"></i></a></button>
+                                    class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                        </p>
+                        </button>
                     </ul>
                 </div>
                 <div class="col-12 my-auto py-lg-0">
