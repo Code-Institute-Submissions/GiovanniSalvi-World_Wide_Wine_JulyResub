@@ -19,7 +19,7 @@
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
 
-            {% if item.image %}
+                {% if item.image %}
 
                 <a href="{{ item.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
@@ -28,7 +28,7 @@
                 <a href="">
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
                 </a>
-            {% endif %}
+                {% endif %}
 
             </div>
         </div>
@@ -39,19 +39,31 @@
             <p class="small mt-1 mb-0">{{ item.types }}</p>
             <p class="small mt-1 mb-0">{{item.description }}</p>
         </div>
-        <form class="form" action="{% url 'add_shopping' item.id %}" method="POST">
-        {% csrf_token %}
-        <div class="col-12" style="text-align:center">
-            <a href="{% url 'stock' %}" class="btn btn-outline-black rounded-0 mt-5">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
-                <span class="text-uppercase">Keep Shopping</span>
-            </a>
-            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
-        </div>
-        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-       </form>
+        <form style="width: 100%;" class="form" action="{% url 'add_shopping' item.id %}" method="POST">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col-12" style="text-align: center;">
+                    <p class="mt-3"><strong>Quantity:</strong></p>
+                    <div class="w-50">
+                        <div class="input-group">
+                            <input class="qty_input" type="number" name="quantity" value="1" min="1"
+                                max="99" data-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" style="text-align:center">
+                    <a href="{% url 'stock' %}" class="btn btn-outline-black rounded-0 mt-5">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                    </a>
+                    <input style="box-shadow: none!important;" type="submit" class="add_bag btn btn-black rounded-0 text-uppercase mt-5"
+                        value="Add to Cart">
+                   </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                   </div>
+        </form>
     </div>
 </div>
 

@@ -49,8 +49,8 @@
                 </div>
                 <div class="col-12 my-auto py-lg-0 text-black">
                     <ul class="dropdown-menu icon menu-icon">
-                        <button class="btn account" type="button" data-toggle="dropdown-item" aria-expanded="false"><a
-                                href="#" class=" btn btn-md rounded-0"><span class="myAccount">Account</span> <i
+                        <button style="box-shadow: none!important;" class="btn account" type="button" data-toggle="dropdown-item" aria-expanded="false"><a
+                                 href="#"  style="box-shadow:none!important ;" class="myAccount btn btn-md rounded-0"><span>Account</span> <i
                                     class="fa fa-user" aria-hidden="true"></i></a>
                             <div class="dropdown menu-list" style="max-height:none">
                                 {% if request.user.is_authenticated %}
@@ -67,13 +67,15 @@
                         </button>
                     </ul>
                     <ul class="icon menu-icon">
-                        <button class="btn cart" type="button"><a  href="{% url 'shopping_cart' %}" class=" btn btn-md rounded-0"><i
+                        <button class="btn cart" type="button"><a style="box-shadow:none!important ;" href="{% url 'shopping_cart' %}" class=" btn btn-md rounded-0"><i
                                     class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         <p class="my-0">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                     {% else %}
+                                        {% if request.user.is_authenticated %}
                                         $0.00
+                                        {% endif %}
                                     {% endif %}
                         </p>
                         </button>
@@ -82,7 +84,7 @@
                 <div class="col-12 my-auto py-lg-0">
                     <form class="form_in_line" method="GET" action="{% url 'stock' %}">
                         <div class="input-group">
-                            <input class="form-control ml-sm-3 " type="search" placeholder="Search" name="q"
+                            <input style="box-shadow:none!important ;" class="form-control ml-sm-3 " type="search" placeholder="Search" name="q"
                                 aria-label="Search">
                             <div class="input-group-prepend  rounded-0" style="height: fit-content;">
                                 <button class="btn form-control" style="width: inherit;" type="submit">

@@ -11,13 +11,14 @@ def cart_contents(request):
     shopping_counter = 0
     cart = request.session.get('cart', {})
 
-    for item_id, in cart.items():
-        item = get_object_or_404(Item, pk=item_id)
-        total = item.price
+    for item_id, quantity in cart.items():
+        item = get_object_or_404(Item, pk=item_id[0])
+        total += quantity * item.price
         shopping_counter = total
         cart_list.append({
             'item_id': item_id,
-            'item': item
+            'item': item,
+            'quantity': quantity
         })
 
     if total > settings.FREEDELIVERY_THRESHOLD:

@@ -1,3 +1,6 @@
+button:focus {
+    box-shadow: none!important;
+}
 .container{
     min-width: 100%!important;
 }
@@ -470,6 +473,9 @@ li:hover .navbar_list{
     color: #b4101d!important;
     text-decoration: none;
 }
+.dropdown-item:focus {
+    background-color: #7c899612;
+}
 .menu-list{
     max-height: none;
     border: 0.3px black solid;
@@ -513,7 +519,25 @@ li:hover .navbar_list{
     font-size: 1.5em;
     line-height: 1.3em; 
 }
-
+.btn-outline-black:hover {
+    background-color: gray;
+}
+.add_bag:hover {
+    color:rgba(255, 0, 0, 0.616);
+}
+.myAccount:hover {
+    color: #7c6c6c;
+}
+.arrow{
+    border: solid black;
+    border-width: 0 3px 3px 0;           /* taken from www.w3schools.com */
+    display: inline-block;              
+    padding: 3px;
+}
+.left{
+    transform: rotate(135deg);
+   -webkit-transform: rotate(135deg);           /* taken from www.w3schools.com */
+}
 @media only screen and (max-width: 900px) {
   .index_image {
     width: 100%;
