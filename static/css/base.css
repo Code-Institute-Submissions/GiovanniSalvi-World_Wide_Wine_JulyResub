@@ -538,68 +538,56 @@ li:hover .navbar_list{
     transform: rotate(135deg);
    -webkit-transform: rotate(135deg);           /* taken from www.w3schools.com */
 }
-.product-image { 
-    float: left; width: 20%; 
+.product{
+    border: 1px solid black;
+}
+.column-labels{
+    height: 5em;
+}
+.product-title{
+    margin-top: 2%;
+    margin-left: 5%;
+    font-weight: bold;
 }
 .product-details { 
-    float: left; width: 37%; 
+    float: left; 
+    width: 37%; 
 }
 .product-sku{
-    float: left; width: 27%;
+    float: left; 
+    width: 27%;
+    height:100%;
 }
 .product-price { 
-    float: left; width: 12%; 
+    float: left; 
+    width: 12%; 
+    margin-top: 1%;
 }
 .product-quantity { 
-    float: left; width: 10%; 
+    float: left; 
+    width: 10%; 
 }
 .product-removal { 
-    float: left; width: 9%; 
+    float: left; 
+    width: 9%; 
 }
 .product-line-price { 
-    float: left; width: 12%; text-align: right; 
+    float: left; 
+    width: 12%; 
+    text-align: right; 
 }
-
-.column-labels label{
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid black;
-}  
-.product-image.product-details.product-removal {
-    text-indent: -9999px;
+.remove-product:focus {
+    background-color: rgba(189, 184, 184, 0.733);
+    transition-duration: 0.1s;
 }
-/* Product entries */
-.product {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid black;
-} 
-.product-image img{
-    text-align: center;
-      width: 100px;
-}  
-.product-details.product-title {
-      margin-right: 20px;
-      font-family: bold;
-}
-.product-description {
-      margin: 5px 20px 5px 0;
-      line-height: 1.4em;
-} 
-.product-quantity input{
-      width: 40px;     
-} 
 .remove-product{
-    border: 0;
-    padding: 4px 8px;
-    background-color: #c66;
-    color: #fff;
-    font-family: bold;
-    font-size: 12px;
-    border-radius: 3px;
+    box-shadow: none!important;
+    color:red;
+    margin-top: 10%;
+    border-radius: 5px;
 }
-.remove-product:hover {
-    background-color: #a44;
+.sku{
+    margin-top: 5%;
 }
 @media only screen and (max-width: 900px) {
   .index_image {

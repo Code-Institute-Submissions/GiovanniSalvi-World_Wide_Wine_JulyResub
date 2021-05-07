@@ -15,35 +15,22 @@
                     <div class="shopping-cart">
                         <div class="product">
                         <div class="column-labels">
-                            <label class="product-image">Image:<div class="product-image">
-                                <img src="{{ item.item.image.url }}">
-                            </div></label>
-                            <label class="product-details">Name:<div class="product-details">
+                            <div class="product-details">
                                 <div class="product-title">{{ item.item.name }}</div>
                                 <p class="product-description"></p>
-                            </div></label>
-                            <label class="product-price">Price:<div class="product-price">{{ item.item.price }}</div>
-                            </label>
-                            <label class="product-sku">Sku:<div class="product-sku">{{ item.item.sku }}</div></label>
-                            <label class="product-quantity">Quantity:<div class="product-quantity">
-                                <input type="number" value="2" min="1">{{ item.item.quantity }}
-                            </div></label>
-                            <label class="product-removal">Remove<div class="product-removal">
+                            </div>
+                            <div class="product-price">${{ item.item.price }}</div>
+                            <div class="product-quantity">
+                                <input style="width: 40%; margin-top: 8%;" type="number" value="{{ item.quantity }}" min="1">{{ item.item.quantity }}
+                            </div>
+                            <div class="product-sku"><span class="sku">{{ item.item.sku }}</span></div>
+                            <div class="product-removal">
                                 <button class="remove-product">
                                     Remove
                                 </button>
-                            </div></label>
-                            <label class="product-line-price">Total:<div class="product-line-price">{{ item.item.total|floatformat:2 }}</div></label>
-                        </div>
-
-                        
-                            
-                            
-                            
-                            
-                            
-                            
-                            
+                            </div>
+                        </div> 
+                        <div class="total">{{ item.item.total|floatformat:2 }}</div>                           
                         </div>
                         {% endfor %}
                         {% else %}
