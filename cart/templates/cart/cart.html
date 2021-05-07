@@ -12,34 +12,54 @@
                 {% if cart_list %}
                 <div class="table-responsive rounded">
                     {% for item in cart_list %}
-                    <tr>
-                        <td class="py-3">
-                            <p class="my-0"><strong>{{ item.item.name }}</strong></p>
-                            <p class="my-0 small text-muted">SKU</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="py-3">
-                            <p class="my-0">${{ item.item.price }}</p>
-                        </td>
-                        <td class="py-3 w-25">
-                            <p class="my-0">{{ item.quantity }}</p>
-                        </td>
-                    </tr>
-                </div>
-                {% endfor %}
-                {% else %}
-                <div class="card-body card">
-                    <div class="col-sm-12 empty-cart-cls text-center"><img style="max-height: 5em;" src="/media/carts.jpeg">
-                        <h3><strong>Your Cart is empty</strong></h3>
-                        <h4>Add Something</h4> <a href="{% url 'stock' %}" class="" data-abc="true"><i class="arrow left"></i>continue
-                            shopping</a>
+                    <div class="shopping-cart">
+                        <div class="product">
+                        <div class="column-labels">
+                            <label class="product-image">Image:<div class="product-image">
+                                <img src="{{ item.item.image.url }}">
+                            </div></label>
+                            <label class="product-details">Name:<div class="product-details">
+                                <div class="product-title">{{ item.item.name }}</div>
+                                <p class="product-description"></p>
+                            </div></label>
+                            <label class="product-price">Price:<div class="product-price">{{ item.item.price }}</div>
+                            </label>
+                            <label class="product-sku">Sku:<div class="product-sku">{{ item.item.sku }}</div></label>
+                            <label class="product-quantity">Quantity:<div class="product-quantity">
+                                <input type="number" value="2" min="1">{{ item.item.quantity }}
+                            </div></label>
+                            <label class="product-removal">Remove<div class="product-removal">
+                                <button class="remove-product">
+                                    Remove
+                                </button>
+                            </div></label>
+                            <label class="product-line-price">Total:<div class="product-line-price">{{ item.item.total|floatformat:2 }}</div></label>
+                        </div>
+
+                        
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="card-body card">
+                            <div class="col-sm-12 empty-cart-cls text-center"><img style="max-height: 5em;"
+                                    src="/media/carts.jpeg">
+                                <h3><strong>Your Cart is empty</strong></h3>
+                                <h4>Add Something</h4> <a href="{% url 'stock' %}" class="" data-abc="true"><i
+                                        class="arrow left"></i>continue
+                                    shopping</a>
+                            </div>
+                        </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
-            {% endif %}
         </div>
-    </div>
-</div>
 
-{% endblock %}
+        {% endblock %}
