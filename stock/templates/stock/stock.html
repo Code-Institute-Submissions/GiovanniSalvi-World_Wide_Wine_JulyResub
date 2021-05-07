@@ -13,11 +13,11 @@
             <div class="wine-name"><span class="name">{{ item }}</span></div>
             <div>{% if item.image %}
                 <a>
-                    <img class="image_wine" src="{{ item.image.url }}" alt="{{ item.name }}">
+                    <img class="image_wine" src="{{ item.image.url }}" alt="{{ item.image }}">
                 </a>
                 {% else %}
                 <a>
-                    <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
+                    <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.image }}">
                 </a>
                 {% endif %}
             </div>

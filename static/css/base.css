@@ -412,6 +412,12 @@ li:hover .navbar_list{
     border: 1px black solid;
     border-radius: 5px;
 }
+.navbar_list{
+    position: absolute;
+    left: -10.5em;
+    width: 25em;
+    padding: 0;
+}
 .logout_container{
     height:100vh;
 }
@@ -735,12 +741,21 @@ li:hover .navbar_list{
 }
 @media only screen and (max-width: 580px) {
   .myAccount {
-    display:none;
+    position: relative;
+    left: 3em;
   }
 }
-@media only screen and (max-width: 480px) {
-  .account.cart {
+@media only screen and (max-width: 580px) {
+  .menu-list {
+    position: relative;
+    left: 3em;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .cart {
     float:left;
+    right: 3em;
+    position: relative;
   }
 }
 @media only screen and (min-width: 470px) and (max-width: 180px) {
@@ -953,22 +968,22 @@ li:hover .navbar_list{
       bottom:0;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 380px) {
   .navbar_list.types{
     width:unset;
-    left:-3.2em;
+    left:-3.35em;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 380px) {
   .navbar_list.countries{
     width:unset;
-    left:-3.2em;
+    left:-3.35em;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 380px) {
   .navbar_list.sparkling{
     width:unset; 
-    left:-3.2em;
+    left:-3.35em;
   }
 }
 @media only screen and (max-width: 480px) {
