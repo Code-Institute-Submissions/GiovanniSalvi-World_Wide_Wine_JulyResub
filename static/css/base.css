@@ -546,9 +546,10 @@ li:hover .navbar_list{
 }
 .product{
     border: 1px solid black;
+    min-height: 9em;
 }
 .column-labels{
-    height: 5em;
+    height: 6em;
 }
 .product-title{
     margin-top: 2%;
@@ -571,7 +572,7 @@ li:hover .navbar_list{
 }
 .product-quantity { 
     float: left; 
-    width: 10%; 
+    width: 18%; 
 }
 .product-removal { 
     float: left; 
@@ -586,14 +587,28 @@ li:hover .navbar_list{
     background-color: rgba(189, 184, 184, 0.733);
     transition-duration: 0.1s;
 }
+.update-product:focus {
+    background-color: rgba(8, 8, 8, 0.733);
+    transition-duration: 0.1s;
+}
 .remove-product{
     box-shadow: none!important;
-    color:red;
+    color: red;
+    margin: 0 0 10% 20%;
+    border-radius: 5px;
+}
+.update-product{
+    box-shadow: none!important;
+    color:greenyellow;
     margin-top: 10%;
     border-radius: 5px;
+    background-color: black;
 }
 .sku{
     margin-top: 5%;
+}
+.card{
+    height:100vh;
 }
 @media only screen and (max-width: 900px) {
   .index_image {
@@ -751,11 +766,10 @@ li:hover .navbar_list{
     left: 3em;
   }
 }
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 380px) {
   .cart {
-    float:left;
-    right: 3em;
     position: relative;
+    left: -3em;
   }
 }
 @media only screen and (min-width: 470px) and (max-width: 180px) {
@@ -989,5 +1003,50 @@ li:hover .navbar_list{
 @media only screen and (max-width: 480px) {
   .lgout-form{
     height:15%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .column-labels{
+    height:12em;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .product-sku{
+    display:table;
+    margin-left: 10%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .product-removal{
+    margin-left: 12%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .product-price{
+    float: left;
+    width: 25%;
+  }
+}
+@media only screen and (max-width: 580px){
+  .remove-product{
+    font-size: 10px;
+    margin-left: -20%;
+  }
+}
+@media only screen and (max-width: 580px){
+  .update-product{
+    font-size: 10px;
+    margin-left: 16%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .product-details{
+    margin-left: 10%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .button-quantity{
+    width: 80%!important;
+    float: right;
   }
 }

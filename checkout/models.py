@@ -1,0 +1,67 @@
+from django.db import models
+import uuid
+from django.db.models import Sum
+from django.conf import settings
+
+from stock.models import Item
+
+# Create your models here.
+
+
+class Checkout(models.Model):
+    order_number = models.CharField(max_length=50, null=False, editable=False)
+    firstname = models.CharField(max_length=50, null=False, blank=False)
+    lastname = models.CharField(max_length=50, null=False, blank=False)
+    email = models.EmailField(max_length=254, null=False, blank=False)
+    phone_number = models.CharField(max_length=15, null=False, blank=False)
+    country = models.CharField(max_length=30, null=False, blank=False)
+    postcode = models.CharField(max_length=10, blank=True)
+    address1 = models.CharField(max_length=60, null=False, blank=False)
+    delivery = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, default=0)
+    total = models.DecimalField(
+        max_digits=15, decimal_places=2, null=False, default=0)
+    grand_total = models.DecimalField(
+        max_digits=15, decimal_places=2, null=False, default=0)
+
+    def _generate_order_number(self):
+        return uuid.uuid4().hex.upper()
+
+    def update_total(self):
+        self.total = self.checkout_items.aggregate(
+            Sum('item_total'))[
+                'item_total__sum']
+        if self.total < settings.FREE_DELIVERY_THRESHOLD:
+            self.delivery = self.total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+        else:
+            self.delivery = 0
+        self.grand_total = self.total + self.delivery
+        self.save()
+
+    def save(self, *args, **kwargs):
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.order_number
+
+
+class Checkout_items(models.Model):
+    checkout = models.ForeignKey(
+        Checkout, null=False,
+        blank=False, on_delete=models.CASCADE, related_name='checkout_items'
+        )
+    item = models.ForeignKey(
+        Item, null=False, blank=False, on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False, blank=False, default=0)
+    item_total = models.DecimalField(
+            max_digits=6, decimal_places=2, null=False, blank=False,
+            editable=False)
+ 
+    def save(self, *args, **kwargs):
+        self.item_total = self.item.price * self.quantity
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'SKU {self.item.sku} on order {self.checkout.order_number}'

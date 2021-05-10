@@ -10,29 +10,42 @@
                     <h4>Cart</h4>
                 </div>
                 {% if cart_list %}
-                <div class="table-responsive rounded">
+                <div class="table-responsive rounded" style="height: 100vh;">
                     {% for item in cart_list %}
                     <div class="shopping-cart">
                         <div class="product">
-                        <div class="column-labels">
-                            <div class="product-details">
-                                <div class="product-title">{{ item.item.name }}</div>
-                                <p class="product-description"></p>
+                            <div class="column-labels">
+                                <div class="product-details">
+                                    <div class="product-title">{{ item.item.name }}</div>
+                                    <p class="product-description"></p>
+                                </div>
+                                <div class="product-price">${{ item.item.price }}</div>
+                                <div class="product-quantity">
+                                    <form class="update-form" method="POST" action="update_shopping item.item_id">
+                                        {% csrf_token %}
+                                        <input class="button-quantity" style="width: 40%; margin-top: 8%;" type="number"
+                                            value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="1">{{ item.item.quantity }}<button
+                                            class="update-product" data-item_id="{{ item.item_id }}">
+                                            Update
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="product-sku"><span class="sku">{{ item.item.sku }}</span></div>
+                                <div class="product-removal">
+                                    <button class="remove-product">
+                                        Remove
+                                    </button>
+                                </div>
                             </div>
-                            <div class="product-price">${{ item.item.price }}</div>
-                            <div class="product-quantity">
-                                <input style="width: 40%; margin-top: 8%;" type="number" value="{{ item.quantity }}" min="1">{{ item.item.quantity }}
-                            </div>
-                            <div class="product-sku"><span class="sku">{{ item.item.sku }}</span></div>
-                            <div class="product-removal">
-                                <button class="remove-product">
-                                    Remove
-                                </button>
-                            </div>
-                        </div> 
-                        <div class="total">{{ item.item.total|floatformat:2 }}</div>                           
+                            <!--<div class="total">{{ item.item.total|floatformat:2 }}</div>-->
                         </div>
                         {% endfor %}
+                        <div class="card-body" style="height: 5em!important">
+                            <a href="{% url 'stock' %}" style="margin-right:20%;" class="text-center" data-abc="true"><i
+                                    class="arrow left"></i>continue
+                                shopping</a>
+                            <a href="#" style="float:right;" data-abc="true"><button class="btn btn-success">Go to Checkout</button></a>
+                        </div>
                         {% else %}
                         <div class="card-body card">
                             <div class="col-sm-12 empty-cart-cls text-center"><img style="max-height: 5em;"
@@ -48,5 +61,6 @@
                 </div>
             </div>
         </div>
-
-        {% endblock %}
+    </div>
+</div>
+{% endblock %}
