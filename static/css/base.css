@@ -208,7 +208,7 @@ li{
     position: relative;
 }
 .etc-login-form{
-    margin-top: 8%;
+    margin-top: 6%;
     /* margin-left: 1em; */
     text-align: center;
 }
@@ -610,6 +610,14 @@ li:hover .navbar_list{
 .card{
     height:100vh;
 }
+.checkout{
+    margin: 10%;
+    padding: 25px;
+    background-color: #d4d2d2b3;
+}
+.text-muted{
+    display: grid;
+}
 @media only screen and (max-width: 900px) {
   .index_image {
     width: 100%;
@@ -953,15 +961,9 @@ li:hover .navbar_list{
     max-width: 12em;
   }
 }
-
 @media only screen and (max-width: 990px) {
   .navbar  {
     flex-wrap:unset;
-  }
-}
-@media only screen and (max-width: 590px) {
-  .container-fluid li  {
-    height:unset!important;
   }
 }
 @media only screen and (max-width: 420px) {

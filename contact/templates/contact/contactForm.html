@@ -1,35 +1,34 @@
 {% extends "base.html" %}
-{% load static %} 
+{% load static %}
 
 {% block content %}
-   <div class="container-fluid">
+<div class="container-fluid">
     <div class="row contact_container">
-	<h3 class="contact-text">Drop us a message</h3>
-	<div class="contact-form">
-		<form id="contact-form" class="text-left" method="POST" action="">
-			
-			<div class="main-contact-form">
-				
-					<div class="form-group" style="height:5em">
-						<label for="lg_name" class="sr-only">Your Name*</label>
-						<input type="text" class="contact-form" id="lg_name" name="lg_name" placeholder="name" required>
-					</div>
+        <h3 class="contact-text">Drop us a message</h3>
+        <div class="contact-form">
+            <form id="contact-form" class="text-left" method="POST" action="">
+                {% csrf_token %}
+                <div class="main-contact-form">
+
+                    <div class="form-group" style="height:5em">
+                        <label for="lg_name" class="sr-only">Your Name*</label>
+                        <input type="text" class="contact-form" id="lg_name" name="lg_name" placeholder="name" required>
+                    </div>
                     <div class="form-group" style="height:5em;">
-						<label for="lg_email" class="sr-only">Your email*</label>
-						<input type="email" class="contact-form" id="lg_email" name="lg_email" placeholder="email" required>
+                        <label for="lg_email" class="sr-only">Your email*</label>
+                        <input type="email" class="contact-form" id="lg_email" name="lg_email" placeholder="email"
+                            required>
                     </div>
                     <div class="form-group" style="height:11em">
-                        <label for="phone" class="sr-only">Your phone number*</label>
-                        <input style="height: 8em;" type="tel" class="contact-form" id="message" name="message"
-                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
-                               required>
-                        
+                        <textarea class="contact-form" rows="4" cols="47" name="comment" form="contact-form">
+                        Enter text here...</textarea>
+
                     </div>
-				<input type="Submit" value="submit" class="contact-btn btn btn-info">	
-				
-			</div>
-        </form>
-    </div>
+                    <input type="Submit" value="submit" class="contact-btn btn btn-info">
+
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
