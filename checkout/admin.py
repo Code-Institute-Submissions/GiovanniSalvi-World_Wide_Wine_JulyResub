@@ -4,7 +4,7 @@ from .models import Checkout, Checkout_items
 
 class Checkout_itemsAdminInline(admin.TabularInline):
     model = Checkout_items
-    readonly_fields = ('item_total',)
+    readonly_fields = ('items_total',)
 
 
 class CheckoutAdmin(admin.ModelAdmin):
@@ -19,6 +19,9 @@ class CheckoutAdmin(admin.ModelAdmin):
               'postcode', 'city', 'address',
               'delivery', 'total', 'grand_total',)
 
+    Checklist = ('order_number', 'first_name', 'last_name',
+                 'delivery', 'total',
+                 'grand_total')
 
-admin.site.register(Checkout)
-admin.site.register(Checkout_items)
+
+admin.site.register(Checkout, CheckoutAdmin)

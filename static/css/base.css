@@ -412,9 +412,20 @@ li:hover .navbar_list{
     border: 1px black solid;
     border-radius: 5px;
 }
-.navbar_list{
+.navbar_list.countries{
+    position: absolute;
+    left: -9.5em;
+    width: 25em;
+    padding: 0;
+}
+.navbar_list.types{
     position: absolute;
     left: -10.5em;
+    width: 25em;
+    padding: 0;
+}.navbar_list.sparkling{
+    position: absolute;
+    left: -8.5em;
     width: 25em;
     padding: 0;
 }

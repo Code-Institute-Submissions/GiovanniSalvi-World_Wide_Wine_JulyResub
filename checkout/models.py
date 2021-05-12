@@ -15,7 +15,8 @@ class Checkout(models.Model):
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=15, null=False, blank=False)
     country = models.CharField(max_length=30, null=False, blank=False)
-    city = models.CharField(max_length=20, null=False, blank=False)
+    city = models.CharField(
+        max_length=20, null=False, blank=False, default="")
     postcode = models.CharField(max_length=10, blank=True)
     address = models.CharField(max_length=60, null=False, blank=False)
     delivery = models.DecimalField(
@@ -29,9 +30,9 @@ class Checkout(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        self.total = self.checkout_items.aggregate(
-            Sum('item_total'))[
-                'item_total__sum']
+        self.total = self.checkoutitems.aggregate(
+            Sum('items_total'))[
+                'items_total__sum']
         if self.total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery = self.total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
@@ -51,15 +52,15 @@ class Checkout(models.Model):
 class Checkout_items(models.Model):
     checkout = models.ForeignKey(
         Checkout, null=False,
-        blank=False, on_delete=models.CASCADE, related_name='checkout_items'
-        )
+        blank=False, on_delete=models.CASCADE, related_name='checkoutitems'
+    )
     item = models.ForeignKey(
         Item, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    item_total = models.DecimalField(
-            max_digits=6, decimal_places=2, null=False, blank=False,
-            editable=False)
- 
+    items_total = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, blank=False,
+        editable=False)
+
     def save(self, *args, **kwargs):
         self.item_total = self.item.price * self.quantity
         super().save(*args, **kwargs)

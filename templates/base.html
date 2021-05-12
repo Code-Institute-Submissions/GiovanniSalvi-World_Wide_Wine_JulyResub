@@ -50,7 +50,7 @@
                 <div class="col-12 my-auto py-lg-0 text-black">
                     <ul class="dropdown-menu icon menu-icon">
                         <button style="box-shadow: none!important;" class="btn account" type="button" data-toggle="dropdown-item" aria-expanded="false"><a
-                                 href="#"  style="box-shadow:none!important ;" class="myAccount btn btn-md rounded-0"><span>Account</span> <i
+                                  style="box-shadow:none!important ;" class="myAccount btn btn-md rounded-0"><span>Account</span> <i
                                     class="fa fa-user" aria-hidden="true"></i></a>
                             <div class="dropdown menu-list" style="max-height:none">
                                 {% if request.user.is_authenticated %}
@@ -166,7 +166,7 @@
         <div class="row bg-light about">
             <table class="footer_table">
                 <th><a style="color:#615353;;text-decoration: none;letter-spacing: 3px;font-size: 20px;"
-                        href="#">About</a></th>
+                        href="{% url 'about' %}">About</a></th>
                 <th><a style="color:#615353;;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
                 left: 1em;font-size: 20px;" href="{% url 'view_contact' %}">Contact</a></th>
             </table>

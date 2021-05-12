@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'contact',
+    'about',
     'stock',
     'cart',
     'checkout',
@@ -176,5 +177,5 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-FREEDELIVERY_THRESHOLD = 30
+FREEDELIVERY_THRESHOLD = 100
 DELIVERY_PERCENTAGE = 10

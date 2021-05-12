@@ -22,7 +22,7 @@ def add_shopping(request, item_id):
     return redirect(redirect_url)
 
 
-def update_shopping(request, item_id):
+def update_cart(request, item_id):
     cart = request.session.get('cart', {})
     quantity = int(request.POST.get('quantity'))
 

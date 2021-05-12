@@ -10,7 +10,7 @@ def checkout(request):
     cart = request.session.get('cart', {})
     if not cart:
         messages.error(request, "your cart is empty at the moment")
-        return redirect(reverse('stock'))
+        return redirect(reverse('cart'))
 
     checkout_form = CheckoutForm()
     template = 'checkout/checkout.html'

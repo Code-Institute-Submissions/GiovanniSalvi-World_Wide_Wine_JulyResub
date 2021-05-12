@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block content %}
 <div class="container-fluid mt-100">
@@ -21,10 +22,10 @@
                                 </div>
                                 <div class="product-price">${{ item.item.price }}</div>
                                 <div class="product-quantity">
-                                    <form class="update-form" method="POST" action="update_shopping item.item_id">
+                                    <form class="update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
                                         {% csrf_token %}
                                         <input class="button-quantity" style="width: 40%; margin-top: 8%;" type="number"
-                                            value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="1">{{ item.item.quantity }}<button
+                                            value="{{ item.quantity }}" name="quantity" data-item_id="{{ item.item_id }}" min="1">{{ item.item.quantity }}<button
                                             class="update-product" data-item_id="{{ item.item_id }}">
                                             Update
                                         </button>
@@ -32,9 +33,9 @@
                                 </div>
                                 <div class="product-sku"><span class="sku">{{ item.item.sku }}</span></div>
                                 <div class="product-removal">
-                                    <button class="remove-product">
+                                    <button  class="remove-product"><a class="remove" id="remove_{{ item.item_id }}">
                                         Remove
-                                    </button>
+                                    </a></button>
                                 </div>
                             </div>
                             <!--<div class="total">{{ item.item.total|floatformat:2 }}</div>-->
@@ -63,4 +64,14 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+
+<script type="text/javascript">
+    $('.update-product').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+</script>
 {% endblock %}
