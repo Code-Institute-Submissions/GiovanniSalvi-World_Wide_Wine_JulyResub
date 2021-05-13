@@ -4,12 +4,12 @@ from django.shortcuts import render, redirect, reverse
 
 
 def shopping_cart(request):
-
     return render(request, 'cart/cart.html')
 
 
 def add_shopping(request, item_id):
     redirect_url = request.POST.get('redirect_url')
+    print(redirect_url)
     cart = request.session.get('cart', {})
     quantity = int(request.POST.get('quantity'))
 
@@ -25,7 +25,6 @@ def add_shopping(request, item_id):
 def update_cart(request, item_id):
     cart = request.session.get('cart', {})
     quantity = int(request.POST.get('quantity'))
-
     if quantity > 0:
         cart[item_id] += quantity
     else:

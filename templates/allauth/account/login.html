@@ -9,7 +9,7 @@
 {% block content %}
 
 
-<div class="container-fluid login_container">
+<!--<div class="container-fluid login_container">
     <div class="row" style="min-height: 100vh!important;">
         <div class="lg_form">
             <div class="logo">
@@ -51,6 +51,35 @@
             </div>
         </div>
     </div>
-</div>
+</div>--->
+<div class="row">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
 
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <i class="fa fa-user" aria-hidden="true" id="icon" alt="User Icon"></i>
+            </div>
+
+            <!-- Login Form -->
+            <form method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {{ form }}
+                {% if redirect_field_value %}
+                {% endif %}
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+   
+</style>
 {% endblock %}

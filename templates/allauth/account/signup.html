@@ -10,7 +10,7 @@
 
 
 
- <div class="container-fluid">
+<!--<div class="container-fluid">
         <div class="row" style="
     margin: 7% 7% 20.5% 7%;
     width: 90%;justify-content: center;">
@@ -63,6 +63,25 @@
 			    	</div>
 	    		</div>
     		</div>
-    	</div>
+    	</div>-->
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <div class="fadeIn first">
+            <i class="fa fa-user" aria-hidden="true" id="icon" alt="User Icon"></i>
+        </div>
 
+        <!-- Register Form -->
+        <form>
+            <input type="text" id="firstname" class="fadeIn second" name="firstname" placeholder="First Name">
+            <input type="text" id="secondname" class="fadeIn second" name="secondname" placeholder="Second Name">
+            <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username">
+            <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+            <input type="password" id="password_confirmation" class="fadeIn third" name="password_confirmation"
+                placeholder="ConfirmPassword">
+            <input type="submit" class="fadeIn fourth" value="Sign Up">
+        </form>
+    </div>
+</div>
 {% endblock %}
