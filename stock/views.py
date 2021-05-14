@@ -58,5 +58,5 @@ def item_details(request, item_id):
     context = {
         'item': item,
     }
-    print(context)
+
     return render(request, 'stock/item_details.html', context)

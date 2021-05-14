@@ -22,10 +22,12 @@
                                 </div>
                                 <div class="product-price">${{ item.item.price | calc_subtotal:item.quantity }}</div>
                                 <div class="product-quantity">
-                                    <form class="update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
+                                    <form class="update-form" method="POST"
+                                        action="{% url 'update_cart' item.item_id %}">
                                         {% csrf_token %}
                                         <input class="button-quantity" style="width: 40%; margin-top: 8%;" type="number"
-                                            value="{{ item.quantity }}" name="quantity" data-item_id="{{ item.item_id }}" min="1">{{ item.item.quantity }}<button
+                                            value="{{ item.quantity }}" name="quantity"
+                                            data-item_id="{{ item.item_id }}" min="1">{{ item.item.quantity }}<button
                                             class="update-product" data-item_id="{{ item.item_id }}">
                                             Update
                                         </button>
@@ -33,9 +35,15 @@
                                 </div>
                                 <div class="product-sku"><span class="sku">{{ item.item.sku }}</span></div>
                                 <div class="product-removal">
-                                    <button  class="remove-product"><a class="remove" id="remove_{{ item.item_id }}">
-                                        Remove
-                                    </a></button>
+                                    <form class="remove-form" method="POST"
+                                        action="{% url 'remove_cart' item.item_id %}">
+                                        {% csrf_token %}
+                                        <button class="remove-product" data-item_id="{{ item.item_id }}">
+                                            <a class="remove" id="remove_{{ item.item_id }}">
+                                                Remove
+                                            </a>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                             <!--<div class="total">{{ item.item.total|floatformat:2 }}</div>-->
@@ -45,7 +53,8 @@
                             <a href="{% url 'stock' %}" style="margin-right:10%;" class="text-center" data-abc="true"><i
                                     class="arrow left"></i>continue
                                 shopping</a>
-                            <a href="{% url 'checkout' %}" style="float:right;" data-abc="true"><button style="width: 25em;" class="btn btn-success">Go to Checkout</button></a>
+                            <a href="{% url 'checkout' %}" style="float:right;" data-abc="true"><button
+                                    style="width: 25em;" class="btn btn-success">Go to Checkout</button></a>
                         </div>
                         {% else %}
                         <div class="card-body card">
@@ -69,7 +78,7 @@
 {% block postloadjs %}
 
 <script type="text/javascript">
-    $('.update-product').click(function(e) {
+    $('.update-product').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
