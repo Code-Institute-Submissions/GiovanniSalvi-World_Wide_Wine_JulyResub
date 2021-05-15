@@ -3,6 +3,8 @@ import uuid
 from django.db.models import Sum
 from django.conf import settings
 
+
+from myaccount.models import MyAccount
 from stock.models import Item
 
 # Create your models here.
@@ -10,11 +12,14 @@ from stock.models import Item
 
 class Checkout(models.Model):
     order_number = models.CharField(max_length=50, null=False, editable=False)
+    my_account = models.ForeignKey(
+        MyAccount, on_delete=models.SET_NULL, null=True, blank=True)
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=15, null=False, blank=False)
-    country = models.CharField(max_length=30, null=False, blank=False)
+    country = models.CharField(
+        max_length=50, null=False, blank=False)
     city = models.CharField(
         max_length=20, null=False, blank=False, default="")
     postcode = models.CharField(max_length=10, blank=True)
