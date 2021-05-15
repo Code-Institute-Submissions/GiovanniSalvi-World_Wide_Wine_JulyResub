@@ -203,8 +203,11 @@ li{
     text-align: center;
     height: max-content;
 }  
-
-
+.bag{
+    padding:0;
+    float:right;
+    margin-right: 10%;
+}
 .form-control {
     border: 0;
     width: 66%;
@@ -357,7 +360,7 @@ li:hover .navbar_list{
     height:100%;
 }
 .cart{
-    float: right;
+    padding:0;
 }
 .fa-shopping-cart:hover {
     color: rgb(26, 145, 153);
@@ -492,8 +495,7 @@ li:hover .navbar_list{
 }
 .signout-button{
     position: relative;
-    left: 47%;
-    font-size: 10px;
+    left: 22%;
 }
 .wine-name{
     font-size: 1.3em;
@@ -845,7 +847,6 @@ input[type=text], input[type=password]:placeholder {
   .index_text {
     width: 95%;
     margin-top: unset;
-    margin-bottom:80%;
   }
 }
 @media only screen and (max-width: 1080px) {
@@ -863,8 +864,9 @@ input[type=text], input[type=password]:placeholder {
 }
 @media only screen and (max-width: 480px) {
   .text-black {
-    width:70%;
+    width:100%;
     position:unset;
+    top: 0px;
   }
 }
 @media only screen and (min-width: 480px) and (max-width:580px) {
@@ -891,7 +893,7 @@ input[type=text], input[type=password]:placeholder {
     height: auto;
     position: absolute;
     width: 100vw;
-    bottom: 0;
+    bottom: -6em;
   }
 }  
 @media only screen and (max-width: 580px) {
@@ -953,15 +955,15 @@ input[type=text], input[type=password]:placeholder {
   }
 } 
 @media only screen and (max-width: 480px) {
-  .cart {
-    float: left;    
+  .bag {
+    float: unset;
+    margin-right: 0;  
   }
 } 
 @media only screen and (max-width: 480px) {
   .account {
     outline: none!important;
     position: relative;
-    right: 35%;
     }
 } 
 @media only screen and (max-width: 480px) {
@@ -985,16 +987,16 @@ input[type=text], input[type=password]:placeholder {
 @media only screen and (max-width: 580px) {
   .menu-list {
     position: relative;
-    left: 3em;
+    left: 1em;
   }
 }
 @media only screen and (max-width: 380px) {
   .cart {
     position: relative;
-    left: -3em;
+    left: 0.5em;
   }
 }
-@media only screen and (min-width: 470px) and (max-width: 180px) {
+@media only screen and (min-width: 440px) and (max-width: 180px) {
   .text-black {
     width: 100%;
     position: relative;
@@ -1014,13 +1016,6 @@ input[type=text], input[type=password]:placeholder {
 @media only screen and (max-width: 340px) {
   .navbar-collapse {
     display:block;
-  }
-}
-@media only screen and (max-width: 340px) {
-  .text-black {
-    width: 70%;
-    position: relative;
-    top: 3em;
   }
 }
 @media only screen and (min-width: 470px) and (max-width: 180px) {
@@ -1065,29 +1060,6 @@ input[type=text], input[type=password]:placeholder {
   }
 }
 @media only screen and (max-width: 580px) {
-  .login-form-1 {
-    width: 65%;
-    height: 20em;
-    position: relative;
-    left: 20%;
-    top: 25%;
-  }
-}
-@media only screen and (max-width: 580px) {
-  .login-button {
-    margin-top: 1em;
-    font-size: small;
-    width:20%;
-    margin-left: 0;
-    border: 0.3px black solid;
-  }
-}
-@media only screen and (max-width: 580px) {
-  .etc-login-form  {
-    font-size: small;
-  }
-}
-@media only screen and (max-width: 580px) {
   .panel-title {
     font-size: 1.75rem;
   }
@@ -1109,6 +1081,12 @@ input[type=text], input[type=password]:placeholder {
   .signup_form {
     width: 100%;
     margin-bottom: 0rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .signout-button {
+    position: relative;
+    left: 7%;
   }
 }
 @media only screen and (max-width: 580px) {
@@ -1172,7 +1150,7 @@ input[type=text], input[type=password]:placeholder {
 @media only screen and (max-width: 780px) {
   .box  {
     height: 20em;
-    max-width: 12em;
+    max-width: 13em;
   }
 }
 @media only screen and (max-width: 990px) {
@@ -1214,11 +1192,6 @@ input[type=text], input[type=password]:placeholder {
   .navbar_list.sparkling{
     width:unset; 
     left:-3.35em;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .lgout-form{
-    height:15%;
   }
 }
 @media only screen and (max-width: 580px) {
@@ -1266,3 +1239,23 @@ input[type=text], input[type=password]:placeholder {
     float: right;
   }
 }
+@media only screen and (max-width: 380px) {
+  .image_wine{
+    bottom: 22%;
+    left: 12%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .wine-name{
+    font-size: 1.4em;
+    line-height: 1;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .account-icon{
+    position: relative;
+    left: 15%;
+  }
+}
+
+

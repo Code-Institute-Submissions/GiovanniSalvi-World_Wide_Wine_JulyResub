@@ -40,121 +40,120 @@
 
 <body>
     <div class="container">
-        <header class="row ">
+        <header class="row">
             <div class="col bg-light">
-                <div class="col-12 col-md-4 my-auto  text-center ">
+                <div class="col-12 col-md-4 my-auto text-center ">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link mw-30">
                         <h2 class="logo-font "> World<strong style="color:rgb(141, 25, 25)"> Wide</strong> Wine</h2>
                     </a>
                 </div>
-                <div class="col-12 my-auto py-lg-0 text-black">
-                    <ul class="dropdown-menu icon menu-icon">
-                        <button style="box-shadow: none!important;" class="btn account" type="button" data-toggle="dropdown-item" aria-expanded="false"><a
-                                  style="box-shadow:none!important ;" class="myAccount btn btn-md rounded-0"><span>Account</span><i
-                                    class="fa fa-user" aria-hidden="true"></i></a>
-                            <div class="dropdown menu-list" style="max-height:none">
-                                {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                <a href="" class="dropdown-item">Admin</a>
-                                {% endif %}
-                                <a href="{% url 'myaccount' %}" class="dropdown-item">MyAccount</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                {% else %}
-                                <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
-                                <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
-                                {% endif %}
-                            </div>
-                        </button>
-                    </ul>
-                    <ul class="icon menu-icon">
-                        <button class="btn cart" type="button"><a style="box-shadow:none!important ;" href="{% url 'shopping_cart' %}" class=" btn btn-md rounded-0"><i
-                                    class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        <p class="my-0">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        {% if request.user.is_authenticated %}
-                                        $0.00
-                                        {% endif %}
-                                    {% endif %}
-                        </p>
-                        </button>
-                    </ul>
-                </div>
-                <div class="col-12 my-auto py-lg-0">
-                    <form class="form_in_line" method="GET" action="{% url 'stock' %}">
-                        <div class="input-group">
-                            <input style="box-shadow:none!important ;" class="form-control ml-sm-3 " type="search" placeholder="Search" name="q"
-                                aria-label="Search">
-                            <div class="input-group-prepend  rounded-0" style="height: fit-content;">
-                                <button class="btn form-control" style="width: inherit;" type="submit">
-                                    <span class="icon">
-                                        <i class="fas fa-search"></i>
-                                    </span>
-                                </button>
-                            </div>
+                <div class="col-12 py-lg-0 text-black">
+                    <button style="box-shadow: none!important;" data-target="#navbarToggleExternalContent"
+                        class="btn account" type="button" data-toggle="collapse"
+                        aria-expanded="false"><i class="fa fa-user account-icon" aria-hidden="true"></i>
+                        <div id="navbarToggleExternalContent" class="dropdown menu-list collapse">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a href="" class="dropdown-item">Admin</a>
+                            {% endif %}
+                            <a href="{% url 'myaccount' %}" class="dropdown-item">MyAccount</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                            <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                            <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                            {% endif %}
                         </div>
-                    </form>
+                    </button>
+                    <div class="bag">
+                    <button class="btn cart" type="button"><a style="box-shadow:none!important ;"
+                            href="{% url 'shopping_cart' %}" class=" btn btn-md rounded-0"><i
+                                class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    </button>
+                        <p class="my-0" style="width: fit-content;">
+                            {% if grand_total %}
+                            ${{ grand_total|floatformat:2 }}
+                            {% else %}
+                            {% if request.user.is_authenticated %}
+                            $0.00
+                            {% endif %}
+                            {% endif %}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </header>
-
-        <div style="line-height: 5em;">
-            <div class="row">
-                <nav class="col navbar navbar-expand-lg" style="background-color:#305377;">
-                    <div class="container-fluid" style="justify-content: center;">
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" class="dropdown-toggle">Types </a>
-                            <div class="hover_menu">
-                                <ul class="dropdown_menu navbar_list types">
-                                    <li class="list" style="border:none;height:4em;">
-                                        <a href="{% url 'stock' %}?types=White" class="icon-arrow-right">White</a>
-                                    </li>
-                                    <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Red"
-                                            class="icon-arrow-right">Red</a></li>
-                                    <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Rose'"
-                                            class="icon-arrow-right">Rose'</a></li>
-                                    <li class="divider"></li>
-                                </ul>
-                            </div>
-                        </li>
+            <div class="col-12 my-auto py-lg-0">
+                <form class="form_in_line" method="GET" action="{% url 'stock' %}">
+                    <div class="input-group">
+                        <input style="box-shadow:none!important; border: 1px solid black;" class="form-control ml-sm-3 " type="search"
+                            placeholder="Search" name="q" aria-label="Search">
+                        <div class="input-group-prepend  rounded-0" style="height: fit-content;">
+                            <button class="btn form-control" style="width: inherit;" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="container-fluid" style="justify-content: center;">
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" class="dropdown-toggle">Countries</a>
-                            <ul class="navbar_list dropdown_menu countries">
-                                <li class="list" style="border:none; height:4em;">
-                                    <a href="{% url 'stock' %}?country=World" class="icon-arrow-right">World</a>
-                                </li>
-                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=France"
-                                        class="icon-arrow-right">France</a></li>
-                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=Italy"
-                                        class="icon-arrow-right">Italy</a></li>
-                                <li class="divider"></li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="container-fluid" style="justify-content: center;">
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" style="color:#ffc107!important"
-                                class="sparkling dropdown-toggle  icon-arrow-right">Champagne</a>
-                            <ul class="navbar_list dropdown_menu sparkling">
-                                <li class="list" style="border:none; height:4em">
-                                    <a href="{% url 'stock' %}?types=BlancdeNoirs"
-                                        class="icon-arrow-right sparkling">Blanc de Noirs</a>
-                                </li>
-                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=BlancdeBlancs"
-                                        class="icon-arrow-right sparkling">Blanc de blancs</a></li>
-                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Brut"
-                                        class="icon-arrow-right sparkling">Brut</a></li>
-
-                                <li class="divider"></li>
-                            </ul>
-                        </li>
-                    </div>
-                </nav>
-            </div>
+                </form>
         </div>
+    </header>
+
+    <div style="line-height: 5em;">
+        <div class="row">
+            <nav class="col navbar navbar-expand-lg" style="background-color:#305377;">
+                <div class="container-fluid" style="justify-content: center;">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle">Types </a>
+                        <div class="hover_menu">
+                            <ul class="dropdown_menu navbar_list types">
+                                <li class="list" style="border:none;height:4em;">
+                                    <a href="{% url 'stock' %}?types=White" class="icon-arrow-right">White</a>
+                                </li>
+                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Red"
+                                        class="icon-arrow-right">Red</a></li>
+                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Rose'"
+                                        class="icon-arrow-right">Rose'</a></li>
+                                <li class="divider"></li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+                <div class="container-fluid" style="justify-content: center;">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle">Countries</a>
+                        <ul class="navbar_list dropdown_menu countries">
+                            <li class="list" style="border:none; height:4em;">
+                                <a href="{% url 'stock' %}?country=World" class="icon-arrow-right">World</a>
+                            </li>
+                            <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=France"
+                                    class="icon-arrow-right">France</a></li>
+                            <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=Italy"
+                                    class="icon-arrow-right">Italy</a></li>
+                            <li class="divider"></li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="container-fluid" style="justify-content: center;">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" style="color:#ffc107!important"
+                            class="sparkling dropdown-toggle  icon-arrow-right">Champagne</a>
+                        <ul class="navbar_list dropdown_menu sparkling">
+                            <li class="list" style="border:none; height:4em">
+                                <a href="{% url 'stock' %}?types=BlancdeNoirs" class="icon-arrow-right sparkling">Blanc
+                                    de Noirs</a>
+                            </li>
+                            <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=BlancdeBlancs"
+                                    class="icon-arrow-right sparkling">Blanc de blancs</a></li>
+                            <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Brut"
+                                    class="icon-arrow-right sparkling">Brut</a></li>
+
+                            <li class="divider"></li>
+                        </ul>
+                    </li>
+                </div>
+            </nav>
+        </div>
+    </div>
     </div>
 
     {% block content %}
