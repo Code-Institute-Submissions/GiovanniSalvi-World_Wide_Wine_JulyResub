@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 
@@ -13,8 +15,16 @@ class MyAccount(models.Model):
         max_length=50, null=False, blank=True)
     default_city = models.CharField(
         max_length=20, null=False, blank=False, default="")
-    default_postcode = models.CharField(max_length=10, null=True, blank=True)
+    default_postcode = models.CharField(max_length=10, blank=True)
     default_address = models.CharField(max_length=60, null=False, blank=False)
 
     def __str__(self):
         return self.user.username
+
+
+@receiver(post_save, sender=User)
+def create_or_update_account(sender, instance, created, **kwargs):
+
+    if created:
+        MyAccount.objects.create(user=instance)
+    instance.myaccount.save()

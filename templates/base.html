@@ -57,11 +57,11 @@
                                 {% if request.user.is_superuser %}
                                 <a href="" class="dropdown-item">Admin</a>
                                 {% endif %}
-                                <li><a href="{% url 'myaccount' %}" class="dropdown-item">MyAccount</a></li>
-                                <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                                <a href="{% url 'myaccount' %}" class="dropdown-item">MyAccount</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% else %}
-                                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
-                                <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                                <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                                <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
                                 {% endif %}
                             </div>
                         </button>

@@ -6,23 +6,26 @@
 
 {% block content %}
 
-<div class="container-fluid logout_container">
-    <div class="row" style="min-height: 100vh!important;">
-    <div class="lgout_form">
-	<div class="logo"><p>Sign Out</p></div>
-	<div class="logout-form-1">
-    <form method="POST" action="{% url 'account_logout' %}?next=/stock" id="logout-form" class="text-left">
-    {% csrf_token %}
-    {% if redirect_field_value %}
-  	<div class="form-group">
-    </div>
-    </div>
-    {% endif %}
-    <input type="Submit" name="submit" value="logout" class="signout-button btn btn-info">
-  
-  </form>
-</div>
-</div>
-</div>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <div class="fadeIn first">
+            <i class="fa fa-user" aria-hidden="true" id="icon" alt="User Icon"></i>
+        </div>
 
-{% endblock %}
+        <div class="logo">
+            <p>Sign Out</p>
+        </div>
+        <div class="logout-form-1">
+            <form method="POST" action="{% url 'account_logout' %}?next=/stock" id="logout-form" class="text-left">
+                {% csrf_token %}
+
+                <div class="form-group">
+                </div>
+
+                <input type="Submit" name="submit" value="logout" class="signout-button btn btn-info">
+
+            </form>
+       
+        </div>
+ {% endblock %}
+

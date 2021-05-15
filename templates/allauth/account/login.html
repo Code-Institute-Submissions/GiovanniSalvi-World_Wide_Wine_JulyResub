@@ -1,12 +1,46 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "account/base.html" %}
 
 
-{% block page_header %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block inner_content %}
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <i class="fa fa-user" aria-hidden="true" id="icon" alt="User Icon"></i>
+        </div>
+
+        <!-- Login Form -->
+        <form method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            {{ form.login }}
+            {{ form.password }}
+            <input type="submit" class="fadeIn fourth" value="login">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+        </div>
+
+    </div>
+</div>
 
 {% endblock %}
 
-{% block content %}
+
+
+
+
+
+
 
 
 <!--<div class="container-fluid login_container">
@@ -52,34 +86,3 @@
         </div>
     </div>
 </div>--->
-<div class="row">
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
-            <!-- Tabs Titles -->
-
-            <!-- Icon -->
-            <div class="fadeIn first">
-                <i class="fa fa-user" aria-hidden="true" id="icon" alt="User Icon"></i>
-            </div>
-
-            <!-- Login Form -->
-            <form method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form }}
-                {% if redirect_field_value %}
-                {% endif %}
-                <input type="submit" class="fadeIn fourth" value="Log In">
-            </form>
-
-            <!-- Remind Passowrd -->
-            <div id="formFooter">
-                <a class="underlineHover" href="{% url 'account_reset_password' %}">Forgot Password?</a>
-            </div>
-
-        </div>
-    </div>
-</div>
-<style>
-   
-</style>
-{% endblock %}
