@@ -1,69 +1,13 @@
-{% extends "base.html" %}
+{% extends "account/base.html" %}
 
-{% load static %}
+{% load i18n %}
+{% load account socialaccount %}
 
-{% block head_title %}
-{% endblock %}
-
-{% block content %}
+{% block head_title %}{% trans "Sign Up" %}{% endblock %}
 
 
+{% block inner_content %}
 
-
-<!--<div class="container-fluid">
-        <div class="row" style="
-    margin: 7% 7% 20.5% 7%;
-    width: 90%;justify-content: center;">
-        <div class="register_form col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-        	<div class="panel panel-default">
-        		<div class="panel-heading">
-			    		<h3 class="panel-title">Sign up<small><br>It's free!</small></h3>
-			 			</div>
-			 			<div class="panel-body">
-			    		<form role="form" action="{% url 'account_signup' %}">
-                            <div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    				<div class="form_group">
-			                    <input type="text" name="firstname" id="first_name" class="form-control input-sm" placeholder="First Name">
-			    				</div>       
-                                </div>
-			    			<div class="col-sm-6 signup_form">
-			    				<input type="text" name="secondname" id="second_name" class="form-control input-sm" placeholder="Second Name">
-                            </div>
-                            </div>
-			    			<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form_group">
-			                <input type="text" name="username" id="username" class="form-control input-sm" placeholder="Username">
-			    					</div>       
-                                </div>
-			    			    <div class="col-sm-6 signup_form">
-			    				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
-			    			</div>
-                            </div>
-			    			<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form_group">
-			    						<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
-			    					</div>
-			    				</div>
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form_group">
-			    						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
-			    					</div>
-			    				</div>
-			    			</div>
-			    			
-			    			<input type="submit" value="register" name="register" class="btn btn-info btn-block" style="margin-top:2em">
-                            <div class="row">
-                                <p class="text-dark signup_already" style="
-                                margin-left: 5%;margin-top: 5%;">Already registered?<a style="color:rgb(141, 25, 25);text-decoration: none;" href="{% url 'account_login' %}"> Click here</a></p>
-                            </div>
-			    		</form>
-			    	</div>
-	    		</div>
-    		</div>
-    	</div>-->
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
@@ -72,16 +16,32 @@
         </div>
 
         <!-- Register Form -->
-        <form>
-            <input type="text" id="firstname" class="fadeIn second" name="firstname" placeholder="First Name">
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+             {% csrf_token %}
+           <input type="text" id="firstname" class="fadeIn second" name="firstname" placeholder="First Name">
             <input type="text" id="secondname" class="fadeIn second" name="secondname" placeholder="Second Name">
             <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username">
-            <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email">
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+            <input type="email" id="email" class="email fadeIn second" name="email" placeholder="Email">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
             <input type="password" id="password_confirmation" class="fadeIn third" name="password_confirmation"
                 placeholder="ConfirmPassword">
+                <!--{{ form.first_name }}
+                {{ form.last_name }}
+                {{ form.username }}
+                {{ form.phone_number }}                
+                {{ form.email }}
+                {{ form.country }}
+                {{ from.city }}
+                {{ form.postcode }}
+                {{ form.address }}
+                {{ form.password }}
+                {{ form.password_confirmation }-->
+                <!--{{ form }}-->
             <input type="submit" class="fadeIn fourth" value="Sign Up">
         </form>
+         <div id="formFooter">
+            <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+        </div>
     </div>
 </div>
 {% endblock %}

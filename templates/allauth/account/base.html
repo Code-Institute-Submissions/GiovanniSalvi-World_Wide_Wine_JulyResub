@@ -3,12 +3,12 @@
 {% block content %}
 
 <div class="row">
-    {% block inner_content %}
     {% csrf_token %}
     <div class="wrapper fadeInDown">
         <div id="formContent">
         </div>
     </div>
+    {% block inner_content %}
     {% endblock %}
 </div>
 
