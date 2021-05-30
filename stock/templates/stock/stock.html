@@ -8,26 +8,33 @@
     <div class="row boxes" style="min-height: 100vh;">
 
         {% for item in item %}
-        
+
         <div class="col-lg-3 col-md-4 col-sm-6 box b1"><a href="{% url 'item_details' item.id %}">
-            <div class="wine-name"><span class="name">{{ item }}</span></div>
-            <div>{% if item.image %}
-                <a>
-                    <img class="image_wine" src="{{ item.image.url }}" alt="{{ item.image }}">
-                </a>
-                {% else %}
-                <a>
-                    <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.image }}">
-                </a>
-                {% endif %}
-            </div>
-            <span class="wine-details">{{ item.country }}</span><span class="price1">{{ item.price }}$</span>
-        </a></div>
-
+                <div class="wine-name"><span class="name">{{ item }}</span></div>
+                <div>{% if item.image %}
+                    <a>
+                        <img class="image_wine" src="{{ item.image.url }}" alt="{{ item.image }}">
+                    </a>
+                    {% else %}
+                    <a>
+                        <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.image }}">
+                    </a>
+                    {% endif %}
+                </div>
+                <span class="wine-details">{{ item.country }}</span><span class="price1">{{ item.price }}$</span>
+            </a></div>
         {% endfor %}
-
     </div>
-
 </div>
+<footer class="footer">
+    <div class="row bg-light about">
+        <table class="footer_table">
+            <th><a style="color:#615353;;text-decoration: none;letter-spacing: 3px;font-size: 20px;"
+                    href="{% url 'about' %}">About</a></th>
+            <th><a style="color:#615353;;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
+                left: 1em;font-size: 20px;" href="{% url 'view_contact' %}">Contact</a></th>
+        </table>
+    </div>
+</footer>
 
 {% endblock %}

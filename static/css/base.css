@@ -45,6 +45,10 @@ button:focus {
     float: right;
     margin-top: 8em;
 }
+.input-group{
+    width: 50%;
+    margin-left: 25%;
+}
 .my-auto{
     height:8.5em;
     text-align: center!important;
@@ -65,7 +69,6 @@ button:focus {
 }
 .form-control{
     border: 1px black solid;
-
 }
 .qty{
     justify-content: center;
@@ -375,12 +378,11 @@ li:hover .navbar_list{
 }
 .contact-text{
     height: min-content;
-    line-height: 2;
     position: relative;
-    left: 17%;
-    top: 14%;
+    left: 25%;
+    top: 10%;
     color: #003977;
-    font-size: x-large;
+    font-size: 35px;
 }
 .container-fluid{
     height:100%;
@@ -435,7 +437,8 @@ li:hover .navbar_list{
     left: -10.5em;
     width: 25em;
     padding: 0;
-}.navbar_list.sparkling{
+}
+.navbar_list.sparkling{
     position: absolute;
     left: -8.5em;
     width: 25em;
@@ -445,19 +448,15 @@ li:hover .navbar_list{
     height:100vh;
 }
 .form-group{
-    margin-bottom: -2rem;
-    width: 75%;
+    margin-bottom: 1rem;
 }
 .text-left {
     text-align: left!important;
 }
-.main-contact-form{
-    height: 20em;
-    padding: 20px 0;
-    margin-left: 10%;
-}
 .contact-form{
     width: 100%;
+    display: flex;
+    justify-content: center;
     border-radius: 5px;
     font-size: large;
 }
@@ -512,8 +511,10 @@ li:hover .navbar_list{
 }
 .contact_container{
     background-color: #7b1f1fb8;
-    height: 32em;border: 0.8px black solid;
-    margin: 10% 22.5%;border-radius: 8px;
+    height: 40em;
+    border: 0.8px black solid;
+    margin: 10% 22.5%;
+    border-radius: 8px;
 }
 .errorlist{
     text-align: center;
