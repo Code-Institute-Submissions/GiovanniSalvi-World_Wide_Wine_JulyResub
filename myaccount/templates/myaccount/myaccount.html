@@ -5,10 +5,13 @@
 {% block content %}
 <div class="row" style="height: 100vh;">
     <div class="col-md-4 order-md-2 mb-4">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">My Account</span>
-            <span class="badge badge-secondary badge-pill"></span>
-        </h4>
+        <h3 class="justify-content-between align-items-center mb-3">
+            <span class="text-muted text-center">My Account</span>
+        </h3>
+        <hr>
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-black rounded-0 text-uppercase float-left">Update Profile</button>
     </div>
 </div>
 

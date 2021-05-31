@@ -15,7 +15,7 @@ class MyAccount(models.Model):
         max_length=50, null=False, blank=True)
     default_city = models.CharField(
         max_length=20, null=False, blank=False, default="")
-    default_postcode = models.CharField(max_length=10, blank=True)
+    default_postcode = models.CharField(max_length=10, blank=True, default="")
     default_address = models.CharField(max_length=60, null=False, blank=False)
 
     def __str__(self):

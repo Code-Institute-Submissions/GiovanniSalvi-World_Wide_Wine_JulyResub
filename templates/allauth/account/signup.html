@@ -16,16 +16,16 @@
         </div>
 
         <!-- Register Form -->
-        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        <form class="signup" id="signup_form" method="POST" action="{% url 'account_signup' %}">
              {% csrf_token %}
-           <!--<input type="text" id="firstname" class="fadeIn second" name="firstname" placeholder="First Name">
+           <input type="text" id="firstname" class="fadeIn second" name="firstname" placeholder="First Name">
             <input type="text" id="secondname" class="fadeIn second" name="secondname" placeholder="Second Name">
             <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username">
             <input type="email" id="email" class="email fadeIn second" name="email" placeholder="Email">
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
             <input type="password" id="password_confirmation" class="fadeIn third" name="password_confirmation"
-                placeholder="ConfirmPassword">-->
-                {{ form.first_name }}
+                placeholder="ConfirmPassword">
+                <!--{{ form.first_name }}
                 {{ form.last_name }}
                 {{ form.username }}
                 {{ form.phone_number }}                
@@ -35,7 +35,7 @@
                 {{ form.postcode }}
                 {{ form.address }}
                 {{ form.password }}
-                {{ form.password_confirmation }}
+                {{ form.password_confirmation }}-->
                 <!--{{ form }}-->
             <input type="submit" class="fadeIn fourth" value="Sign Up">
         </form>
