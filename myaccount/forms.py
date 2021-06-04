@@ -11,9 +11,9 @@ class AccountForm(forms.ModelForm):
 
         super().__init__(*args, **kwargs)
         placeholders = {
-            'default_phone_number': 'Phone Number',
-            'default_city': 'City',
-            'default_postcode': 'Postal Code',
-            'default_address': 'Address',
-            'default_country': 'Country',
+            'default_phone_number':'Phone Number',
+            'default_city':'City',
+            'default_postcode':'Postal Code',
+            'default_address':'Address',
+            'default_country':'Country',
         }

@@ -12,7 +12,6 @@ from stock.models import Item
 
 class Checkout(models.Model):
     order_number = models.CharField(max_length=50, null=False, editable=False)
-    print("order:", order_number)
     my_account = models.ForeignKey(
         MyAccount, on_delete=models.SET_NULL, null=True, blank=True)
     first_name = models.CharField(max_length=50, null=False, blank=False)

@@ -25,18 +25,19 @@
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
             <input type="password" id="password_confirmation" class="fadeIn third" name="password_confirmation"
                 placeholder="ConfirmPassword">-->
-                {{ form.first_name }}
-                {{ form.last_name }}
+                <!--{{ checkout.form.first_name }}
+                {{ checkout.form.last_name }}
                 {{ form.username }}
-                {{ form.phone_number }}                
+                {{ checkout.form.phone_number }}                
                 {{ form.email }}
                 {{ form.country }}
                 {{ from.city }}
                 {{ form.postcode }}
                 {{ form.address }}
                 {{ form.password }}
-                {{ form.password_confirmation }}
-                <!--{{ form }}-->
+                {{ form.password_confirmation }}-->
+                {{ form }}
+                
             <input type="submit" class="fadeIn fourth" value="Sign Up">
         </form>
          <div id="formFooter">
@@ -44,4 +45,33 @@
         </div>
     </div>
 </div>
+<style>
+    label{
+        display:none;
+    }
+    #id_email{
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    }
+    #id_email:focus{
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+    }
+</style>
 {% endblock %}

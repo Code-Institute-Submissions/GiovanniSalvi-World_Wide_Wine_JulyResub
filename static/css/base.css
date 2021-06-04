@@ -289,6 +289,13 @@ li:hover .navbar_list{
     left: 13%;
     border-radius: 16em;
 }
+.logo-about{
+    width: 25em;
+    float: right;
+    position: relative;
+    bottom: 35%;
+    right: 10%;
+}
 .b1{
     background-color:  #e2d1d26e;;
     justify-content: center;
