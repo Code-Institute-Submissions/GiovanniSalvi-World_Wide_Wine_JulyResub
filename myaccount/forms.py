@@ -13,7 +13,7 @@ class AccountForm(forms.ModelForm):
         placeholders = {
             'default_phone_number':'Phone Number',
             'default_city':'City',
-            'default_postcode':'Postal Code',
+            'default_postcode':'Post Code',
             'default_address':'Address',
             'default_country':'Country',
         }

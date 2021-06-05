@@ -17,27 +17,8 @@
 
         <!-- Register Form -->
         <form class="signup" id="signup_form" method="POST" action="{% url 'account_signup' %}">
-             {% csrf_token %}
-           <!--<input type="text" id="firstname" class="fadeIn second" name="firstname" placeholder="First Name">
-            <input type="text" id="secondname" class="fadeIn second" name="secondname" placeholder="Second Name">
-            <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username">
-            <input type="email" id="email" class="email fadeIn second" name="email" placeholder="Email">
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
-            <input type="password" id="password_confirmation" class="fadeIn third" name="password_confirmation"
-                placeholder="ConfirmPassword">-->
-                <!--{{ checkout.form.first_name }}
-                {{ checkout.form.last_name }}
-                {{ form.username }}
-                {{ checkout.form.phone_number }}                
-                {{ form.email }}
-                {{ form.country }}
-                {{ from.city }}
-                {{ form.postcode }}
-                {{ form.address }}
-                {{ form.password }}
-                {{ form.password_confirmation }}-->
-                {{ form }}
-                
+            {% csrf_token %}
+            {{ form }}             
             <input type="submit" class="fadeIn fourth" value="Sign Up">
         </form>
          <div id="formFooter">
@@ -70,6 +51,14 @@
     border-radius: 5px 5px 5px 5px;
     }
     #id_email:focus{
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+    }
+    #id_username{
+        background-color: #f6f6f6;
+        border-bottom: none;
+    }
+    #id_username:focus{
     background-color: #fff;
     border-bottom: 2px solid #5fbae9;
     }

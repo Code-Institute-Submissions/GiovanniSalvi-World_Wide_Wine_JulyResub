@@ -67,7 +67,7 @@ class Checkout_items(models.Model):
         editable=False)
 
     def save(self, *args, **kwargs):
-        self.item_total = self.item.price * self.quantity
+        self.items_total = self.item.price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):
