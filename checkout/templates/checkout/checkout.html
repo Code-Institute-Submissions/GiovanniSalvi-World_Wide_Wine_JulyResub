@@ -2,6 +2,10 @@
 {% load static %}
 {% load cart_tools %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="row checkout">
     <div class="col-md-4 order-md-2 mb-4">
@@ -103,24 +107,13 @@
                     <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
                     <label class="custom-control-label" for="debit">Debit card</label>
                 </div>
-                <div class="custom-control custom-radio">
-                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                    <label class="custom-control-label" for="paypal">PayPal</label>
-                </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label style="margin-left:0!important;" for="cc-name">Name on card</label>
-                    <input style="width: 100%!important;" type="text" class="form-control" id="cc-name" placeholder=""
-                        required>
-                    <div class="invalid-feedback">
-                        Name on card is required
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
                     <label style="margin-left:0!important;" for="cc-number">Credit card number</label>
-                    <input style="width: 100%!important;" type="text" class="form-control" id="cc-number" placeholder=""
+                    <input style="width: 100%!important;" type="text" class="form-control" id="card_payment" placeholder=""
                         required>
+                    <div class="text-danger" id="card-errors" role="alert"></div>
                     <div class="invalid-feedback">
                         Credit card number is required
                     </div>
@@ -145,8 +138,15 @@
                 </div>
             </div>
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Pay</button>
+            <button id="checkout-button" class="btn btn-primary btn-lg btn-block" type="submit">Pay</button>
         </form>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+ {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe.js' %}"></script>
 {% endblock %}
