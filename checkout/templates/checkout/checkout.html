@@ -47,7 +47,7 @@
             {% csrf_token %}
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label for="firstName">First name</label>{{ checkout_form.phone_number }}
+                    <label for="firstName">First name</label>{{ checkout_form.first_name }}
                     <!--<input style="width: 100%!important; float: none!important;" type="text" class="form-control"
                         id="firstName" placeholder="" value="" required >--->
                     <div class="invalid-feedback">
@@ -97,43 +97,14 @@
             <hr class="mb-4">
 
             <h4 class="mb-3">Payment</h4>
-
-            <div class="d-block my-3">
-                <div class="custom-control custom-radio">
-                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                    <label class="custom-control-label" for="credit">Credit card</label>
-                </div>
-                <div class="custom-control custom-radio">
-                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                    <label class="custom-control-label" for="debit">Debit card</label>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label style="margin-left:0!important;" for="cc-number">Credit card number</label>
-                    <input style="width: 100%!important;" type="text" class="form-control" id="card_payment" placeholder=""
-                        required>
+                    <div style="width: 100%!important;" type="text" class="form-control" id="card-payment" placeholder=""
+                        required></div>
                     <div class="text-danger" id="card-errors" role="alert"></div>
                     <div class="invalid-feedback">
                         Credit card number is required
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 mb-3">
-                    <label style="margin-left:0!important;" for="cc-expiration">Expiration</label>
-                    <input style="width: 100%!important;" type="text" class="form-control" id="cc-expiration"
-                        placeholder="" required>
-                    <div class="invalid-feedback">
-                        Expiration date required
-                    </div>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label style="margin-left:0!important;" for="cc-cvv">CVV</label>
-                    <input style="width: 100%!important;" type="text" class="form-control" id="cc-cvv" placeholder=""
-                        required>
-                    <div class="invalid-feedback">
-                        Security code required
                     </div>
                 </div>
             </div>
