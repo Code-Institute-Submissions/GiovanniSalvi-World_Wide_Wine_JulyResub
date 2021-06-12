@@ -37,7 +37,7 @@ class Checkout(models.Model):
     def update_total(self):
         self.total = self.checkoutitems.aggregate(
             Sum('items_total'))[
-                'items_total__sum']
+                'items_total__sum'] or 0
         if self.total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery = self.total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:

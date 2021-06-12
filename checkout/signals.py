@@ -12,7 +12,5 @@ def update_save_checkout(sender, instance, created, **kwargs):
 
 @receiver(post_delete, sender=Checkout_items)
 def delete_save_checkout(sender, instance, **kwargs):
-    """
-    Update order total on lineitem delete
-    """
+    
     instance.checkout.update_total()

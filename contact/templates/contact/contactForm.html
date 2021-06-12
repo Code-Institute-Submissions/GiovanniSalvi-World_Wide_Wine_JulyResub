@@ -4,8 +4,8 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row contact_container">
-        <h3 class="contact-text">Drop us a message</h3>
-        <div class="contact-form">
+        <h3 class="contact-text">Join to our Newsletter</h3>
+        <div class="contact-form" style="display:block!important">
             <form id="contact-form" class="text-left" method="POST" action="">
                 {% csrf_token %}
                 <div class="main-contact-form">
@@ -18,11 +18,6 @@
                         <label for="lg_email" class="sr-only">Your email*</label>
                         <input type="email" class="email contact-form" id="lg_email" name="lg_email" placeholder="email"
                             required>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="contact-form" rows="4" cols="47" name="comment" form="contact-form">
-                        Enter text here...</textarea>
-
                     </div>
                     <input value="submit" class="btn btn-info" type="Submit" style="margin:0;">
 
