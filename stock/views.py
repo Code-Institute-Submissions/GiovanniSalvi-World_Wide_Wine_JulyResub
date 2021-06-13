@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.db.models import Q
 from django.contrib import messages
 from .models import Item, Stock, Country
 from django.shortcuts import get_object_or_404
+from .forms import StockForm
 
 # Create your views here.
 
@@ -60,3 +61,21 @@ def item_details(request, item_id):
     }
 
     return render(request, 'stock/item_details.html', context)
+
+
+def add_item(request):
+    if request.method == 'POST':
+        form = StockForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('add_item'))
+    else:
+        form = StockForm()
+
+    template = 'stock/add_item.html'
+    context = {
+        'form' : form,
+    }
+
+    return render(request, template, context)
+         
