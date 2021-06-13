@@ -34,12 +34,6 @@
                 </div>
                 <span></span>
             </li>
-            <li class="list-group-item d-flex justify-content-between bg-light">
-                <div>
-                    <h6 class="my-0">Order Number.</h6>
-                    <small class="text-muted">{{ item.order_number }}</small>
-                </div>
-            </li>
             <li class="list-group-item d-flex justify-content-between">
                 <span>SubTotal</span>
                 <strong class="text-success">${{ grand_total | floatformat:2 }}</strong>
@@ -111,7 +105,7 @@
 							{% else %}
 								<label class="form-check-label" for="id-save-info">
                                     <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to purchase this product.
                                 </label>
 							{% endif %}
                         </div>
@@ -129,9 +123,11 @@
                     </div>
                 </div>
             </div>
+            {% if request.user.is_authenticated %}
             <hr class="mb-4">
             <button id="checkout-button" class="btn btn-primary btn-lg btn-block" type="submit">Pay</button>
             <input type="hidden" value="{{ client_secret }}" name="client_secret">
+            {% endif %}
         </form>
     </div>
 </div>

@@ -51,7 +51,16 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             checkout.stripe_pid = pid
             checkout.original_cart = json.dumps(cart)
+
+
+            # tutor code - problem was retrieving the cart
+            bag = cart_contents(request)
+            checkout.total = bag['total']
+            checkout.delivery = bag['delivery']
+            checkout.grand_total = bag['grand_total']
             checkout.save()
+            #tutor code
+
             for item_id, item_data in cart.items():
                 try:
                     item = get_object_or_404(Item, pk=item_id)
@@ -60,7 +69,8 @@ def checkout(request):
                             checkout=checkout,
                             item=item,
                             quantity=item_data
-                        )                   
+                        )
+                                                               
                         cartList.save()
                     else:
                         for quantity in item_data.items():

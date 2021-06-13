@@ -67,8 +67,8 @@ def add_item(request):
     if request.method == 'POST':
         form = StockForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect(reverse('add_item'))
+            item = form.save()
+            return redirect(reverse('item_details', args=[item.id]))
     else:
         form = StockForm()
 
@@ -78,4 +78,30 @@ def add_item(request):
     }
 
     return render(request, template, context)
+
+
+def edit_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    if request.method == 'POST':
+        form = StockForm(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('item_details', args=[item.id]))
+    else:
+        form = StockForm(instance=item)
+
+    template = 'stock/edit_item.html'
+    context = {
+        'form': form,
+        'item': item,
+    }
+
+    return render(request, template, context)
+
+
+def delete_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    item.delete()
+
+    return redirect(reverse('stock'))
          

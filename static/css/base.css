@@ -130,7 +130,6 @@ button:focus {
     text-decoration: none;
 }
 .about{
-    position: absolute;
     width: 100vw;
     margin-left: 0;
 }
@@ -290,11 +289,7 @@ li:hover .navbar_list{
     border-radius: 16em;
 }
 .logo-about{
-    width: 25em;
     float: right;
-    position: relative;
-    bottom: 35%;
-    right: 10%;
 }
 .b1{
     background-color:  #e2d1d26e;;
@@ -386,7 +381,7 @@ li:hover .navbar_list{
 .contact-text{
     height: min-content;
     position: relative;
-    left: 25%;
+    left: 8%;
     top: 10%;
     color: #003977;
     font-size: 35px;

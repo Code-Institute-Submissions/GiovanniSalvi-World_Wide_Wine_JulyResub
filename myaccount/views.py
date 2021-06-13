@@ -12,12 +12,12 @@ def myaccount(request):
     myaccount = get_object_or_404(MyAccount, user=request.user)
     
     form = AccountForm(instance=myaccount)
-    orders = myaccount.orders.all()
+    checkouts = myaccount.checkouts.all()
 
     template = 'myaccount/myaccount.html'
     context = {
         'form': form,
-        'orders': orders
+        'checkouts': checkouts
     }
 
     return render(request, template, context)
