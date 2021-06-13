@@ -43,24 +43,32 @@
             {% csrf_token %}
             <div class="form-row">
                 <div class="col-12" style="text-align: center;">
-                        <div class="qty">
-                            <p class="mt-3"><strong>Quantity:</strong></p>
-                            <input class="qty_input" type="number" name="quantity" value="1" min="1"
-                                max="99" data-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
-                        </div>
+                    <div class="qty">
+                        <p class="mt-3"><strong>Quantity:</strong></p>
+                        <input class="qty_input" type="number" name="quantity" value="1" min="1" max="99"
+                            data-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
+                    </div>
+                    {% if request.user.is_superuser %}
+                    <div class="edit text-center">
+                        <a href="{% url 'edit_item' item.id %}">Edit</a> |
+                        <a class="text-danger" href="{% url 'delete_item' item.id %}">Delete</a>
+                    </div>
+                    {% endif %}
                 </div>
+
                 <div class="col-12" style="text-align:center">
-                    <a href="{% url 'stock' %}" style="margin-top:0em!important;" class="btn btn-outline-black rounded-0 mt-5">
+                    <a href="{% url 'stock' %}" style="margin-top:0em!important;"
+                        class="btn btn-outline-black rounded-0 mt-5">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
                         <span class="text-uppercase">Keep Shopping</span>
                     </a>
-                    <input style="box-shadow: none!important;" type="submit" class="add_bag btn btn-black rounded-0 text-uppercase mt-5"
-                        value="Add to Cart">
-                   </div>
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                   </div>
+                    <input style="box-shadow: none!important;" type="submit"
+                        class="add_bag btn btn-black rounded-0 text-uppercase mt-5" value="Add to Cart">
+                </div>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </div>
         </form>
     </div>
 </div>

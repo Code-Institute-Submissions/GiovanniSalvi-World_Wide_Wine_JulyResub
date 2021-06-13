@@ -155,7 +155,7 @@ button:focus {
 }
 .box{
     display:grid;
-    border:3px solid #6b0202;
+    border:1.5px solid #6b0202;
     height:30em;
     max-width:20em;
     border-radius: 15px;
@@ -284,7 +284,7 @@ li:hover .navbar_list{
 .image_wine{
     max-height: 50%;
     position: absolute;
-    bottom: 25%;
+    bottom: 22%;
     left: 13%;
     border-radius: 16em;
 }
@@ -1310,5 +1310,47 @@ input[type=text], input[type=password]:placeholder {
     left: 15%;
   }
 }
+@media screen and (max-width: 600px) {
+table#cart tbody td .form-control{
+		width:20%;
+		display: inline !important;
+}
+.actions .btn{
+		width:36%;
+		margin:1.5em 0;
+}
+	
+.actions .btn-info{
+		float:left;
+}
+.actions .btn-danger{
+        float:right;
+        margin-top: -2.5px!important;
+        width: 36%!important;
+}
 
+table#cart thead { 
+    display: none; 
+}
+table#cart tbody td { 
+    display: block; 
+    padding: .6rem; 
+    min-width:320px;
+    text-align: start!important;
+}
+table#cart tbody td:before {
+        content: attr(data-th); 
+        font-weight: bold;
+        display: inline-block;
+         width: 8rem;
+}
+table#cart tfoot td{
+    display:block; 
+}
+table#cart tfoot td .btn{
+    display:block;
+    margin-left: 0!important;
+}
+	
+}
 
