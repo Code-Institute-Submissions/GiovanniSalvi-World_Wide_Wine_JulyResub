@@ -88,6 +88,8 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 * [Bootstrap.com](https://getbootstrap.com/)
 
+* [jQuery](https://jquery.com/)
+
 ---
 
 ## Testing
