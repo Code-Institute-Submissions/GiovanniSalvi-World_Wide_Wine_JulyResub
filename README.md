@@ -8,7 +8,7 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 ### 
 
-### The nav menu, home-button and accounts icons  are repeated in all site's pages to get app style consistent.
+### The nav menu, Logo-button and accounts icons  are repeated in all site's pages to get app style consistent.
 
 
 ---
