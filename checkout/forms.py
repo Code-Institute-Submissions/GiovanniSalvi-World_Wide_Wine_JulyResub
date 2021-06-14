@@ -15,3 +15,6 @@ class CheckoutForm(forms.ModelForm):
             'postcode',
             'country',
         )
+
+        email = forms.EmailField(required=True, max_length=100)
+        

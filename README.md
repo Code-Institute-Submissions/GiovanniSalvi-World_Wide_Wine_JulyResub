@@ -4,7 +4,7 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 ## I realized this project as part of the Full Stack Frameworks with Django module that I am attending at "code academy" training course.
 
-### The App 
+### WorldWideWine is an example of a wine eCommerce app.
 
 ### 
 
