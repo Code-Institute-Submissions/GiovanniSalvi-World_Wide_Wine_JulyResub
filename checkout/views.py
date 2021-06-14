@@ -51,15 +51,11 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             checkout.stripe_pid = pid
             checkout.original_cart = json.dumps(cart)
-
-
-            # tutor code - problem was retrieving the cart
             bag = cart_contents(request)
             checkout.total = bag['total']
             checkout.delivery = bag['delivery']
             checkout.grand_total = bag['grand_total']
             checkout.save()
-            #tutor code
 
             for item_id, item_data in cart.items():
                 try:
@@ -138,4 +134,5 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
 

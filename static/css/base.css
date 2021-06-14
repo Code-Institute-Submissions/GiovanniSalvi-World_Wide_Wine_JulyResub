@@ -1211,7 +1211,8 @@ account-field {
 @media only screen and (max-width: 480px) {
 	.account {
 		outline: none!important;
-		position: relative;
+        position: relative;
+        right: 2%;
 	}
 }
 
@@ -1564,7 +1565,8 @@ account-field {
 
 @media only screen and (min-width: 570px) and (max-width: 880px) {
 	.image_wine {
-		bottom: 8%;
+		bottom: 10%;
+        left: 12%;
 	}
 }
 

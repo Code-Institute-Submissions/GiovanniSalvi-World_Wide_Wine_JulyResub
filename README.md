@@ -18,17 +18,21 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 * [Homepage]()
 
-* []()
+* [Stock]()
 
-* []()
+* [Checkout]()
 
-* []()
+* [Cart]()
 
-* []()
+* [Register]()
 
-* []()
+* [Login]()
 
-* []()
+* [Checkout Success]()
+
+* [About]()
+
+* [Newsletter]()
 
 ---
 
@@ -36,35 +40,35 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 ### Existing features
 
-* Feature1: 
+* Feature1: Registration Form
 
-* Feature2: 
+* Feature2: Login Form
 
-* Feature3:
+* Feature3: Search tab, Navbar
 
-* Feature4: 
+* Feature4: Cart
 
-* Feature5: 
+* Feature5: Checkout
 
-* Feature6: 
+* Feature6: Stripe Payments
 
-* Feature7: 
+* Feature7: List of products
 
-* Feature8: 
+* Feature8: Reset Password
 
-* Feature9: 
+* Feature9: Add,Edit and Delete Products
 
 ### Features left to implement
 
-* 
+* Update/Remove Account
 
-* 
+* Toast
 
-* 
+* Webhooks
 
-* 
+* Order History
 
-* 
+* Newsletter
 
 ---
 
@@ -90,27 +94,27 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 ### In order to navigate easily through the site:
 
-* The homepage provides an header with the cart and account icons,a navbar to navigate through the app.The main section provides an hero image, a brief decription of the products features on sale and a link to all wines in stock.
+* The homepage provides an header with the [cart and account icons](https://user-images.githubusercontent.com/61980577/121951358-bd303e80-cd52-11eb-9e0a-f30f7100595b.png),a [navbar](https://user-images.githubusercontent.com/61980577/121951355-bc97a800-cd52-11eb-9e10-1b8734ae9af7.png) to navigate through the app.The main section is displayed an hero image, a brief decription of the products features on sale and a link to all wines in stock.
 
-* Clicking on 'clickhere' button in the homepage leads to the full stock of products on sale in the site(stock page).The products are displayed in three rows and are wrapped in a card container.The name ,an image, price and the country where wine is produced are displayed inside the card.
+* Account icon dropdown menu provides a [registration](https://user-images.githubusercontent.com/61980577/121951375-c3261f80-cd52-11eb-9034-aec5f79ca575.png) and a [login](https://user-images.githubusercontent.com/61980577/121951368-c1f4f280-cd52-11eb-9e55-44ec369b29f4.png) if user is already signed up.
 
-* Clicking on wine's name inside the card leads to a page containing wine's details and a brief description of the product.For site administrator is possible to update the stock deleting or editing the selected product clicking on 'delete' or 'edit' button just below wine's details.
+* Clicking on ['clickhere'](https://user-images.githubusercontent.com/61980577/121951401-c9b49700-cd52-11eb-93bb-522a988948b5.png) button in the homepage leads to the whole stock of products on sale in the site(stock page).The products are displayed in three rows and are wrapped in a [card container](https://user-images.githubusercontent.com/61980577/121951400-c91c0080-cd52-11eb-8058-f8db0e611d5a.png).Name, image, price and the country where wine is produced are displayed inside the card.
 
-* The two button at the bottom of products details page are 'keep shopping' button to redirect users to the stock page instead 'checkout' button leads the users to the checkout form in order to complete the orders checkout.
+* Clicking on wine's name inside the card leads to a page containing [wine's details](https://user-images.githubusercontent.com/61980577/121951399-c8836a00-cd52-11eb-8337-8c2d12afe3b6.png) and a brief description of the product.For site administrator is possible to update the stock deleting or editing the selected product clicking on ['delete'](https://user-images.githubusercontent.com/61980577/121951396-c8836a00-cd52-11eb-8769-536086becc01.png) or ['edit'](https://user-images.githubusercontent.com/61980577/121951395-c8836a00-cd52-11eb-8c33-6c8301f6e5b2.png) buttons just below wine's details.
 
-* Checkout page provides a form to fill in order to complete the purchase.Field required are full-name, an email address,country,city,phone number and a postal code for the delivery.Below the form, stripe payments details inputs such card number,ccv , card expiration date and a zip code are displayed.Only authenticated users are allowed to buy products otherwise 'pay' button is not rendered on the page.Clicking 'pay' button if transaction is successful users get redirect to 'checkout_successful' page which include a summary of the completed order.
+* The two button at the bottom of products details page are ['keep shopping'](https://user-images.githubusercontent.com/61980577/121951395-c8836a00-cd52-11eb-8c33-6c8301f6e5b2.png) button to redirect users to the stock page and [add to cart](https://user-images.githubusercontent.com/61980577/121951394-c7ead380-cd52-11eb-87fe-3ece4b5806a5.png) button in order to add the products in the bag.Clicking on the cart icon  with the amount of the order updated, shown below the icon[0.00$](https://user-images.githubusercontent.com/61980577/121951382-c6211000-cd52-11eb-87fd-ecd6d2c4ed01.png), leads to the [cart page](https://user-images.githubusercontent.com/61980577/121951392-c7ead380-cd52-11eb-9465-efa61b1cd6c5.png).['Checkout'](https://user-images.githubusercontent.com/61980577/121951391-c7523d00-cd52-11eb-90e9-da23d68d1e76.png) button in the cart page allow the users to complete the checkout leading to a  form to fill with the required users details.
 
-* Orders details with product's name, quantity,price, total,delivery cost if included and subtotal are displayed next to checkout form in the same page.
+* Checkout page provides a [form](https://user-images.githubusercontent.com/61980577/121951389-c7523d00-cd52-11eb-8f86-bc4e22a657d8.png) to fill in order to complete the purchase.Field required are full-name, an email address,country,city,phone number and a postal code for the delivery.Below the form, stripe payment details [inputs](https://user-images.githubusercontent.com/61980577/121951387-c7523d00-cd52-11eb-90cc-3a2b2e78f3b8.png) such card number,ccv , card expiration date and a zip code are displayed.Only authenticated users are allowed to buy products otherwise 'pay' button is not rendered on the page.Clicking ['pay'](https://user-images.githubusercontent.com/61980577/121951386-c6b9a680-cd52-11eb-914d-62f0a06b3f8c.png) button if transaction is successful users get redirect to ['checkout_successful'](https://user-images.githubusercontent.com/61980577/121951385-c6b9a680-cd52-11eb-81ac-1324175f8e5b.png) page which include a summary of the completed order.
 
 * A search tab in the homepage allows users to find any product in stock, a navbar allows user to an advanced searching of products in stock which includes types of wines(white,red,rose'),champagne(blanc de blancs, blac de noirs,brut) and countries(italy,france,world).
 
-* The account icon provides a dropdown menu including register and login link.When user is authenticated provides 'myaccount' link leads to the users personal accounts(feature left to implement) or logout link.If user has staff status(administrator)in the dropdown menu is possible to log into a form to add new products in the stock filling all required fields.
+* The account icon provides a dropdown menu including register and login link.When user is authenticated provides ['myaccount'](https://user-images.githubusercontent.com/61980577/121951384-c6b9a680-cd52-11eb-85a8-7ff2cbf35e4f.png)link leads to the users personal accounts and [logout](https://user-images.githubusercontent.com/61980577/121951383-c6211000-cd52-11eb-8652-66e37bac6a17.png) button.If user has staff status(administrator)in the dropdown menu is possible to log into a form to add new products in the stock filling all required fields(feature left to implement).
 
-* Bag icon in the homepage top right leads to the 'cart' which provides all selected products that users have added to it.The name,sku,price,quantity and total cost of the products are displayed inside a rectangular box.It is possible to update the quantity using 'edit' button or remove the product from the cart using 'remove' button.
+* Bag icon in the homepage top right leads to the 'cart' which provides all selected products that users have added to it.The name,sku,price,quantity and total cost of the products are displayed inside a rectangular box. It is possible to update the quantity using 'edit' button or remove the product from the cart using 'delete' button.
 
-* The footer provide two links: 'about' that leads to a brief description of the hystory of this app and 'newsletter!'that leads to a form to fill in order to join to the app newsletter(feature left to implement)
+* The [footer](https://user-images.githubusercontent.com/61980577/121951381-c6211000-cd52-11eb-99c3-f67df5ae6377.png) provide two links: ['about'](https://user-images.githubusercontent.com/61980577/121951378-c4efe300-cd52-11eb-887f-430e97bda08c.png) that leads to a brief description of the hystory of this app and ['newsletter!](https://user-images.githubusercontent.com/61980577/121951376-c4574c80-cd52-11eb-8a2d-3cc4b062dc2c.png)'that leads to a form to fill in order to join to the app newsletter(feature left to implement)
 
-* The text-name of the app 'worldwidewine' in the homepage top left is also a link which redirects users to the hompage from every pages of the site.
+* The text-name of the app ['worldwidewine'](https://user-images.githubusercontent.com/61980577/121952884-bacee400-cd54-11eb-8942-5e9e0bcd5cac.png) in the homepage top left is also a link which redirects users to the hompage from every pages of the site.
 
 ### The project has been validated and beautified using:
 
@@ -147,7 +151,7 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 * CSS: [https://webformatter.com/](https://webformatter.com/)
 
-* JAVASCRIPT: [https://jshint.com/]()
+* JAVASCRIPT: [https://jshint.com/](https://jshint.com/)
 
 * SCRIPT.JS :<img width="1248"  src="https://user-images.githubusercontent.com/61980577/121937694-df21c500-cd42-11eb-8d63-e85f5c376157.jpg">
 * STRIPE.JS :<img width="1248" src="https://user-images.githubusercontent.com/61980577/121937840-05476500-cd43-11eb-9de3-a03fa6883a2c.png">
@@ -157,11 +161,9 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 * PYTHON:  [http://pep8online.com/](http://pep8online.com)
 
 
-
-
 ### The quality of the website was measured using Google Lighthouse:
 
-* Chrome lighthouse Tool: <img width="1272" alt="Google lighthouse" src="">
+* Chrome lighthouse Tool: <img width="1272" alt="Google lighthouse" src="https://user-images.githubusercontent.com/61980577/121942775-c3212200-cd48-11eb-954b-4466b21c16b9.png">
 
 ---
 
@@ -285,16 +287,36 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
     [fontawesome.com](https://fontawesome.com/v4.7.0/icons/)
 
-
 ### Image
 
-* Hero Image provide from:
+* Background Images:
 
-    [Hero Image](https://user-images.githubusercontent.com/61980577/121937363-86eac300-cd42-11eb-8efc-08e4b10b1cd8.jpeg)
+    [Hero Image](https://user-images.githubusercontent.com/61980577/121937363-86eac300-cd42-11eb-8efc-08e4b10b1cd8.jpeg) 
 
     [About Image](https://user-images.githubusercontent.com/61980577/121937365-881bf000-cd42-11eb-9b16-17cb2a365007.jpeg)
 
+* Wines Images:
+    
+    [1](https://user-images.githubusercontent.com/61980577/121943216-43e01e00-cd49-11eb-9070-a5f4c74403af.jpeg)
+    [2](https://user-images.githubusercontent.com/61980577/121944532-a980da00-cd4a-11eb-8470-f6387d063d84.jpeg)
+    [3](https://user-images.githubusercontent.com/61980577/121944537-aab20700-cd4a-11eb-8896-178bed32eae3.jpeg)
+    [4](https://user-images.githubusercontent.com/61980577/121944540-ac7bca80-cd4a-11eb-9031-11ff5077596f.jpeg)
+    [5](https://user-images.githubusercontent.com/61980577/121944543-adacf780-cd4a-11eb-98e2-d6c0beefceae.jpeg)
+    [6](https://user-images.githubusercontent.com/61980577/121944545-adacf780-cd4a-11eb-9094-80e607440d52.jpeg)
+    [7](https://user-images.githubusercontent.com/61980577/121944550-af76bb00-cd4a-11eb-89c8-bdab7267bd4e.jpeg)
+    [8](https://user-images.githubusercontent.com/61980577/121944551-b00f5180-cd4a-11eb-8d48-6469c95064a3.jpeg)
+    [9](https://user-images.githubusercontent.com/61980577/121944555-b0a7e800-cd4a-11eb-9e63-d9e21aedc268.jpeg)
+    [10](https://user-images.githubusercontent.com/61980577/121944562-b3a2d880-cd4a-11eb-8eaa-bc431eb8b9b3.jpeg)
+    [11](https://user-images.githubusercontent.com/61980577/121944565-b3a2d880-cd4a-11eb-9772-f9d6ccd6d907.jpeg)
+    [12](https://user-images.githubusercontent.com/61980577/121944569-b43b6f00-cd4a-11eb-9759-bdd3552f3d00.jpeg)
+    [13](https://user-images.githubusercontent.com/61980577/121944571-b43b6f00-cd4a-11eb-9595-6969db674a45.jpeg)
+    [14](https://user-images.githubusercontent.com/61980577/121944573-b4d40580-cd4a-11eb-86b2-90178fcf6dc3.jpeg)
+    [15](https://user-images.githubusercontent.com/61980577/121944578-b6053280-cd4a-11eb-8ff4-e4cd340c294e.jpeg)
+    [16](https://user-images.githubusercontent.com/61980577/121944579-b69dc900-cd4a-11eb-945d-72017fdc7890.jpeg)
 
+* Cart Image:
+    
+    [cart](https://user-images.githubusercontent.com/61980577/121947127-991e2e80-cd4d-11eb-902a-9c5f65e55435.jpeg)
 ---
 
 ### Bugs 
@@ -308,6 +330,10 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 *  Javascript code for stripe payment was entirely taken from Boutique Ado then update for project's needs.
 
 * I received inspiration for this project from: Boutique Ado
+
+* Wines image, description and price were taken from https://www.tannico.co.uk/
+
+* SKUs (Stock Keeping Units) are generated from https://www.tradegecko.com/free-tools/sku-generator
 
 
 
