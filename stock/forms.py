@@ -13,8 +13,6 @@ class StockForm(forms.ModelForm):
         stock_fields = Stock.objects.all()
         types = [(f.id, f.types) for f in stock_fields]
 
-
-        #self.fields['stock_fields'].choices = types
         
 
         

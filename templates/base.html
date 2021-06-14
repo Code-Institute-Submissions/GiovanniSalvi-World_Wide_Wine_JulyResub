@@ -1,168 +1,153 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
-
-<head>
-    {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
-
-
-    {% block corecss %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% endblock %}
-
-    {% block extra_css %}
-    {% endblock %}
-
-    {% block corejs %}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-    <link rel="script" href="{% static 'js/script.js' %}">
-
-    <!--stripe-->
-
-    <script src="https://js.stripe.com/v3/"></script>
-    {% endblock %}
-
-
-    <title>World Wide Wine</title>
-</head>
-
-<body>
-    <div class="container">
-        <header class="row">
+   <head>
+      {% block meta %}
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      {% endblock %}
+      {% block corecss %}
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      {% endblock %}
+      {% block extra_css %}
+      {% endblock %}
+      {% block corejs %}
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+         crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+         crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+      <link rel="script" href="{% static 'js/script.js' %}">
+      <!--stripe-->
+      <script src="https://js.stripe.com/v3/"></script>
+      {% endblock %}
+      <title>World Wide Wine</title>
+   </head>
+   <body>
+      <div class="container">
+         <header class="row">
             <div class="col bg-light">
-                <div class="col-12 col-md-4 my-auto text-center ">
-                    <a href="{% url 'home' %}" class="nav-link main-logo-link mw-30">
-                        <h2 class="logo-font "> World<strong style="color:rgb(141, 25, 25)"> Wide</strong> Wine</h2>
-                    </a>
-                </div>
-                <div class="col-12 py-lg-0 text-black">
-                    <button style="box-shadow: none!important;" data-target="#navbarToggleExternalContent"
-                        class="btn account" type="button" data-toggle="collapse"
-                        aria-expanded="false"><i class="fa fa-user account-icon" aria-hidden="true"></i>
-                        <div id="navbarToggleExternalContent" class="dropdown menu-list collapse">
-                            {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <a href="{% url 'add_item' %}" class="dropdown-item">Admin</a>
-                            {% endif %}
-                            <a href="{% url 'myaccount' %}" class="dropdown-item">MyAccount</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                            <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
-                            <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
-                            {% endif %}
-                        </div>
-                    </button>
-                    <div class="bag">
-                    <button class="btn cart" type="button"><a style="box-shadow:none!important ;"
-                            href="{% url 'shopping_cart' %}" class=" btn btn-md rounded-0"><i
-                                class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                    </button>
-                        <p class="my-0" style="width: fit-content;">
-                            {% if grand_total %}
-                            ${{ grand_total|floatformat:2 }}
-                            {% else %}
-                            {% if request.user.is_authenticated %}
-                            $0.00
-                            {% endif %}
-                            {% endif %}
-                        </p>
-                    </div>
-                </div>
+               <div class="col-12 col-md-4 my-auto text-center ">
+                  <a href="{% url 'home' %}" class="nav-link main-logo-link mw-30">
+                     <h2 class="logo-font "> World<strong style="color:rgb(141, 25, 25)"> Wide</strong> Wine</h2>
+                  </a>
+               </div>
+               <div class="col-12 py-lg-0 text-black">
+                  <button style="box-shadow: none!important;" data-target="#navbarToggleExternalContent"
+                     class="btn account" type="button" data-toggle="collapse"
+                     aria-expanded="false">
+                     <i class="fa fa-user account-icon" aria-hidden="true"></i>
+                     <div id="navbarToggleExternalContent" class="dropdown menu-list collapse">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a href="{% url 'add_item' %}" class="dropdown-item">Admin</a>
+                        {% endif %}
+                        <a href="{% url 'myaccount' %}" class="dropdown-item">MyAccount</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                        <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                        <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                        {% endif %}
+                     </div>
+                  </button>
+                  <div class="bag">
+                     <button class="btn cart" type="button"><a style="box-shadow:none!important ;"
+                        href="{% url 'shopping_cart' %}" class=" btn btn-md rounded-0"><i
+                        class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                     </button>
+                     <p class="my-0" style="width: fit-content;">
+                        {% if grand_total %}
+                        ${{ grand_total|floatformat:2 }}
+                        {% else %}
+                        {% if request.user.is_authenticated %}
+                        $0.00
+                        {% endif %}
+                        {% endif %}
+                     </p>
+                  </div>
+               </div>
             </div>
             <div class="col-12 my-auto py-lg-0">
-                <form class="form_in_line" method="GET" action="{% url 'stock' %}">
-                    <div class="input-group">
-                        <input style="box-shadow:none!important; border: 1px solid black;" class="form-control ml-sm-3 " type="search"
-                            placeholder="Search" name="q" aria-label="Search">
-                        <div class="input-group-prepend  rounded-0" style="height: fit-content;">
-                            <button class="btn form-control" style="width: inherit;" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-        </div>
-    </header>
-
-    <div style="line-height: 5em;">
-        <div class="row">
-            <nav class="col navbar navbar-expand-lg" style="background-color:#305377;">
-                <div class="container-fluid" style="justify-content: center;">
-                    <li class="dropdown">
+               <form class="form_in_line" method="GET" action="{% url 'stock' %}">
+                  <div class="input-group">
+                     <input style="box-shadow:none!important; border: 1px solid black;" class="form-control ml-sm-3 " type="search"
+                        placeholder="Search" name="q" aria-label="Search">
+                     <div class="input-group-prepend  rounded-0" style="height: fit-content;">
+                        <button class="btn form-control" style="width: inherit;" type="submit">
+                        <span class="icon">
+                        <i class="fas fa-search"></i>
+                        </span>
+                        </button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </header>
+         <div style="line-height: 5em;">
+            <div class="row">
+               <nav class="col navbar navbar-expand-lg" style="background-color:#305377;">
+                  <div class="container-fluid" style="justify-content: center;">
+                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle">Types </a>
                         <div class="hover_menu">
-                            <ul class="dropdown_menu navbar_list types">
-                                <li class="list" style="border:none;height:4em;">
-                                    <a href="{% url 'stock' %}?types=White" class="icon-arrow-right">White</a>
-                                </li>
-                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Red"
-                                        class="icon-arrow-right">Red</a></li>
-                                <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Rose'"
-                                        class="icon-arrow-right">Rose'</a></li>
-                                <li class="divider"></li>
-                            </ul>
+                           <ul class="dropdown_menu navbar_list types">
+                              <li class="list" style="border:none;height:4em;">
+                                 <a href="{% url 'stock' %}?types=White" class="icon-arrow-right">White</a>
+                              </li>
+                              <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Red"
+                                 class="icon-arrow-right">Red</a></li>
+                              <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Rose'"
+                                 class="icon-arrow-right">Rose'</a></li>
+                              <li class="divider"></li>
+                           </ul>
                         </div>
-                    </li>
-                </div>
-                <div class="container-fluid" style="justify-content: center;">
-                    <li class="dropdown">
+                     </li>
+                  </div>
+                  <div class="container-fluid" style="justify-content: center;">
+                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle">Countries</a>
                         <ul class="navbar_list dropdown_menu countries">
-                            <li class="list" style="border:none; height:4em;">
-                                <a href="{% url 'stock' %}?country=World" class="icon-arrow-right">World</a>
-                            </li>
-                            <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=France"
-                                    class="icon-arrow-right">France</a></li>
-                            <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=Italy"
-                                    class="icon-arrow-right">Italy</a></li>
-                            <li class="divider"></li>
+                           <li class="list" style="border:none; height:4em;">
+                              <a href="{% url 'stock' %}?country=World" class="icon-arrow-right">World</a>
+                           </li>
+                           <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=France"
+                              class="icon-arrow-right">France</a></li>
+                           <li class="list" style="height:4em;"><a href="{% url 'stock' %}?country=Italy"
+                              class="icon-arrow-right">Italy</a></li>
+                           <li class="divider"></li>
                         </ul>
-                    </li>
-                </div>
-                <div class="container-fluid" style="justify-content: center;">
-                    <li class="dropdown">
+                     </li>
+                  </div>
+                  <div class="container-fluid" style="justify-content: center;">
+                     <li class="dropdown">
                         <a data-toggle="dropdown" style="color:#ffc107!important"
-                            class="sparkling dropdown-toggle  icon-arrow-right">Champagne</a>
+                           class="sparkling dropdown-toggle  icon-arrow-right">Champagne</a>
                         <ul class="navbar_list dropdown_menu sparkling">
-                            <li class="list" style="border:none; height:4em">
-                                <a href="{% url 'stock' %}?types=BlancdeNoirs" class="icon-arrow-right sparkling">Blanc
-                                    de Noirs</a>
-                            </li>
-                            <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=BlancdeBlancs"
-                                    class="icon-arrow-right sparkling">Blanc de blancs</a></li>
-                            <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Brut"
-                                    class="icon-arrow-right sparkling">Brut</a></li>
-
-                            <li class="divider"></li>
+                           <li class="list" style="border:none; height:4em">
+                              <a href="{% url 'stock' %}?types=BlancdeNoirs" class="icon-arrow-right sparkling">Blanc
+                              de Noirs</a>
+                           </li>
+                           <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=BlancdeBlancs"
+                              class="icon-arrow-right sparkling">Blanc de blancs</a></li>
+                           <li class="list" style="height:4em;"><a href="{% url 'stock' %}?types=Brut"
+                              class="icon-arrow-right sparkling">Brut</a></li>
+                           <li class="divider"></li>
                         </ul>
-                    </li>
-                </div>
-            </nav>
-        </div>
-    </div>
-    </div>
-
-    {% block content %}
-    {% endblock %}
-
-    {% block postloadjs %}
-    {% endblock %}
-</body>
-
+                     </li>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </div>
+      {% block content %}
+      {% endblock %}
+      {% block postloadjs %}
+      {% endblock %}
+   </body>
 </html>

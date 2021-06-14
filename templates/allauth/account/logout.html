@@ -1,27 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
-
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
-
 {% block content %}
-
 <div class="wrapper fadeInDown">
-    <div id="formContent">
-        <div class="fadeIn first">
-            <i class="fa fa-user" aria-hidden="true" id="icon" alt="User Icon"></i>
-        </div>
-
-        <div class="logo">
-            <p>Sign Out</p>
-        </div>
-        <div class="logout-form-1">
-            <form method="POST" action="{% url 'account_logout' %}?next=/stock" id="logout-form" class="text-left">
-                {% csrf_token %}
-                <input type="Submit" name="submit" value="logout" class="signout-button btn btn-info">
-
-            </form>
-       
-        </div>
- {% endblock %}
-
+<div id="formContent">
+<div class="fadeIn first">
+   <i class="fa fa-user" aria-hidden="true" id="icon" alt="User Icon"></i>
+</div>
+<div class="logo">
+   <p>Sign Out</p>
+</div>
+<div class="logout-form-1">
+   <form method="POST" action="{% url 'account_logout' %}?next=/stock" id="logout-form" class="text-left">
+      {% csrf_token %}
+      <input type="Submit" name="submit" value="logout" class="signout-button btn btn-info">
+   </form>
+</div>
+{% endblock %}
