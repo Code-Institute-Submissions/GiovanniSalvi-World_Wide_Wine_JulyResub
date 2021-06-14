@@ -1,39 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
 <div class="container-fluid">
-    <div class="row contact_container">
-        <h3 class="contact-text">Join to our Newsletter</h3>
-        <div class="contact-form" style="display:block!important">
-            <form id="contact-form" class="text-left" method="POST" action="">
-                {% csrf_token %}
-                <div class="main-contact-form">
-
-                    <div class="form-group" style="height:6em">
-                        <label for="lg_name" class="sr-only">Your Name*</label>
-                        <input type="text" class="contact-form" style="width:100%; margin:0;" id="lg_name" name="lg_name" placeholder="name" required>
-                    </div>
-                    <div class="form-group" style="height:6em;">
-                        <label for="lg_email" class="sr-only">Your email*</label>
-                        <input type="email" class="email contact-form" id="lg_email" name="lg_email" placeholder="email"
-                            required>
-                    </div>
-                    <input value="submit" class="btn btn-info" type="Submit" style="margin:0;">
-
-                </div>
-            </form>
-        </div>
-    </div>
+   <div class="row contact_container">
+      <h3 class="contact-text">Join to our Newsletter</h3>
+      <div class="contact-form" style="display:block!important">
+         <form id="contact-form" class="text-left" method="POST" action="">
+            {% csrf_token %}
+            <div class="main-contact-form">
+               <div class="form-group" style="height:6em">
+                  <label for="lg_name" class="sr-only">Your Name*</label>
+                  <input type="text" class="contact-form" style="width:100%; margin:0;" id="lg_name" name="lg_name" placeholder="name" required>
+               </div>
+               <div class="form-group" style="height:6em;">
+                  <label for="lg_email" class="sr-only">Your email*</label>
+                  <input type="email" class="email contact-form" id="lg_email" name="lg_email" placeholder="email"
+                     required>
+               </div>
+               <input value="submit" class="btn btn-info" type="Submit" style="margin:0;">
+            </div>
+         </form>
+      </div>
+   </div>
 </div>
 <footer class="footer">
-    <div class="row bg-light about">
-        <table class="footer_table">
-            <th><a style="color:#615353;;text-decoration: none;letter-spacing: 3px;font-size: 20px;"
-                    href="{% url 'about' %}">About</a></th>
-            <th><a style="color:blue;;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
-                left: 1em;font-size: 20px;" href="{% url 'view_contact' %}">Newsletter!</a></th>
-        </table>
-    </div>
+   <div class="row bg-light about">
+      <table class="footer_table">
+         <th><a style="color:#615353;;text-decoration: none;letter-spacing: 3px;font-size: 20px;"
+            href="{% url 'about' %}">About</a></th>
+         <th><a style="color:blue;;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
+            left: 1em;font-size: 20px;" href="{% url 'view_contact' %}">Newsletter!</a></th>
+      </table>
+   </div>
 </footer>
 {% endblock %}

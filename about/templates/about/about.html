@@ -1,34 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
-
-
 {% block content %}
-
 <div class="container-fluid">
-    <div class="row">
-        <div style="padding:20px;" class="background_image col-lg-12 col-sm-12">
-            <h3 class="flyer" style="margin: 5%;">ABOUT US</h3>
-            <p class="flyer"><img class="logo-about"
-                src="https://us.123rf.com/450wm/alexkava/alexkava1212/alexkava121200005/16752969-vidrio-y-uvas.jpg?ver=6">
-                Providing our customers with a sophisticated alcohol retail shopping experience is the WorldWideWine
-                difference. Our upscale products appeals to a wide variety of shoppers. With top-rated selections in
-                finest wines, white, red and rose' and many different types of champagne form all over the
-                world,WorldWideWine is committed to providing the best merchandise selection at the lowest possible
-                prices.
-            </p>
-        </div>
-    </div>
+   <div class="row">
+      <div style="padding:20px;" class="background_image col-lg-12 col-sm-12">
+         <h3 class="flyer" style="margin: 5%;">ABOUT US</h3>
+         <p class="flyer"><img class="logo-about"
+            src="https://us.123rf.com/450wm/alexkava/alexkava1212/alexkava121200005/16752969-vidrio-y-uvas.jpg?ver=6">
+            Providing our customers with a sophisticated alcohol retail shopping experience is the WorldWideWine
+            difference. Our upscale products appeals to a wide variety of shoppers. With top-rated selections in
+            finest wines, white, red and rose' and many different types of champagne form all over the
+            world,WorldWideWine is committed to providing the best merchandise selection at the lowest possible
+            prices.
+         </p>
+      </div>
+   </div>
 </div>
 </div>
 <footer class="footer">
-    <div class="row bg-light about">
-        <table class="footer_table">
-            <th><a style="color:blue;text-decoration: none;letter-spacing: 3px;font-size: 20px;"
-                    href="{% url 'about' %}">About</a></th>
-            <th><a style="color:#615353;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
-                left: 1em;font-size: 20px;" href="{% url 'view_contact' %}">Newsletter!</a></th>
-        </table>
-    </div>
+   <div class="row bg-light about">
+      <table class="footer_table">
+         <th><a style="color:blue;text-decoration: none;letter-spacing: 3px;font-size: 20px;"
+            href="{% url 'about' %}">About</a></th>
+         <th><a style="color:#615353;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
+            left: 1em;font-size: 20px;" href="{% url 'view_contact' %}">Newsletter!</a></th>
+      </table>
+   </div>
 </footer>
-
 {% endblock %}

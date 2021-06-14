@@ -1,44 +1,43 @@
-{% extends "base.html" %}
+% extends "base.html" %}
 {% load static %}
-
 {% block content %}
 <div style="display:block; flex-wrap: wrap;">
-    <div class="col text-center mb-4">
-        <h4 class="align-items-center mb-3 text-center">Administrator</h4>
-            <h6 class="text-muted">Edit Product</h6>
-    </div>
-    <div class="row">
-            <div class="col-12 col-md-6" style="margin-left: 1em;">
-                <form method="POST" action="{% url 'edit_item' item.id %}" class="form" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form | crispy  }}
-                    <div class="text-center" style="margin: 8%;">
-                        <a class="btn btn-outline-black" href="{% url 'stock' %}">Cancel</a>
-                        <button class="btn btn-black" type="submit">Update</button>
-                    </div>
-                </form>
-            </div>            
-        </div>
+   <div class="col text-center mb-4">
+      <h4 class="align-items-center mb-3 text-center">Administrator</h4>
+      <h6 class="text-muted">Edit Product</h6>
+   </div>
+   <div class="row">
+      <div class="col-12 col-md-6" style="margin-left: 1em;">
+         <form method="POST" action="{% url 'edit_item' item.id %}" class="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy  }}
+            <div class="text-center" style="margin: 8%;">
+               <a class="btn btn-outline-black" href="{% url 'stock' %}">Cancel</a>
+               <button class="btn btn-black" type="submit">Update</button>
+            </div>
+         </form>
+      </div>
+   </div>
 </div>
 <style>
-    .form-control{
-    border: 1px black solid;
-    width: 100%;
-    float: none;
-    margin-bottom: 0;
-}
-    input[type=text]{
-    border: 1px black solid;
-    width: 100%;
-    float: none;
-    margin-bottom: 0;   
-    }
-    .btn-black{
-    color: white;
-    background-color: black;
-    }
-    .btn-outline-black{
-    border: 1px black solid;
-    }
+   .form-control{
+   border: 1px black solid;
+   width: 100%;
+   float: none;
+   margin-bottom: 0;
+   }
+   input[type=text]{
+   border: 1px black solid;
+   width: 100%;
+   float: none;
+   margin-bottom: 0;   
+   }
+   .btn-black{
+   color: white;
+   background-color: black;
+   }
+   .btn-outline-black{
+   border: 1px black solid;
+   }
 </style>
 {% endblock %}

@@ -1,29 +1,24 @@
 {% extends "base.html" %}
 {% load static %}
-
-
 {% block content %}
-
 <div class="container-fluid">
-    <div class="row">
-        <div style="padding:20px;" class="background_image col-lg-12 col-sm-12">
-            <div class="index_image"></div>
-            <div class="index_text">
-                <p class="flyer">A new online store features several premium wines exclusive to the site. Each wine comes with recommended food pairings, tasting notes, and information about the winemaker and regional growing conditions...To uncovered fanstastic Wines <a class="click_here" href="{% url 'stock' %}">Click here!</a></p>
-            </div>
-        </div>
-    </div>
+   <div class="row">
+      <div style="padding:20px;" class="background_image col-lg-12 col-sm-12">
+         <div class="index_image"></div>
+         <div class="index_text">
+            <p class="flyer">A new online store features several premium wines exclusive to the site. Each wine comes with recommended food pairings, tasting notes, and information about the winemaker and regional growing conditions...To uncovered fanstastic Wines <a class="click_here" href="{% url 'stock' %}">Click here!</a></p>
+         </div>
+      </div>
+   </div>
 </div>
 <footer class="footer">
-    <div class="row bg-light about">
-        <table class="footer_table">
-            <th><a id="about" style="color:#615353;;text-decoration: none;letter-spacing: 3px;font-size: 20px;"
-                    href="{% url 'about' %}">About</a></th>
-            <th><a style="color:#615353;;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
-                left: 1em;font-size: 20px;" href="{% url 'view_contact' %}">Newsletter!</a></th>
-        </table>
-    </div>
+   <div class="row bg-light about">
+      <table class="footer_table">
+         <th><a id="about" style="color:#615353;;text-decoration: none;letter-spacing: 3px;font-size: 20px;"
+            href="{% url 'about' %}">About</a></th>
+         <th><a style="color:#615353;;text-decoration: none; letter-spacing: 3px; float:right;position: relative;
+            left: 1em;font-size: 20px;" href="{% url 'view_contact' %}">Newsletter!</a></th>
+      </table>
+   </div>
 </footer>
-
 {% endblock %}
-<!---Pc2B7Kjh--->

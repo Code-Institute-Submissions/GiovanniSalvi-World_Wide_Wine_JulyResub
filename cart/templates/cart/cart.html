@@ -1,81 +1,83 @@
 {% extends "base.html" %}
 {% load static %}
 {% load cart_tools %}
-
 {% block content %}
-
 <div class="container">
-    <div class="card-header">
-        <h4 style="text-align: center;color: black;
-    font-style: oblique;
-    font-family: fantasy;
-    font-size: 2em;
-    font-weight: bold;">Shopping <strong style="color:rgb(141, 25, 25)">Cart</strong></h4>
-    </div>
-    <table id="cart" class="table table-hover table-condensed">
-        {% if cart_list %}
-        <thead>
-            <tr>
-                <th style="width:50%">Product</th>
-                <th style="width:10%">Price</th>
-                <th style="width:8%">Quantity</th>
-                <th style="width:22%" class="text-center">Total</th>
-                <th style="width:10%"></th>
-            </tr>
-        </thead>
-        {% for item in cart_list %}
-        <tbody>
-            <tr>
-                <td data-th="Product">
-                    <div class="row">
-                        <div class="col-sm-10">
-                            <h4 class="nomargin">{{ item.item.name }}</h4>
-                            <p>{{ item.item.sku }}</p>
-                        </div>
-                    </div>
-                </td>
-                <td data-th="Price">${{ item.item.price }}</td>
-                <form class="update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
-                    {% csrf_token %}
-                    <td data-th="Quantity">
-                        <input type="number" class="form-control text-center" name="quantity"
-                            value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="1">
-                    </td>
-                    <td data-th="Subtotal" class="text-center">{{ item.item.price | calc_subtotal:item.quantity }}</td>
-                    <td class="actions" data-th="">{{ item.item.quantity }}<button class="btn btn-info btn-sm"><i
-                                class="fa fa-refresh"></i></button>
-                </form>
-                <form class="remove-form" method="POST" action="{% url 'remove_cart' item.item_id %}">
-                    {% csrf_token %}
-                    <button style="margin-top: 5px; width: 35px;" data-item_id="{{ item.item_id }}"
-                        class="btn btn-danger btn-sm"><a class="remove" id="remove_{{ item.item_id }}"></a><i
-                            class="fa fa-trash-o"></i></button>
-                    </td>
-                </form>
-            </tr>
-        </tbody>
-        {% endfor %}
-        <tfoot>
-            <tr>
-                <td><a href="{% url 'stock' %}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue
-                        Shopping</a></td>
-                <td colspan="2" class="hidden-xs"></td>
-
-                <td><a href="{% url 'checkout' %}" style="margin-left: 8em;" class="btn btn-success btn-block">Checkout
-                        <i class="fa fa-angle-right"></i></a></td>
-            </tr>
-        </tfoot>
-        {% else %}
-        <div class="card-body card">
-            <div class="col-sm-12 empty-cart-cls text-center"><img style="max-height: 5em; margin-top: 10%;"
-                    src="/media/carts.jpeg">
-                <h3><strong>Your Cart is empty</strong></h3>
-                <h4>Add Something</h4> <a href="{% url 'stock' %}" class="" data-abc="true"><i
-                        class="arrow left"></i>continue
-                    shopping</a>
-            </div>
-        </div>
-        {% endif %}
+   <div class="card-header">
+      <h4 style="text-align: center;color: black;
+         font-style: oblique;
+         font-family: fantasy;
+         font-size: 2em;
+         font-weight: bold;">Shopping <strong style="color:rgb(141, 25, 25)">Cart</strong></h4>
+   </div>
+   <table id="cart" class="table table-hover table-condensed">
+      {% if cart_list %}
+      <thead>
+         <tr>
+            <th style="width:50%">Product</th>
+            <th style="width:10%">Price</th>
+            <th style="width:8%">Quantity</th>
+            <th style="width:22%" class="text-center">Total</th>
+            <th style="width:10%"></th>
+         </tr>
+      </thead>
+      {% for item in cart_list %}
+      <tbody>
+         <tr>
+            <td data-th="Product">
+               <div class="row">
+                  <div class="col-sm-10">
+                     <h4 class="nomargin">{{ item.item.name }}</h4>
+                     <p>{{ item.item.sku }}</p>
+                  </div>
+               </div>
+            </td>
+            <td data-th="Price">${{ item.item.price }}</td>
+            <form class="update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
+               {% csrf_token %}
+               <td data-th="Quantity">
+                  <input type="number" class="form-control text-center" name="quantity"
+                     value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" min="1">
+               </td>
+               <td data-th="Subtotal" class="text-center">{{ item.item.price | calc_subtotal:item.quantity }}</td>
+               <td class="actions" data-th="">
+                  {{ item.item.quantity }}<button class="btn btn-info btn-sm"><i
+                     class="fa fa-refresh"></i></button>
+            </form>
+            <form class="remove-form" method="POST" action="{% url 'remove_cart' item.item_id %}">
+            {% csrf_token %}
+            <button style="margin-top: 5px; width: 35px;" data-item_id="{{ item.item_id }}"
+               class="btn btn-danger btn-sm"><a class="remove" id="remove_{{ item.item_id }}"></a><i
+               class="fa fa-trash-o"></i></button>
+            </td>
+            </form>
+         </tr>
+      </tbody>
+      {% endfor %}
+      <tfoot>
+         <tr>
+            <td><a href="{% url 'stock' %}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue
+               Shopping</a>
+            </td>
+            <td colspan="2" class="hidden-xs"></td>
+            <td><a href="{% url 'checkout' %}" style="margin-left: 8em;" class="btn btn-success btn-block">Checkout
+               <i class="fa fa-angle-right"></i></a>
+            </td>
+         </tr>
+      </tfoot>
+      {% else %}
+      <div class="card-body card">
+         <div class="col-sm-12 empty-cart-cls text-center">
+            <img style="max-height: 5em; margin-top: 10%;"
+               src="/media/carts.jpeg">
+            <h3><strong>Your Cart is empty</strong></h3>
+            <h4>Add Something</h4>
+            <a href="{% url 'stock' %}" class="" data-abc="true"><i
+               class="arrow left"></i>continue
+            shopping</a>
+         </div>
+      </div>
+      {% endif %}
 </div>
 </table>
 </div>
