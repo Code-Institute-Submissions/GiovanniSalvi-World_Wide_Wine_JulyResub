@@ -213,33 +213,30 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 ### The project has beeen designed to make pages render well on a variety of devices and window or screen sizes such as:
 
 * Desktop: (1600x992px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
-<img width="1280" alt="Desktop " src="">
+<img width="1280" alt="Desktop " src="https://user-images.githubusercontent.com/61980577/121954864-24e88880-cd57-11eb-9023-a0ed4c77a4b4.png">
 
 * Laptop: (1280x802px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
-<img width="778" alt="Tablet" src="">
+<img width="778" alt="Tablet" src="https://user-images.githubusercontent.com/61980577/121954859-244ff200-cd57-11eb-852c-d8d99862e540.png">
 
 * Tablet
  1. ipad Pro: (1024x1366px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
- <img width="778" alt="iPad pro" src="">
+ <img width="778" alt="iPad pro" src="https://user-images.githubusercontent.com/61980577/121954849-21550180-cd57-11eb-91bb-bd1218a0abbe.png">
 
  2. iPad: (768x1024px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
-<img width="778" alt="iPad" src="">
+<img width="778" alt="iPad" src="https://user-images.githubusercontent.com/61980577/121954873-274ae280-cd57-11eb-84cd-dee9f21b02e6.png">
 
 * Mobile
  1. Moto G4 (360x640px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
- <img width="778" alt="motog4" src="">
+ <img width="778" alt="motog4" src="https://user-images.githubusercontent.com/61980577/121954871-274ae280-cd57-11eb-9b81-1f7f09b82798.png">
 
  2. Galaxy S5 (360x640px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
- <img width="778" alt="Galaxy s5" src="">
+ <img width="778" alt="Galaxy s5" src="https://user-images.githubusercontent.com/61980577/121954869-26b24c00-cd57-11eb-950d-a7c7ebdbfa28.png">
  
- 3. Iphone 6/7/8 Plus (414x736px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
- <img width="778" alt="iPhone6:7 plus" src="">
-
- 4. Iphone 6/7/8 (375x667px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
- <img width="778" alt="iPhone 6:7" src="">
+ 3. Iphone 6/7/8 (375x667px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
+ <img width="778" alt="iPhone6:7 plus" src="https://user-images.githubusercontent.com/61980577/121954866-25811f00-cd57-11eb-8535-06fe43d21137.png">
  
- 5. Iphone X (375x812px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
- <img width="778" alt="iPhone x" src="">
+ 4. Iphone X (375x812px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
+ <img width="778" alt="iPhone x" src="https://user-images.githubusercontent.com/61980577/121954858-23b75b80-cd57-11eb-9b10-0f7ab0ba67a6.png">
 
 
 
