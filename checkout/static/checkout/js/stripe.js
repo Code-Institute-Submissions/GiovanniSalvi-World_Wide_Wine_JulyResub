@@ -9,7 +9,7 @@ var style = {
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
-            color: '#aab7c4'                                          // code taken from Boutique Ado 
+            color: '#aab7c4' // code taken from Boutique Ado 
         }
     },
     invalid: {
@@ -17,12 +17,14 @@ var style = {
         iconColor: '#dc3545'
     }
 };
-var card = elements.create('card', {style: style});
+var card = elements.create('card', {
+    style: style
+});
 card.mount('#card-payment');
 
 //handling card error event taken from Boutique Ado//
 
-card.addEventListener('change', function (event) {
+card.addEventListener('change', function(event) {
     var errorDiv = document.getElementById('card-errors');
     if (event.error) {
         var html = `
@@ -43,7 +45,9 @@ var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
-    card.update({ 'disabled': true});
+    card.update({
+        'disabled': true
+    });
     $('#checkout-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
@@ -62,7 +66,9 @@ form.addEventListener('submit', function(ev) {
             $(errorDiv).html(html);
             $('#payment-form').fadeToggle(100);
             $('#loading-overlay').fadeToggle(100);
-            card.update({ 'disabled': false});
+            card.update({
+                'disabled': false
+            });
             $('#checkout-button').attr('disabled', false);
         } else {
             if (result.paymentIntent.status === 'succeeded') {

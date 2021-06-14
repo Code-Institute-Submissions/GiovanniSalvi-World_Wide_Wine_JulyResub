@@ -116,50 +116,47 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 * HTML:
 
-    • [https://validator.w3.org/nu/]()
+    • About [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fabout%2Ftemplates%2Fabout%2Fabout.html)
 
-    • [https://validator.w3.org/nu/]()
+    • Cart [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fcart%2Ftemplates%2Fcart%2Fcart.html)
 
-    • [https://validator.w3.org/nu/]()
+    • Checkout [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fcheckout%2Ftemplates%2Fcheckout%2Fcheckout.html)
 
-    • [https://validator.w3.org/nu/]()
+    • Checkout_success [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fcheckout%2Ftemplates%2Fcheckout%2Fcheckout_success.html)
 
-    • [https://validator.w3.org/nu/]()
+    • Contact [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fcontact%2Ftemplates%2Fcontact%2FcontactForm.html)
 
-    • [https://validator.w3.org/nu/]()
+    • Index [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fhome%2Ftemplates%2Fhome%2Findex.html)
 
-    • [https://validator.w3.org/nu/]()
+    • MyAccount [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fmyaccount%2Ftemplates%2Fmyaccount%2Fmyaccount.html)
 
-    • [https://validator.w3.org/nu/]()
+    • AddItem [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fstock%2Ftemplates%2Fstock%2Fadd_item.html)
 
-    • [https://validator.w3.org/nu/]()
+    • EditItem [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fstock%2Ftemplates%2Fstock%2Fedit_item.html)
 
-    • [https://validator.w3.org/nu/]()
+    • ItemDetails [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fstock%2Ftemplates%2Fstock%2Fitem_details.html)
     
-    • [https://validator.w3.org/nu/]()
+    • Stock [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fstock%2Ftemplates%2Fstock%2Fstock.html)
 
-    •  [https://validator.w3.org/nu/]()
-
-    •  [https://validator.w3.org/nu/]()
+    • Base [https://validator.w3.org/nu/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Ftemplates%2Fbase.html)
 
 
-* HTML: [https://webformatter.com/](https://validator.w3.org/)
+* HTML: [https://webformatter.com/](https://www.freeformatter.com/html-formatter.html)
 
-
-* CSS: [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/)
+* CSS: [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgithub.com%2FGiovanniSalvi%2FWorld_Wide_Wine%2Fblob%2Fmaster%2Fstatic%2Fcss%2Fbase.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#errors)
 
 * CSS: [https://webformatter.com/](https://webformatter.com/)
 
-* JAVASCRIPT: [https://jshint.com/](https://jshint.com/)
+* JAVASCRIPT: [https://jshint.com/]()
 
-* JAVASCRIPT:<img width="1248" alt="javascript valid" src="">
-
+* SCRIPT.JS :<img width="1248"  src="https://user-images.githubusercontent.com/61980577/121937694-df21c500-cd42-11eb-8d63-e85f5c376157.jpg">
+* STRIPE.JS :<img width="1248" src="https://user-images.githubusercontent.com/61980577/121937840-05476500-cd43-11eb-9de3-a03fa6883a2c.png">
 
 * JAVASCRIPT: [https://webformatter.com/](https://webformatter.com/)
 
+* PYTHON:  [http://pep8online.com/](http://pep8online.com)
 
-* PYTHON: [http://pep8online.com/](http://pep8online.com/)
-* PYTHON: <img width="1440" alt="python code Validation" src="">
+
 
 
 ### The quality of the website was measured using Google Lighthouse:
@@ -284,7 +281,7 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 ## Media
 
-* Social-media icons were provided from:
+* Icons and cart Image were provided from:
 
     [fontawesome.com](https://fontawesome.com/v4.7.0/icons/)
 
@@ -293,21 +290,24 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 * Hero Image provide from:
 
-    [Hero Image]()
+    [Hero Image](https://user-images.githubusercontent.com/61980577/121937363-86eac300-cd42-11eb-8efc-08e4b10b1cd8.jpeg)
 
-    [Hero Image]()
+    [About Image](https://user-images.githubusercontent.com/61980577/121937365-881bf000-cd42-11eb-9b16-17cb2a365007.jpeg)
+
 
 ---
 
 ### Bugs 
 
-  1. Not significant bugs found.
+  1. Not  bugs found.
 
 ---
 
 ### Code  
 
-* 
+*  Javascript code for stripe payment was entirely taken from Boutique Ado then update for project's needs.
+
+* I received inspiration for this project from: Boutique Ado
 
 
 
