@@ -143,10 +143,10 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
     •  [https://validator.w3.org/nu/]()
 
 
-* HTML: [https://webformatter.com/]()
+* HTML: [https://webformatter.com/](https://validator.w3.org/)
 
 
-* CSS: [https://jigsaw.w3.org/css-validator/]()
+* CSS: [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/)
 
 * CSS: [https://webformatter.com/](https://webformatter.com/)
 
