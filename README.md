@@ -8,7 +8,7 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 ### 
 
-### The nav menu, footer, home-button and background image are repeated in all website pages to get app style consistent.
+### The nav menu, home-button and accounts icons  are repeated in all site's pages to get app style consistent.
 
 
 ---
@@ -78,7 +78,7 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 * JAVASCRIPT
 
-* PYTHON3/DJANGO
+* PYTHON3 + DJANGO
 
 ### Libraries
 
@@ -89,19 +89,28 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 ## Testing
 
 ### In order to navigate easily through the site:
-* 
 
-* 
+* The homepage provides an header with the cart and account icons,a navbar to navigate through the app.The main section provides an hero image, a brief decription of the products features on sale and a link to all wines in stock.
 
-* 
+* Clicking on 'clickhere' button in the homepage leads to the full stock of products on sale in the site(stock page).The products are displayed in three rows and are wrapped in a card container.The name ,an image, price and the country where wine is produced are displayed inside the card.
 
-* 
+* Clicking on wine's name inside the card leads to a page containing wine's details and a brief description of the product.For site administrator is possible to update the stock deleting or editing the selected product clicking on 'delete' or 'edit' button just below wine's details.
 
-* 
+* The two button at the bottom of products details page are 'keep shopping' button to redirect users to the stock page instead 'checkout' button leads the users to the checkout form in order to complete the orders checkout.
 
-* 
+* Checkout page provides a form to fill in order to complete the purchase.Field required are full-name, an email address,country,city,phone number and a postal code for the delivery.Below the form, stripe payments details inputs such card number,ccv , card expiration date and a zip code are displayed.Only authenticated users are allowed to buy products otherwise 'pay' button is not rendered on the page.Clicking 'pay' button if transaction is successful users get redirect to 'checkout_successful' page which include a summary of the completed order.
 
-* 
+* Orders details with product's name, quantity,price, total,delivery cost if included and subtotal are displayed next to checkout form in the same page.
+
+* A search tab in the homepage allows users to find any product in stock, a navbar allows user to an advanced searching of products in stock which includes types of wines(white,red,rose'),champagne(blanc de blancs, blac de noirs,brut) and countries(italy,france,world).
+
+* The account icon provides a dropdown menu including register and login link.When user is authenticated provides 'myaccount' link leads to the users personal accounts(feature left to implement) or logout link.If user has staff status(administrator)in the dropdown menu is possible to log into a form to add new products in the stock filling all required fields.
+
+* Bag icon in the homepage top right leads to the 'cart' which provides all selected products that users have added to it.The name,sku,price,quantity and total cost of the products are displayed inside a rectangular box.It is possible to update the quantity using 'edit' button or remove the product from the cart using 'remove' button.
+
+* The footer provide two links: 'about' that leads to a brief description of the hystory of this app and 'newsletter!'that leads to a form to fill in order to join to the app newsletter(feature left to implement)
+
+* The text-name of the app 'worldwidewine' in the homepage top left is also a link which redirects users to the hompage from every pages of the site.
 
 ### The project has been validated and beautified using:
 
@@ -161,41 +170,43 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 ### User stories :
 
-1. As an User I want
+1. As an Shopper I want
 
-  • 
-  • 
+  • View a list of products to purchese
+  • View price,description image to indentify the product needed.
 
-2. As an User I want 
+2. As an Shopper I want 
 
-  • 
+  • Select the quantity according to my budget and avoid overspending.
+  • View the price to get the best deal.
 
+4. As an Shopper I want 
 
-  • 
+  • Search the products by name or a specific category.
 
-4. As an user I want 
+5. As an Shopper I want 
 
-  • 
-
-5. As an user I want 
-
-  • 
+  • Search the products across specific categories such(white,rose' blanc de blancs).
   
- 6. As an user I want 
+ 6. As an User I want 
  
-  • 
+  • Quickly register for an account.
   
- 7. As a user I want 
+ 7. As a User I want 
  
-  • 
+  • Quickly login to my personal account
 
-  8. As a user I want 
+  8. As a User I want 
 
-  • 
+  • Recover passwords if forget it.
 
-  9. As a user 
+  9. As a User  I want
 
-  • 
+  •  Receive a confirmation email that my regitration was successful
+
+  10. As User I want
+
+  • Check my personal account, update account's details and see my orsers history.
   
   
 ### The project has beeen designed to make pages render well on a variety of devices and window or screen sizes such as:
@@ -229,8 +240,6 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
  5. Iphone X (375x812px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
  <img width="778" alt="iPhone x" src="">
 
- 6. Surface Duo (540x720px) Responsivness tested using ChromeDev inspector tool, as shown in the screenshot below:
- <img width="778" alt="surface duo" src="">
 
 
 ---

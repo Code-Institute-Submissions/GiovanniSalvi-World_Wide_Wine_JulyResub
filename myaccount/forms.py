@@ -17,3 +17,8 @@ class AccountForm(forms.ModelForm):
             'default_address':'Address',
             'default_country':'Country',
         }
+
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'account-form'
+            self.fields[field].label = False
+            

@@ -6,6 +6,7 @@ from django.dispatch import receiver
 # Create your models here.
 
 
+
 class MyAccount(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)

@@ -770,6 +770,17 @@ input[type=text], input[type=password]:placeholder {
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
 }
+.logo-account{
+    font-family: fantasy;
+    font-size: 2.5em;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+}
+account-field{
+    border: 1px black solid;
+    margin: 5%;
+}
 @-webkit-keyframes fadeInDown {
         0% {
             opacity: 0;
@@ -1125,12 +1136,6 @@ input[type=text], input[type=password]:placeholder {
   }
 }
 @media only screen and (max-width: 580px) {
-  .form-group {
-    width: 100%;
-    margin-bottom: -2rem;
-  }
-}
-@media only screen and (max-width: 580px) {
   .signup_form {
     width: 100%;
     margin-bottom: 0rem;
@@ -1193,6 +1198,11 @@ input[type=text], input[type=password]:placeholder {
 @media only screen and (max-width: 580px) {
   #login-form{
     margin-top: 0;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .checkout{
+    margin:unset;
   }
 }
 @media only screen and (max-width: 380px) {
@@ -1310,6 +1320,37 @@ input[type=text], input[type=password]:placeholder {
     left: 15%;
   }
 }
+@media only screen and (min-width: 570px) and (max-width: 880px) {
+.navbar_list.sparkling {
+        position: absolute;
+        left: -7em;
+        width: 20em;
+        padding: 0;
+  }
+}
+@media only screen and (min-width: 570px) and (max-width: 880px) {
+.image_wine {
+    bottom: 8%;  
+  }
+}
+@media only screen and (min-width: 570px) and (max-width: 880px) {
+.wine-name {
+    font-size: 1em;  
+  }
+}
+@media only screen and (min-width: 980px) and (max-width: 1080px) {
+.navbar_list.sparkling {
+    width: 24.2em;
+
+  }
+}
+@media only screen and (min-width: 980px) and (max-width: 1080px) {
+.image_wine {
+    bottom: 11%;
+    left: -1%;
+}
+}
+
 @media screen and (max-width: 600px) {
 table#cart tbody td .form-control{
 		width:20%;
@@ -1319,7 +1360,6 @@ table#cart tbody td .form-control{
 		width:36%;
 		margin:1.5em 0;
 }
-	
 .actions .btn-info{
 		float:left;
 }
@@ -1353,4 +1393,5 @@ table#cart tfoot td .btn{
 }
 	
 }
+
 
