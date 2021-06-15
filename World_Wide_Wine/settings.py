@@ -118,17 +118,6 @@ WSGI_APPLICATION = 'World_Wide_Wine.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-#if 'DATABASE_URL' in os.environ:
-    #DATABASES = {
-        #'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    #}
-#else:
-    #DATABASES = {
-        #'default': {
-            #'ENGINE': 'django.db.backends.sqlite3',
-            #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        #}
-    #}
 
 DATABASES = { 
     'default': dj_database_url.parse('postgres://kujimrqrmgwhnt:3933c3bbc870646d60f933c09c3dfecae752e0af15f3453a82ff474f3ff51505@ec2-18-233-83-165.compute-1.amazonaws.com:5432/d2ccp00l2noi2j') 
