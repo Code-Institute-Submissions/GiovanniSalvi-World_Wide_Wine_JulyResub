@@ -233,27 +233,35 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 ### In order to deploy the project, you need to perform some steps:
 
-    1. 
+    1. Connect the app to Heroku Postgres, to use postgres on gitpod install dj-database-url and psycopg2 binary then freeze the requirements.txt.
 
-    2. 
+    2. Run makemigrations and migrate commands in gitpod console.
 
-    3. 
+    3. Connect Django to the database in setting.py and then install gunicorn. which act as a web server.
 
-    4. 
+    4. Create a Procfile then disable temporary collectstatic file setting on DISABLE_COLLECTSTATIC  = 1 then freeze the requirements.txt again.
 
-    5. 
+    5. Add host name to allowed host in setting.py commit and push heroku master.
 
-    6. 
+    6. In heroku on the deploy tab set to connect to github in order to enable automatic deploy.
 
-    7. 
+    7. Add secret key and heroku hostname in heroku config vars.
+    
+    8. From now every changes made in gitpod will be automatic deployed to heroku.
+    
+    ---
+  
+    1. To store static file and image use AWS.
 
-    8. 
+    2. Create a AWS account.
+    
+    3. Create AWS groups policies and users.
+    
+    4. Connect Django to AWS.
+    
+    5. Along to static folder just created in Amazon S3 add manually a media folder for caching the images.
 
-    9. 
 
-    10. 
-
----
 
 # Credits
 
