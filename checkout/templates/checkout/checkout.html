@@ -81,6 +81,7 @@
             {% endif %}
          </div>
          <hr class="mb-4">
+         {% if request.user.is_authenticated %}
          <h4 class="mb-3">Payment</h4>
          <div class="row">
             <div class="col-md-6 mb-3">
@@ -93,7 +94,6 @@
                </div>
             </div>
          </div>
-         {% if request.user.is_authenticated %}
          <hr class="mb-4">
          <button id="checkout-button" class="btn btn-primary btn-lg btn-block" type="submit">Pay</button>
          <input type="hidden" value="{{ client_secret }}" name="client_secret">

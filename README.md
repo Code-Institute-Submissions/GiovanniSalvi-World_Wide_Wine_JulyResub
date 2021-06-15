@@ -4,37 +4,15 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 ## I realized this project as part of the Full Stack Frameworks with Django module that I am attending at "code academy" training course.
 
-### WorldWideWine is an example of a wine eCommerce app.
+### WorldWideWine is an example of a wine shop eCommerce app.
 
-### 
+### using Stripe as payment processing platform.
 
 ### The nav menu, Logo-button and accounts icons  are repeated in all site's pages to get app style consistent.
 
 
 ---
 
-
-## Project's Mockup screenshots
-
-* [Homepage]()
-
-* [Stock]()
-
-* [Checkout]()
-
-* [Cart]()
-
-* [Register]()
-
-* [Login]()
-
-* [Checkout Success]()
-
-* [About]()
-
-* [Newsletter]()
-
----
 
 ## Features:
 
@@ -57,6 +35,8 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 * Feature8: Reset Password
 
 * Feature9: Add,Edit and Delete Products
+
+* Feature10: Receiving Email
 
 ### Features left to implement
 
@@ -272,8 +252,6 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
     9. 
 
     10. 
-
-*   
 
 ---
 
