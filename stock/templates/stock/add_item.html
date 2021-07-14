@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% if request.user.is_superuser %}
 <div style="display:block; flex-wrap: wrap;">
    <div class="col text-center mb-4">
       <h4 class="align-items-center mb-3 text-center">Administrator</h4>
@@ -19,6 +20,7 @@
       </div>
    </div>
 </div>
+{% endif %}
 <style>
    .form-control{
    border: 1px black solid;
