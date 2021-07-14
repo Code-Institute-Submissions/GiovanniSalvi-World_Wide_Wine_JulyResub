@@ -119,7 +119,7 @@ def checkout(request):
 
 def checkout_success(request, order_number):
 
-    cartInfo = request.session.get('cartInfo')
+    cartInfo = request.session.get('info')
     checkout_details = get_object_or_404(Checkout, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
