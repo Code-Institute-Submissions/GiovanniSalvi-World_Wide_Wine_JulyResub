@@ -62,7 +62,7 @@
                            Address: <span class="font-weight-bold"> {{ checkout_details.address }}</span>
                         </p>
                      </div>
-                     {% if checkout.county %}
+                     {% if checkout_details.country %}
                   </div>
                   <div class="row">
                      <div class="col-12 col-md-8">
@@ -71,7 +71,7 @@
                         </p>
                      </div>
                      {% endif %}
-                     {% if checkout.city %}
+                     {% if checkout_details.city %}
                   </div>
                   <div class="row">
                      <div class="col-12 col-md-8">
@@ -80,7 +80,7 @@
                         </p>
                      </div>
                      {% endif %}
-                     {% if checkout.postcode %}
+                     {% if checkout_details.postcode %}
                   </div>
                   <div class="row">
                      <div class="col-12 col-md-8">
@@ -88,17 +88,17 @@
                            PostCode: <span class=" font-weight-bold">{{ checkout_details.postcode }}</span>
                         </p>
                      </div>
-                  </div>
                   {% endif %}
-                  {% if checkout.phone_number %}
+                  {% if checkout_details.phone_number %}
+                  </div>
                   <div class="row">
                      <div class="col-12 col-md-8">
                         <p class="text-left text-dark">
-                           PhoneNumber: <span class="font-weight-bold"> {{ checkout_details.phone_number }}</span>
+                           Phone: <span class="font-weight-bold"> {{ checkout_details.phone_number }}</span>
                         </p>
                      </div>
-                  </div>
                   {% endif %}
+                  </div>
                   <div class="col-lg-12 col-lg-6">
                      <div class-="checkout_success">
                         <hr>
@@ -134,8 +134,8 @@
             </div>
          </div>
       </div>
-      <a href="{% url 'stock' %}" class="" data-abc="true"><i class="arrow left"></i>continue shopping</a>
    </div>
+   <a href="{% url 'stock' %}" class="" data-abc="true"><i class="arrow left"></i>continue shopping</a>
 </div>
 {% endfor %}
 {% endblock %}

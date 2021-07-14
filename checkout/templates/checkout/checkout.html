@@ -40,11 +40,11 @@
    </div>
    <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Billing address</h4>
-      <form action="{% url 'checkout' %}" method="POST" class="needs-validation" id="payment-form" novalidate>
+      <form action="{% url 'checkout' %}" method="POST" class="needs-validation" id="payment-form">
          {% csrf_token %}
          <div class="row">
             <div class="col-md-6 mb-3">
-               <label for="firstName">First name</label>{{ checkout_form.first_name }}
+               <label for="firstName" required>First name</label>{{ checkout_form.first_name }} 
             </div>
             <div class="col-md-6 mb-3">
                <label for="lastName">Last name</label>{{ checkout_form.last_name }}

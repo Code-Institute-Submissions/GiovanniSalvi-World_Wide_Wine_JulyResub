@@ -13,7 +13,7 @@
             {{ form | crispy  }}
             <div class="text-center" style="margin: 8%;">
                <a class="btn btn-outline-black" href="{% url 'stock' %}">Cancel</a>
-               <button class="btn btn-black" type="submit">Add Item</button>
+               <button class="btn btn-black add_button" type="submit">Add Item</button>
             </div>
          </form>
       </div>
@@ -38,6 +38,9 @@
    }
    .btn-outline-black{
    border: 1px black solid;
+   }
+   .add_button:hover{
+      background-color: rgba(75, 74, 74, 0.733);
    }
 </style>
 {% endblock %}

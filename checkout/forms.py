@@ -14,7 +14,4 @@ class CheckoutForm(forms.ModelForm):
             'city',
             'postcode',
             'country',
-        )
-
-        email = forms.EmailField(required=True, max_length=100)
-        
+        ) 
