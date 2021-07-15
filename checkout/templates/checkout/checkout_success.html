@@ -5,14 +5,14 @@
 {% endblock %}
 {% block content %}
 <div class="container-fluid">
-   <div class="row" style="margin-top:2em; justify-content: center;">
-      <div class="col-md-4 order-md-2 mb-4" style="border: 1px black solid;">
-         <h2 class="d-flex align-items-center mb-3">Success!</h2>
-         <p class="text-dark">A confirmation email will be sent to: <strong>{{ checkout_details.email }}</strong></p>
-         <p class="text-dark"></p>
+   <h2 class="d-flex align-items-center mb-3">Order Successful!</h2>
+   <p class="text-dark">A confirmation email will be sent to: <strong>{{ checkout_details.email }}</strong></p>
+   <p class="text-dark"></p>
          Your order number is: <strong>{{ checkout_details.order_number }}</strong>
-         <hr>
-         <div class="row" style="padding:3em;">
+   {% for item in checkout_details.checkoutitems.all %}
+   <div class="row" style="margin-top:2em; justify-content: center;">
+      <div class="col-md-6 order-md-2 mb-4" style="border: 1px black solid;">
+         <div class="row" style="padding:3em; background-color: #f5e1a754;">
             <div class="col-lg-12 col-lg-6">
                <div class-="checkout_success">
                   <div class="row">
@@ -20,7 +20,6 @@
                         <h5 class="text-center">Details</h5>
                      </div>
                   </div>
-                  {% for item in checkout_details.checkoutitems.all %}
                   <div class="row">
                      <div class="col-12 col-md-8">
                         <p class="text-left text-dark">
@@ -135,7 +134,11 @@
          </div>
       </div>
    </div>
+   {% endfor %}
+   <div>
    <a href="{% url 'stock' %}" class="" data-abc="true"><i class="arrow left"></i>continue shopping</a>
+   <a href="{% url 'myaccount' %}" style="margin-left: 8em;" class="btn btn-info">MyAccount
+      <i class="fa fa-angle-right"></i></a>
+   </div>
 </div>
-{% endfor %}
 {% endblock %}

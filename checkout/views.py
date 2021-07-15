@@ -7,6 +7,8 @@ from .forms import CheckoutForm
 from .models import Checkout, Checkout_items
 from stock.models import Item
 from cart.contexts import cart_contents
+from myaccount.models import MyAccount
+from myaccount.forms import AccountForm
 
 
 import stripe
@@ -121,9 +123,23 @@ def checkout_success(request, order_number):
 
     cartInfo = request.session.get('info')
     checkout_details = get_object_or_404(Checkout, order_number=order_number)
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {checkout_details.email}.')
+
+    if request.user.is_authenticated:
+        account = MyAccount.objects.get(user=request.user)
+        checkout_details.my_account = account
+        checkout_details.save()
+
+        if cartInfo:
+            account_data = {
+                'default_phone_number': checkout_details.phone_number,
+                'default_country': checkout_details.country,
+                'default_postcode': checkout_details.postcode,
+                'default_city': checkout_details.city,
+                'default_address': checkout_details.address,                
+            }
+            my_account_form = AccountForm(account_data, instance=account)
+            if my_account_form.is_valid():
+                my_account_form.save()
 
     if 'cart' in request.session:
         del request.session['cart']
