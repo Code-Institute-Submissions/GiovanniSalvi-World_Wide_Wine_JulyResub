@@ -49,7 +49,7 @@ def checkout(request):
         }
         checkout_form = CheckoutForm(form_data)
         if checkout_form.is_valid():
-            checkout = checkout_form.save()
+            checkout = checkout_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             checkout.stripe_pid = pid
             checkout.original_cart = json.dumps(cart)

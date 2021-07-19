@@ -13,7 +13,7 @@ from stock.models import Item
 class Checkout(models.Model):
     order_number = models.CharField(max_length=50, null=False, editable=False)
     my_account = models.ForeignKey(
-        MyAccount, on_delete=models.SET_NULL, null=True, blank=True)
+        MyAccount, on_delete=models.SET_NULL, null=True, blank=True, related_name='order')
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -24,6 +24,7 @@ class Checkout(models.Model):
         max_length=20, null=False, blank=False, default="")
     postcode = models.CharField(max_length=10, blank=True)
     address = models.CharField(max_length=60, null=False, blank=False)
+    #date = models.DateTimeField(auto_now_add=True)
     delivery = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, default=0)
     total = models.DecimalField(
