@@ -24,7 +24,7 @@ class Checkout(models.Model):
         max_length=20, null=False, blank=False, default="")
     postcode = models.CharField(max_length=10, blank=True)
     address = models.CharField(max_length=60, null=False, blank=False)
-    #date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now_add=True)
     delivery = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, default=0)
     total = models.DecimalField(

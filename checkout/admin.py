@@ -10,16 +10,16 @@ class Checkout_itemsAdminInline(admin.TabularInline):
 class CheckoutAdmin(admin.ModelAdmin):
     inlines = (Checkout_itemsAdminInline,)
 
-    readonly_fields = ('order_number',
+    readonly_fields = ('order_number', 'date',
                        'delivery', 'total',
                        'grand_total',)
 
     fields = ('order_number', 'first_name', 'last_name',
-              'email', 'phone_number', 'country',
+              'email', 'date', 'phone_number', 'country',
               'postcode', 'city', 'address',
               'delivery', 'total', 'grand_total',)
 
-    Checklist = ('order_number', 'first_name', 'last_name',
+    Checklist = ('order_number', 'date', 'first_name', 'last_name',
                  'delivery', 'total',
                  'grand_total')
 

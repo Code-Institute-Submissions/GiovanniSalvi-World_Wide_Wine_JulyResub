@@ -37,26 +37,31 @@
                   </tr>
                </thead>
                <tbody>
-                  {% for ordine in order %}
+                  {% for orders in order %}
                   <tr>
                      <td>
-                        <li></li>
+                        <li>{{ orders.date }}</li>
                      </td>
                      <td>
-                        <li>{{ ordine.order_number }}</li>
+                        <li><a>{{ orders.order_number }}</a></li>
                      </td>
-                     {% for prodotto in ordine.checkoutitems.all %}
+                     {% for product in orders.checkoutitems.all %}
                      <td>
                         <ul class="list-unstyled">
-                           <li class="small">{{ prodotto.item }} </li>
+                           <li class="small">{{ product.item }} </li>
                         </ul>
                      </td>
-                     <td class="text-center">{{ prodotto.quantity }}</td>
+                     <td class="text-center">{{ product.quantity }}</td>
                      {% endfor %}
-                     <td class="text-center" style="color:#28a745; font-weight:bold;">${{ ordine.grand_total }}</td>
-                     <td> <button style="margin-top: 5px; width: 35px;" data-item_id=""
-                        class="btn btn-sm"><a class="remove" id="r"></a><i
-                        class="fa fa-trash-o item_delete"></i></button></td>
+                     <td class="text-center" style="color:#28a745; font-weight:bold;">${{ orders.grand_total }}</td>
+                     <form class="remove-form" method="POST" action="{% url 'remove_order' orders.order_number %}">
+                        {% csrf_token %}
+                     <td>
+                        <button style="margin-top: 5px; width: 35px;" data-item_id="{{ orders.order_number }}"
+                        class="btn btn-sm"><a class="remove" id="remove_{{ orders.order_number }}"></a><i
+                        class="fa fa-trash-o item_delete"></i></button>
+                     </td>
+                     </form>
                   </tr>
                   {% endfor %}
                </tbody>

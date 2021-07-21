@@ -15,9 +15,9 @@ class MyAccount(models.Model):
     default_country = models.CharField(
         max_length=50, null=False, blank=True)
     default_city = models.CharField(
-        max_length=20, null=False, blank=False, default="")
+        max_length=20, null=False, blank=True, default="")
     default_postcode = models.CharField(max_length=10, blank=True, default="")
-    default_address = models.CharField(max_length=60, null=False, blank=False)
+    default_address = models.CharField(max_length=60, null=False, blank=True)
 
     def __str__(self):
         return self.user.username

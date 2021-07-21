@@ -3,6 +3,7 @@ from django.db.models import Q
 from django.contrib import messages
 from .models import Item, Stock, Country
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import User
 from .forms import StockForm
 
 # Create your views here.
@@ -101,7 +102,8 @@ def edit_item(request, item_id):
 
 def delete_item(request, item_id):
     item = get_object_or_404(Item, pk=item_id)
-    item.delete()
+    if request.user.is_superuser:
+        item.delete()
 
     return redirect(reverse('stock'))
          
