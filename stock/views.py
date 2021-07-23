@@ -5,6 +5,7 @@ from .models import Item, Stock, Country
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 from .forms import StockForm
+from django.http import Http404
 
 # Create your views here.
 
@@ -55,7 +56,6 @@ def view_stock(request):
 
 
 def item_details(request, item_id):
-
     item = get_object_or_404(Item, pk=item_id)
     context = {
         'item': item,
@@ -65,10 +65,13 @@ def item_details(request, item_id):
 
 
 def add_item(request):
+    if not request.user.is_superuser:
+        raise Http404()
     if request.method == 'POST':
         form = StockForm(request.POST, request.FILES)
         if form.is_valid():
             item = form.save()
+            messages.success(request, f'Added {item.name} to stock')
             return redirect(reverse('item_details', args=[item.id]))
     else:
         form = StockForm()
@@ -87,6 +90,7 @@ def edit_item(request, item_id):
         form = StockForm(request.POST, request.FILES, instance=item)
         if form.is_valid():
             form.save()
+            messages.success(request, f'{item.name} was updated')
             return redirect(reverse('item_details', args=[item.id]))
     else:
         form = StockForm(instance=item)
@@ -99,11 +103,11 @@ def edit_item(request, item_id):
 
     return render(request, template, context)
 
-
 def delete_item(request, item_id):
     item = get_object_or_404(Item, pk=item_id)
     if request.user.is_superuser:
+        messages.success(request, f'{item.name} was removed')
         item.delete()
-
-    return redirect(reverse('stock'))
-         
+        
+        
+    return redirect(reverse('stock'))       

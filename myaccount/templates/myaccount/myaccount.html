@@ -33,7 +33,6 @@
                      <th  class="text-center">Product</th>
                      <th  class="text-center" style="width:10%">Quantity</th>
                      <th  class="text-center" style="width:10%">SubTotal</th>
-                     <th style="width:3%"></th>
                   </tr>
                </thead>
                <tbody>
@@ -54,14 +53,6 @@
                      <td class="text-center">{{ product.quantity }}</td>
                      {% endfor %}
                      <td class="text-center" style="color:#28a745; font-weight:bold;">${{ orders.grand_total }}</td>
-                     <form class="remove-form" method="POST" action="{% url 'remove_order' orders.order_number %}">
-                        {% csrf_token %}
-                     <td>
-                        <button style="margin-top: 5px; width: 35px;" data-item_id="{{ orders.order_number }}"
-                        class="btn btn-sm"><a class="remove" id="remove_{{ orders.order_number }}"></a><i
-                        class="fa fa-trash-o item_delete"></i></button>
-                     </td>
-                     </form>
                   </tr>
                   {% endfor %}
                </tbody>

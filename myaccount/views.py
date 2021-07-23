@@ -43,10 +43,3 @@ def shopping_history(request, order_number):
     }
 
     return render(request, template, context)
-
-def remove_order(request, order_number):
-    order = get_object_or_404(Checkout, order_number=order_number) 
-    order.delete()
-    messages.success(request, f'Removed {order_number} from your shopping history')
-
-    return redirect(reverse('myaccount'))

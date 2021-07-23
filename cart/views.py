@@ -23,7 +23,7 @@ def add_shopping(request, item_id):
         cart[item_id[0]] = quantity
 
     request.session['cart'] = cart
-    messages.success(request, f'Added {item.name} to your cart')
+    messages.success(request, f'Added {cart[item_id]} bottles of {item.name} to the cart')
     return redirect(redirect_url)
 
 
@@ -37,7 +37,7 @@ def update_cart(request, item_id):
         cart.pop(item_id)
 
     request.session['cart'] = cart
-    messages.success(request, f'Updated {item.name} Quantity to {cart[item_id]}')
+    messages.success(request, f'Updated {item.name} quantity to {cart[item_id]}')
     return redirect(reverse('shopping_cart'))
 
 
@@ -45,7 +45,7 @@ def remove_cart(request, item_id):
     cart = request.session.get('cart', {})
     item = get_object_or_404(Item, pk=item_id)
     cart.pop(item_id)
-    messages.success(request, f'Removed {item.name} from your cart')
+    messages.success(request, f'{item.name} was removed')
 
     request.session['cart'] = cart
     return redirect(reverse('shopping_cart'))
