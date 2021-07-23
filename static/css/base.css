@@ -796,6 +796,22 @@ li:hover .navbar_list {
 	border-radius: 0 0 10px 10px;
 }
 
+/*  bootstrap toasts  */
+
+.message-container {
+    position: fixed;
+    top: 120px;
+    right: 5px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
 
 /* TABS */
 

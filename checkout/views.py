@@ -85,7 +85,7 @@ def checkout(request):
                     )
                     checkout.delete()
                     return redirect(reverse('shopping_cart'))
-            request.session['save_info'] = 'save-info' in request.POST
+            request.session['save-info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[checkout.order_number]))
         else:
             messages.error(request, 'There was an error with your form.')
@@ -120,7 +120,7 @@ def checkout(request):
 
 def checkout_success(request, order_number):
 
-    cartInfo = request.session.get('info')
+    cartInfo = request.session.get('save-info')
     checkout_details = get_object_or_404(Checkout, order_number=order_number)
 
     if request.user.is_authenticated:

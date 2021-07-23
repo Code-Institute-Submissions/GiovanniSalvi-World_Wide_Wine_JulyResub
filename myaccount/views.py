@@ -4,7 +4,6 @@ from django.contrib import messages
 
 from .models import MyAccount
 from .forms import AccountForm
-# Create your views here.
 
 from checkout.models import Checkout
 
@@ -15,6 +14,7 @@ def myaccount(request):
         form = AccountForm(request.POST, instance=myaccount)
         if form.is_valid():
             form.save()
+            messages.success(request, f'Your profile has been updated')
     
     form = AccountForm(instance=myaccount)
     order = myaccount.order.all()
@@ -31,10 +31,10 @@ def myaccount(request):
 def shopping_history(request, order_number):
     orders = get_object_or_404(Checkout, order_number=order_number)
 
-    #messages.info(request, (
-        #f'This is a past confirmation for order number {order_number}. '
-        #'A confirmation email was sent on the order date.'
-    #))
+    messages.info(request, (
+        f'This is a past confirmation for order number {order_number}. '
+        'A confirmation email was sent on the order date.'
+    ))
 
     template = 'checkout/checkout_success.html'
     context = {

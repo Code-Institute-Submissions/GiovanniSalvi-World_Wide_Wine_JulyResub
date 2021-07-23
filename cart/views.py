@@ -12,6 +12,7 @@ def shopping_cart(request):
 
 
 def add_shopping(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
     quantity = int(request.POST.get('quantity'))
@@ -22,10 +23,12 @@ def add_shopping(request, item_id):
         cart[item_id[0]] = quantity
 
     request.session['cart'] = cart
+    messages.success(request, f'Added {item.name} to your cart')
     return redirect(redirect_url)
 
 
 def update_cart(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
     cart = request.session.get('cart', {})
     quantity = int(request.POST.get('quantity'))
     if quantity > 0:
@@ -34,6 +37,7 @@ def update_cart(request, item_id):
         cart.pop(item_id)
 
     request.session['cart'] = cart
+    messages.success(request, f'Updated {item.name} Quantity to {cart[item_id]}')
     return redirect(reverse('shopping_cart'))
 
 
