@@ -18,9 +18,9 @@ def add_shopping(request, item_id):
     quantity = int(request.POST.get('quantity'))
 
     if item_id in list(cart.keys()):
-        cart[item_id[0]] += quantity
+        cart[item_id] += quantity
     else:
-        cart[item_id[0]] = quantity
+        cart[item_id] = quantity
 
     request.session['cart'] = cart
     messages.success(request, f'Added {cart[item_id]} bottles of {item.name} to the cart')

@@ -85,7 +85,7 @@ def checkout(request):
                     )
                     checkout.delete()
                     return redirect(reverse('shopping_cart'))
-            request.session['save-info'] = 'save-info' in request.POST
+            request.session['save_info'] = 'save_info' in request.POST
             return redirect(reverse('checkout_success', args=[checkout.order_number]))
         else:
             messages.error(request, 'There was an error with your form.')

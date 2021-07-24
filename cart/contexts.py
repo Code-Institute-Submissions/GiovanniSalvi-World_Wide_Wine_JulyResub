@@ -12,7 +12,7 @@ def cart_contents(request):
     cart = request.session.get('cart', {})
 
     for item_id, quantity in cart.items():
-        item = get_object_or_404(Item, pk=item_id[0])
+        item = get_object_or_404(Item, pk=item_id)
         total += quantity * item.price
         shopping_counter = total
         cart_list.append({

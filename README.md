@@ -38,15 +38,17 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 * Feature10: Receiving Email
 
+* Feature11: Toast
+
+* Feature12: Order History
+
+* Feature13: Update account details
+
 ### Features left to implement
 
-* Update/Remove Account
-
-* Toast
+* Remove Account
 
 * Webhooks
-
-* Order History
 
 * Newsletter
 
@@ -90,11 +92,13 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 * A search tab in the homepage allows users to find any product in stock, a navbar allows user to an advanced searching of products in stock which includes types of wines(white,red,rose'),champagne(blanc de blancs, blac de noirs,brut) and countries(italy,france,world).
 
-* The account icon provides a dropdown menu including register and login link.When user is authenticated provides ['myaccount'](https://user-images.githubusercontent.com/61980577/121951384-c6b9a680-cd52-11eb-85a8-7ff2cbf35e4f.png)link leads to the users personal accounts and [logout](https://user-images.githubusercontent.com/61980577/121951383-c6211000-cd52-11eb-8652-66e37bac6a17.png) button.If user has staff status(administrator)in the dropdown menu is possible to log into a form to add new products in the stock filling all required fields(feature left to implement).
+* The account icon provides a dropdown menu including register and login link.When user is authenticated provides ['myaccount'](https://user-images.githubusercontent.com/61980577/121951384-c6b9a680-cd52-11eb-85a8-7ff2cbf35e4f.png)link which leads to the users personal accounts and the [logout](https://user-images.githubusercontent.com/61980577/121951383-c6211000-cd52-11eb-8652-66e37bac6a17.png) button.If user has staff status(administrator)in the dropdown menu is possible to log into a form to add new products in the stock filling all required fields(feature left to implement).
 
 * Bag icon in the homepage top right leads to the 'cart' which provides all selected products that users have added to it.The name,sku,price,quantity and total cost of the products are displayed inside a rectangular box. It is possible to update the quantity using 'edit' button or remove the product from the cart using 'delete' button.
 
 * The [footer](https://user-images.githubusercontent.com/61980577/121951381-c6211000-cd52-11eb-99c3-f67df5ae6377.png) provide two links: ['about'](https://user-images.githubusercontent.com/61980577/121951378-c4efe300-cd52-11eb-887f-430e97bda08c.png) that leads to a brief description of the hystory of this app and ['newsletter!](https://user-images.githubusercontent.com/61980577/121951376-c4574c80-cd52-11eb-8a2d-3cc4b062dc2c.png)'that leads to a form to fill in order to join to the app newsletter(feature left to implement)
+
+* [Myaccount](https://user-images.githubusercontent.com/61980577/121951384-c6b9a680-cd52-11eb-85a8-7ff2cbf35e4f.png)button top right leads to the personal user's account page where a the user's delivery [details](https://github.com/GiovanniSalvi/World_Wide_Wine/blob/master/media/Profile%20form.png) are displayed.[Order_history](https://github.com/GiovanniSalvi/World_Wide_Wine/blob/master/media/Orders%20History.png) is displayed at the bottom of this page.
 
 * The text-name of the app ['worldwidewine'](https://user-images.githubusercontent.com/61980577/121952884-bacee400-cd54-11eb-8942-5e9e0bcd5cac.png) in the homepage top left is also a link which redirects users to the hompage from every pages of the site.
 
@@ -187,7 +191,7 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
   10. As User I want
 
-  • Check my personal account, update account's details and see my orsers history.
+  • Check my personal account, update account's details and see my orders history.
   
   
 ### The project has beeen designed to make pages render well on a variety of devices and window or screen sizes such as:
