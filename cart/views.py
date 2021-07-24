@@ -23,7 +23,7 @@ def add_shopping(request, item_id):
         cart[item_id] = quantity
 
     request.session['cart'] = cart
-    messages.success(request, f'Added {cart[item_id]} bottles of {item.name} to the cart')
+    messages.success(request, f'Added {cart[item_id]} {"bottles" if cart[item_id] > 1 else "bottle"} of {item.name} to the cart')
     return redirect(redirect_url)
 
 

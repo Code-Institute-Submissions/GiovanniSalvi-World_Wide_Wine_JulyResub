@@ -52,6 +52,8 @@ Welcome! [github.com](https://github.com/GiovanniSalvi/World_Wide_Wine)
 
 * Newsletter
 
+* Form's details auto-saved  in the checkout form
+
 ---
 
 # Technology used:
