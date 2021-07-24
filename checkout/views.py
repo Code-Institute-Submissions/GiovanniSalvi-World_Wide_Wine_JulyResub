@@ -120,7 +120,7 @@ def checkout(request):
 
 def checkout_success(request, order_number):
 
-    cartInfo = request.session.get('save-info')
+    cartInfo = request.session.get('save_info')
     checkout_details = get_object_or_404(Checkout, order_number=order_number)
 
     if request.user.is_authenticated:
